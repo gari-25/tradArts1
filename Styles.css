@@ -36,3 +36,66 @@ body{
     border: solid black;
     border-width: 2px 0px 2px 0px;
 }
+
+.content-section {
+    display: flex;
+    justify-content: center; /* Centers the items inside the flex container */
+    align-items: center;
+    margin-top: 20px;
+    width: 100%; /* Set width to 75% of the parent's width (which is the body) */
+    margin-left: auto; /* Used with margin-right: auto to center a block-level element */
+    margin-right: auto; /* Used with margin-left: auto to center a block-level element */
+}
+
+.design-image {
+    width: 65%;
+    max-width: 550px; /* max-width for better control on larger screens which can be optional */
+    height: auto;
+}
+
+.section-title {
+    font-size: 45px;
+    margin: 0 20px; /* horizontal spacing around the text */
+    color: rgb(122, 5, 5);
+    font-family: 'Almendra SC', cursive;
+    font-weight: bold;
+}
+
+.states{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.sitem-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.sitem{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgb(122, 5, 5);
+    object-fit: cover;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3); 
+}
+
+.sitem-text{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: 'Quintessential',cursive;
+    color: rgb(122, 5, 5);
+    font-weight: bold;
+}
+
+.sitem-container:hover{
+    transform: scale(1.1);
+}

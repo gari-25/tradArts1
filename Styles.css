@@ -1,7 +1,15 @@
+html, body{
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    background-attachment: fixed; /* Ensures the background stays fixed relative to the viewport */
+    background-position: center center; /* Centers the image */
     margin:auto;
     height: 100vh;
     width:auto;
@@ -54,7 +62,7 @@ body{
 }
 
 .section-title {
-    font-size: 45px;
+    font-size: 50px;
     margin: 0 20px; /* horizontal spacing around the text */
     color: rgb(122, 5, 5);
     font-family: 'Almendra SC', cursive;
@@ -90,7 +98,7 @@ body{
 
 .sitem-text{
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Quintessential',cursive;
     color: rgb(122, 5, 5);
     font-weight: bold;
@@ -98,4 +106,8 @@ body{
 
 .sitem-container:hover{
     transform: scale(1.1);
+}
+
+.sitem:hover{
+    border-color: rgb(160, 10, 10);
 }

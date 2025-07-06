@@ -21,5 +21,69 @@
         <a><div class="items">Log in</div></a>
         <a><div class="items">Contact Us</div></a>
     </div>
+
+    <br>
+
+        <div class="slide-container">
+        <div class="slide fade">
+            <img src="Madhubani.jpg">
+            <div class="caption">Madhubani Folk Painting - Mithila</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="warli.jpg">
+            <div class="caption">Warli Tribal Art - Maharashtra</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="Kathakali.jpg">
+            <div class="caption">Kathakali - Kerala's Theatre of Paint and Gesture</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="pattchitra.jpg">
+            <div class="caption">Pattachitra - Timeless Scroll Art from Odisha</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="puppet.jpg">
+            <div class="caption">Kathputli Puppetry - The Colourful Voice of Rajasthani Folk Tradition</div>
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+
+    </div>
+
+    
+    <script>
+        let Index = 0;
+
+        showSlides();
+
+        function changeSlide(n){
+            Index += n;
+            showSlides();
+        }
+
+        function showSlides(){
+            const slides = document.getElementsByClassName("slide");
+            if(Index >= slides.length) Index = 0;
+            if(Index < 0) Index = slides.length - 1;
+
+            for(let i = 0; i<slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[Index].style.display = "block";
+
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+    </script>
+
 </body>
 </html>

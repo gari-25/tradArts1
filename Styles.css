@@ -49,7 +49,7 @@ body{
     display: flex;
     justify-content: center; /* Centers the items inside the flex container */
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%; /* Set width to 75% of the parent's width (which is the body) */
     margin-left: auto; /* Used with margin-right: auto to center a block-level element */
     margin-right: auto; /* Used with margin-left: auto to center a block-level element */
@@ -110,4 +110,50 @@ body{
 
 .sitem:hover{
     border-color: rgb(160, 10, 10);
+}
+
+#Back{
+    margin: 10px 10px;
+    padding: 15px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20%;
+    color: aliceblue;
+    background-color: rgb(160, 10, 10);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+.artform-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height:25%;
+    border: 1px solid black;
+    padding: 5px 5px;
+}
+
+.image-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.description-container{
+    flex: 2;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+#pic{
+    flex: 3;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+#pic-name{
+    flex: 1;
+    align-items: center;
+    border: 1px solid black;
 }

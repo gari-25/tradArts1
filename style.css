@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    font-family: 'Libre Baskerville', serif;
     margin:auto;
     height: 100vh;
     width:auto;
@@ -31,12 +32,13 @@ body{
     padding:1vmax;
     justify-content: space-around;
     color:#6B2E0D;
-    font-family: 'Libre Baskerville', serif;
+    /* font-family: 'Libre Baskerville', serif; */
     font-size:1.2vmax;
     border: solid black;
-    border-width: 2px 0px 2px 0px;
+    border-width: 1px 0px 1px 0px;
 }
 .items:hover{
+    cursor:pointer;
     text-decoration: underline;
 }
 .slide-container {
@@ -59,7 +61,9 @@ body{
 }
 
 @keyframes fading{
-    0%{opacity: 1}100%{opacity:0.8}
+    0%{opacity: 1}
+    75%{opacity:1}
+    100%{opacity:0.8}
 }
 
 .slide img {
@@ -111,4 +115,21 @@ body{
     font-size: 18px;
     padding: 12px;
     }
+}
+.about{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    justify-content: space-between;
+}
+.title{
+    /* font-family: 'Winky Rough',sans-serif; */
+    font-size:1.4em;
+    color:maroon;
+}
+.content{
+    /* font-family: 'Winky Rough',sans-serif; */
+    color:#102b36;
+    align-self: flex-end;
+    width:98%;
 }

@@ -2,7 +2,7 @@ body{
     background-image:url(bg.jpg); 
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: absolute;
+    background-attachment: fixed;
     margin:auto;
     height: 100vh;
     width:auto;

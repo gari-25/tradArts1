@@ -19,6 +19,7 @@ body{
     animation-duration: 5s;
     animation-iteration-count: 1; */
 }
+
 .logo{
     background-color: #6B2E0D;
     color:#F3E3D0;
@@ -42,7 +43,7 @@ body{
     font-family: 'Libre Baskerville', serif;
     font-size:1.2vmax;
     border: solid black;
-    border-width: 2px 0px 2px 0px;
+    border-width: 1px 0px 1px 0px;
 }
 
 .content-section {
@@ -147,7 +148,7 @@ body{
 }
 
 #pic{
-    flex: 3;
+    flex: 4;
     justify-content: center;
     border: 1px solid black;
 }
@@ -156,4 +157,15 @@ body{
     flex: 1;
     align-items: center;
     border: 1px solid black;
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .artform-container {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        height: auto; /* Allow height to adjust */
+    }
+    .image-container, .description-container {
+        flex: none; /* Remove flex sizing */
+        width: 100%; /* Make them full width */
+    }
 }

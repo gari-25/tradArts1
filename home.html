@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Hind&family=Winky+Rough:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Hind&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 <body>
+    <video id="introVideo" autoplay muted playsinline>
+    <source src="Intro_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+<div class="mainContent">
     <div class="logo">
         <div class="main_logo"><img src="Logo1.png" style="height: inherit;width:inherit;"></div> 
         <div>Echoes of Tradition &nbsp; <br>in Every Stroke.</div>
@@ -56,6 +61,7 @@
     </div><br><br>
 
     <div class="about">
+        <div class="element">
         <div class="title">
             <img src="flower.png">Who We Are
         </div>
@@ -65,8 +71,17 @@
             strokes of Madhubani to the bold weaves of Kanchipuram, we are a celebration of stories passed down 
             through generations — preserved in color, rhythm, and spirit.
         </div>
-        
+        </div>
+        <br>
 
+        <div class="element">
+        <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black;">
+        <p style="align-self: center;color:bisque;background:rgba(0,0,0,0.6);padding: 2px 4px;
+        border-radius:5px;font-size: 1.5vmax;">
+        Folk Art Map Of India</p>
+        </div><br>
+
+        <div class="element">
         <div class="title">
             <img src="flower.png">Why We Exist?
         </div>
@@ -76,10 +91,18 @@
             community that honors authenticity over imitation. Every creation you see here carries the voice of 
             a region, the soul of a people, and the rhythm of centuries.
         </div>
+        </div>
     </div>
-    
+    </div>
 
     <script>
+        const video = document.getElementById('introVideo');
+        video.onended = () => {
+        video.style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        document.body.style.overflow = 'auto';
+        };
+
         let Index = 0;
 
         showSlides();

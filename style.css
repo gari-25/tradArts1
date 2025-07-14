@@ -211,7 +211,7 @@ body{
 }
 
 .footer-section ul li a {
-  color: #ffe4c4;
+  color: #dda96a;
   text-decoration: none;
 }
 
@@ -221,7 +221,7 @@ body{
 
 .social-links a {
   color: #6b2e0d;
-  background-color:bisque;
+  background-color:rgb(220,183,139);
   padding:3px 3px 0px 3px;
   border-radius:50%;
 }
@@ -240,7 +240,7 @@ body{
 
 .newsletter-form button {
   padding: 8px 16px;
-  background-color: bisque;
+  background-color: rgb(220,183,139);
   color:#6B2E0D ;
   border: none;
   border-radius: 4px;

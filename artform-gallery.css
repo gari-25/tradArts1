@@ -110,7 +110,7 @@ body {
 
 .image-container {
     flex: 0 0 250px;
-    height: 375px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,7 +121,7 @@ body {
 
 .artform-image {
     width: 250px;
-    height: 350px;
+    height: 90%;
     object-fit: cover;
     border-radius: 15%;
     border: 2px solid rgb(122, 5, 5);

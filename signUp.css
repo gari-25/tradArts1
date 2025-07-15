@@ -88,6 +88,7 @@ input{
     background-color: transparent;
     border-bottom: 2px solid #f2d5a1;
     margin-bottom: 1.5rem;
+    background:transparent;
 }
 button{
     background: linear-gradient(to right,#f2d5a1, #d49877,#8d4620);

@@ -1,0 +1,241 @@
+*{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box; 
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 40px; 
+  background-color: #6b2e0c;
+}
+
+.logo img {
+  height: 50px; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f2d5a1;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color:#874019;
+}
+
+.container{
+    width: 73vw;
+    height: 78vh;
+    margin: 50px auto; 
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content{
+    width: 58%;
+    height: 100%;
+    position: relative;
+    background-image: url(Untitled\ design.png);
+    background-size: cover;
+    background-position: center;
+    float: left;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.form-box {
+    width: 42%;
+    height: 100%;
+    float: right;
+    background-color: #6b2e0c;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
+.form-box h2 {
+    color: #f2d5a1;
+    margin-bottom: 44px;
+    font-size: 35px;
+    font-weight: 600;
+}
+.input-box{
+    width: 70%;
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 2px solid #f2d5a1;
+}
+.input-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color:#f2d5a1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.input-box input::placeholder {
+    color: #f2d5a1;
+    opacity: 0.7; 
+}
+.input-box input:focus {
+    border-bottom: 2px solid #aea7a7;
+}
+.form-box button {
+    width: 30%;
+    padding: 10px;
+    background: linear-gradient(to right,#f2d5a1, #d49877,#8d4620);
+    color: #6b2e0c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+} 
+.form-box button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.form-box h4 {
+    color: #f2d5a1;
+    margin-top: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form-box p {
+    color: #f2d5a1;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.form-box p a {
+    color: #f2d5a1;
+    text-decoration: none;
+} 
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px;
+  height: calc(100% - 48px); 
+  
+}
+.image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: cover;
+  display: block;
+  box-shadow: #f2d5a1 5px 5px 5px;
+}
+
+.footer {
+  background-color: #6B2E0D; /* #4e342e deep brown */
+  color: #fff;
+  padding: 40px 20px;
+  /* font-family: 'Segoe UI', sans-serif; */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  padding: 20px;
+}
+
+.footer-section h3 {
+  color: bisque;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ffe4c4;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  color: #6b2e0d;
+  background-color:bisque;
+  padding:3px 3px 0px 3px;
+  border-radius:50%;
+}
+
+.newsletter-form {
+  margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.newsletter-form button {
+  padding: 8px 16px;
+  background-color: bisque;
+  color:#6B2E0D ;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #f5deb3; /* lighter bisque */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid bisque;
+  margin-top: 30px;
+  font-size: 14px;
+  color: bisque;
+}

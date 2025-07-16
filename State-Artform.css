@@ -21,34 +21,50 @@ body{
 }
 
 .logo{
-    background-color: #6B2E0D;
-    color:#F3E3D0;
-    padding:1vmax;
+    background-color:#6B2E00;
     display:flex;
-    font-size: 2.3vmax;
-    font-family: 'Tangerine', cursive;
+    flex-wrap: wrap;
     font-weight: bold;
     justify-content: space-around;
+    align-items: center;
+    
 }
-.main_logo{
-    height:5vmax;
-    width:20vw;
-}
-.nav{
-    background-color: bisque;
-    display:flex;
-    padding:1vmax;
-    justify-content: space-around;
-    color:#6B2E0D;
-    font-family: 'Libre Baskerville', serif;
-    font-size:1.2vmax;
-    border: solid black;
-    border-width: 1px 0px 1px 0px;
+.main_logo img{
+    height: 7vmax;
+    width:25vmax;   
+} 
+.main_logo img:hover{
+  cursor: pointer;
 }
 
+/* nav bar */
+.nav{
+    display:flex;
+    flex-wrap: wrap;
+    padding:1vmax;
+    justify-content: center;
+    gap:1.2em;
+    font-size:1.2em;
+}
+.nav a{
+  text-decoration: none;
+}
+.items{
+  width:7em;
+  height: auto;
+  text-align:center;
+  color: rgb(225, 196, 159);
+  background-color:#6B2E00;
+  padding:0.8vmax;
+  border-radius:10px;
+  transition: transform 0.3s ease-in-out;
+}
 .items:hover{
-    text-decoration: underline;
-    cursor: pointer;
+    cursor:pointer;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+    background-color: rgb(245, 225, 189, 0.7);
+    color:maroon;
+    transform: scale(1.05) translate(-2px);
 }
 
 .content-section {

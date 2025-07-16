@@ -48,7 +48,7 @@ main{
 
 .hero-section {
   position: relative;
-  height: 350px;
+  height: 300px;
   padding: 80px 5% 60px;
   overflow: hidden;
 }
@@ -176,7 +176,7 @@ main{
 
 
 .calendar-events {
-  background: #fff3d8;
+  background: rgb(255, 243, 216,0.7);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -189,7 +189,7 @@ main{
 
 .event-item {
   margin-bottom: 20px;
-  background: #fff7e6;
+  background: rgb(255, 247, 230,0.7);
 }
 
 .event-item h4 {

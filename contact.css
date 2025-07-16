@@ -102,6 +102,7 @@ body {
 .info-box:hover{
   translate: 0 10px;
   box-shadow: #f2d5a1 0px 4px 8px;
+  transition: translate 0.3s ease, box-shadow 0.3s ease;
 }
 .contact-form {
   display: flex;
@@ -169,6 +170,7 @@ body {
   background-color: #874019;
   color: #f2d5a1;
   box-shadow: 4px 8px 16px #f2d5a1;
+  transition: translate 0.3s ease, box-shadow 0.3s ease;
 }
 .contact-form form input::placeholder,
 .contact-form form textarea::placeholder {

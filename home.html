@@ -6,31 +6,49 @@
     <title>Homepage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Luxurious+Roman&family=Hind&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Amarante&family=Luxurious+Roman&family=Hind&family=Palatino+Linotype&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 <body>
     <video id="introVideo" autoplay muted playsinline>
     <source src="Intro_video.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
-<div class="mainContent">
-    <div class="logo">
-        <div class="main_logo"><img src="Logo1.png" style="height: inherit;width:inherit;"></div> 
-        <div>Echoes of Tradition &nbsp; <br>in Every Stroke.</div>
-        <!-- A digital sanctuary for India’s timeless artistic traditions. -->
-    </div>
+  <div class="mainContent">
     
-    <div class="nav">
-        <a><div class="items">Home</div></a>
-        <a><div class="items">State</div></a>
+    <div class="logo">
+        <div class="main_logo"><a href="home.html"><img src="Logo1.png"></a></div> 
+        <!-- <div>Echoes of Tradition &nbsp; <br>in Every Stroke.</div> -->
+        <!-- A digital sanctuary for India’s timeless artistic traditions. -->
+
+        <div class="nav">
+        <a href="home.html"><div class="items">Home</div></a>
+        <a><div class="items">Artforms</div></a>
         <a><div class="items">Events</div></a>
         <a><div class="items">Log in</div></a>
         <a><div class="items">Contact Us</div></a>
     </div>
+    </div>
+    <div class="start">
+      <div class="desc">
+        Step into a world where<br> every artifact tells a story!<br>
+        <button onclick="window.open('home.html','_blank')">Explore the archive</button>
+      </div>
+      <img src="im1.jpg" id="im1" class="ims">
+      <img src="im2.jpg" id="im2" class="ims">
+      <img src="im3.jpg" id="im3" class="ims">
+      <img src="im4.jpg" id="im4" class="ims">
+    </div>
+    <br>
 
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">Indian Arts</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
     <br>
 
         <div class="slide-container">
+        <div class="slides-wrapper" id="slidesWrapper">
         <div class="slide fade">
             <img src="Madhubani.jpg">
             <div class="caption">Madhubani Folk Painting - Mithila</div>
@@ -55,16 +73,23 @@
             <img src="puppet.jpg">
             <div class="caption">Kathputli Puppetry - The Colourful Voice of Rajasthani Folk Tradition</div>
         </div>
+        </div>
 
         <a class="prev" onclick="changeSlide(-1)">❮</a>
         <a class="next" onclick="changeSlide(1)">❯</a>
 
     </div><br><br>
 
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">About Us</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
+
     <div class="about">
         <div class="element">
         <div class="title">
-            <img src="flower.png">Who We Are
+            Born of Tradition, Made with Purpose
         </div>
         <div class="content">
             Kalakosh is a heartfelt tribute to India's rich artistic heritage — a digital sanctuary where 
@@ -76,16 +101,8 @@
         <br>
 
         <div class="element">
-        <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black;
-        height:150vh;width:60vw;">
-        <p style="align-self: center;color:bisque;background:rgba(0,0,0,0.6);padding: 2px 4px;
-        border-radius:5px;font-size: 1.5vmax;">
-        Folk Art Map Of India</p>
-        </div><br>
-
-        <div class="element">
         <div class="title">
-            <img src="flower.png">Why We Exist?
+            Preserving Living Legacies
         </div>
         <div class="content">
             At Kalakosh, we curate, showcase, and support traditional Indian art forms — not just as artifacts, 
@@ -94,8 +111,27 @@
             a region, the soul of a people, and the rhythm of centuries.
         </div>
         </div>
-    </div> <br>
 
+        <div class="element">
+          <div class="title">
+            Join the Journey Back to Our Roots
+          </div>
+          <div class="content">
+            In every thread, every brushstroke, and every rhythm, Kalakosh echoes the beauty of our heritage. 
+            Together, let's keep the art alive.
+          </div>
+        </div>
+    </div> <br><br>
+
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">Folk Art Map</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
+    <div class="map">
+        <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black;
+        height:150vh;width:60vw;">
+    </div><br>
 
 <footer class="footer">
   <div class="footer-container">
@@ -114,7 +150,7 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/states">State</a></li>
+        <li><a href="/states">Artforms</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/contact">Contact us</a></li>
         <li><a href="/login">Log in</a></li>
@@ -161,32 +197,24 @@
         const video = document.getElementById('introVideo');
         video.onended = () => {
         video.style.display = 'none';
-        document.getElementById('mainContent').style.display = 'block';
+        document.querySelector('.mainContent').style.display = 'block';
         document.body.style.overflow = 'auto';
         };
 
-        let Index = 0;
+        let currentSlide = 0;
+        const slidesWrapper = document.getElementById("slidesWrapper");
+        const totalSlides = slidesWrapper.children.length;
 
-        showSlides();
-
-        function changeSlide(n){
-            Index += n;
-            showSlides();
+        function changeSlide(direction) {
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+          updateSlidePosition();
         }
 
-        function showSlides(){
-            const slides = document.getElementsByClassName("slide");
-            if(Index >= slides.length) Index = 0;
-            if(Index < 0) Index = slides.length - 1;
-
-            for(let i = 0; i<slides.length; i++){
-                slides[i].style.display = "none";
-            }
-
-            slides[Index].style.display = "block";
-
+        function updateSlidePosition() {
+          slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
+  // Optional auto-slide
         setInterval(() => {
             changeSlide(1);
         }, 5000);

@@ -31,12 +31,14 @@
         "email": "abc@gmail.com",
         "password": "1234"
     },
-    "null": {
-        "email": null,
-        "password": null
     "v": {
         "email": "hi@gmail.com",
         "password": "123",
         "user_type": "visitor"
+    },
+    "G": {
+        "email": "gari@gmail.com",
+        "password": "456",
+        "user_type": "artist"
     }
 }

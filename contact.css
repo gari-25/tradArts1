@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image:url(ddd.png); 
+    /* background-image: url(border_des1.webp); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    font-family: 'Libre Baskerville', serif;
+    margin:auto;
+    overflow:auto;
+}
 .header {
   display: flex;
   justify-content: space-between; 
@@ -10,17 +20,10 @@
   padding: 10px 40px; 
   background-color: #6b2e0c;
 }
-body {
-  margin: 0;
-  padding: 0; 
-  color: #333; 
-  font-family: 'Poppins', sans-serif;
-  background-image: url("ddd.png");
-  background-position: center;
-}
 
 .logo img {
-  height: 50px; 
+  height: 5vmax;
+  width:20vmax; 
 }
 
 .nav-links {
@@ -31,158 +34,216 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #f2d5a1;
-  font-size: 18px;
+  font-size: 1.1em;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
   background-color:#874019;
 }
-.heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
-  width: 100%;
-  background: transparent;
 
+/* Initially hide elements */
+.floating-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
 }
-.heading h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-  background-image: url("bg.jpg");
-  color:  #6b2e0c;
-  border: #6b2e0c 2px solid;
-  padding: 20px;
-  border-radius: 20px;  
-  
+
+/* Animate when in view */
+.floating-element.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.info-section {
-  display: flex;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
-  gap: 20px;
-  justify-content: space-between;
-  background: transparent;
-  padding-left: 40px;
-  padding-right: 40px;
+.profiles-head{
+    display:flex;
+    font-family:'Quintessential';
+    font-size:3.6em;
+    font-weight: bold;
+    color:#fdd68f;
+    text-shadow:0 2px 8px rgba(0, 0, 0);
+    justify-content:space-between;
 }
-.info-section .info-box {
-  flex: 1;
-  padding: 20px;
-  height: calc(100% - 48px);
-  width: calc(100% - 70%);
-  display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  padding-top: 20px;
-  align-items: center;
-  border-radius: 20px;
-  background-image: url("bg.jpg");
-  color:  #6b2e0c;
-  border: #6b2e0c 2px solid;
-}
-.info-section .info-box h2 {
-  font-size: 35px;
-  margin-bottom: 30px;
-  
-}
-.info-section .info-box p {
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 20px;
-  font: 400 16px 'Poppins', sans-serif;
-}
-.info-box:hover{
-  translate: 0 10px;
-  box-shadow: #f2d5a1 0px 4px 8px;
-  transition: translate 0.3s ease, box-shadow 0.3s ease;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  width: 70vw;
-  height: 60vh;
-  background: transparent;
-  background-color: rgba(242, 213, 161, 0.8);
-  color:  #6b2e0c;
-  border: #6b2e0c 2px solid;
-  justify-content: space-around;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
-  background-image: url("bg.jpg");
-  
-  
-}
-.contact-form h2 {
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-.contact-form p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-}
-.contact-form form input,
-.contact-form form textarea {
-  padding: 10px;
-  background-color: rgba(242, 213, 161, 0.8);
-  color:  #6b2e0c;
-  border: #6b2e0c 2px solid;
-  border-radius: 5px;
-  background-color: transparent;
-  width: 140%;
-  height: 40px;
-  
-}
-.contact-form form textarea {
-  height: 100px;
-  resize: none; 
+.profiles-head img{
+    width:30vw;
 } 
 
-.contact-form form button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  color: #f2d5a1;
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.team-card {
+  width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #6b2e0c;
+  display: flex;
+  flex-direction: column;
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.card-header {
   background-color: #6b2e0c;
-  font-size: 16px;
-  cursor: pointer;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
-.contact-form form button:hover {
-  background-color: #874019;
-  color: #f2d5a1;
-  box-shadow: 4px 8px 16px #f2d5a1;
-  transition: translate 0.3s ease, box-shadow 0.3s ease;
+
+.card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 50%; */
+  border: 1px solid #f2d5a1;
 }
-.contact-form form input::placeholder,
-.contact-form form textarea::placeholder {
+
+/* Body content aligned */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
   color: #6b2e0c;
-  opacity: 0.8;
-  font: 300 12px 'Poppins', sans-serif;
-  font-style: italic;
+  font-family: 'Poppins', sans-serif;
 }
-.contact-form:hover{
-  translate: 0 10px;
-  box-shadow: #f2d5a1 0px 4px 8px;
+
+.card-body h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
 }
+
+.card-body h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-body p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.card-body button {
+  background-color: #6b2e0c;
+  color: #f2d5a1;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: stretch; /* makes all buttons the same width as the body */
+}
+
+.card-body button:hover {
+  background-color: #874019;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-body {
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-body button {
+    align-self: center;
+  }
+}
+        .page-content {
+            background-image:url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center; /* Center content for contact */
+        }
+        .page-content h2 {
+            font-family: 'Almendra SC', serif;
+            color:#6b2e0c;
+            margin-bottom: 30px;
+            font-size: 2.8em;
+        }
+        .contact-info p {
+            font-family: 'Mukta', sans-serif;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .contact-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .contact-form label {
+            display: block;
+            width: 80%;
+            text-align: left;
+            font-family: 'Mukta', sans-serif;
+            color: #6B2E0D;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 80%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Mukta', sans-serif;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            margin-bottom: 10px;
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical; /* Allow vertical resizing */
+        }
+        .contact-form button {
+            background-color:#874019;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Mukta', sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .contact-form button:hover {
+            background-color: #6B2E0D;
+            transform: translateY(-2px);
+        }
+
 
 .footer {
   background-color: #6B2E0D; /* #4e342e deep brown */
@@ -223,7 +284,7 @@ body {
 }
 
 .footer-section ul li a {
-  color: #ffe4c4;
+  color: #dda96a;
   text-decoration: none;
 }
 
@@ -233,7 +294,7 @@ body {
 
 .social-links a {
   color: #6b2e0d;
-  background-color:bisque;
+  background-color:rgb(220,183,139);
   padding:3px 3px 0px 3px;
   border-radius:50%;
 }
@@ -252,7 +313,7 @@ body {
 
 .newsletter-form button {
   padding: 8px 16px;
-  background-color: bisque;
+  background-color: rgb(220,183,139);
   color:#6B2E0D ;
   border: none;
   border-radius: 4px;
@@ -271,6 +332,7 @@ body {
   font-size: 14px;
   color: bisque;
 }
+
 @media screen and (max-width: 768px) {
   body{
     flex-direction: column;

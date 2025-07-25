@@ -1,0 +1,31 @@
+{
+    "dlwmd": {
+        "email": "wd@vvvvv",
+        "password": "1234"
+    },
+    "drashti singh": {
+        "email": "abc@gmail.com",
+        "password": "1234"
+    },
+    "hi": {
+        "email": "ac@gmail.com",
+        "password": "1234"
+    },
+    "drashtisingh14": {
+        "email": "acd@gmail.com",
+        "password": "1234"
+    },
+    "vaibhavi": {
+        "email": "vaibhavi@gmail.com",
+        "password": "1234"
+    },
+    "null": {
+        "email": null,
+        "password": null
+    },
+    "v": {
+        "email": "hi@gmail.com",
+        "password": "123",
+        "user_type": "visitor"
+    }
+}

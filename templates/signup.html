@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">  
+</head>
+<body>
+     <div class="header">
+    <div class="logo">
+        <img src="/static/images/logo.png" alt="">
+    </div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+        <a href="#"><i class="fas fa-user"></i> Contact </a>
+    </div>
+</div>
+
+   <div class="container">
+     <h1>Sign Up</h1>
+   <form  method="post" id="signup-form" action="/signup">
+       <input type="text" id="signup-username" name="username" placeholder=" Username" required>
+       <input type="email" id="signup-email" name="email" placeholder=" Email" required>
+       <input type="password" id="signup-password" name="password" placeholder=" Password" required>
+      <select name="user_type" id="user_type" required>
+          <option value="" disabled selected>User Type</option>
+           <option value="artist">Artist</option>
+           <option value="curator">Curator</option>
+           <option value="visitor">Visitor</option>
+       </select>
+        <br>
+       <button type="submit" onclick="signup()">Sign Up</button>
+       <h4>already have an account? <a href="login.html">Log in</a></h4>
+   </form>
+   <p id="signup-result" style="color: white;"></p>
+   </div>
+   <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>About Kalakosh</h3>
+      <p>
+        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
+        folk, tribal, and classical artforms across every state.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/states">State</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/contact">Contact us</a></li>
+        <li><a href="/login">Log in</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Explore By Theme</h3>
+      <ul>
+        <li><a href="#">Folk Paintings</a></li>
+        <li><a href="#">Classical Dance</a></li>
+        <li><a href="#">Handicrafts</a></li>
+        <li><a href="#">Tribal Art</a></li>
+        <li><a href="#">Artisan Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Stay Connected</h3>
+      <p>Follow us on:</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>     
+        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>    
+        <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+  </div>
+</footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

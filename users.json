@@ -26,5 +26,13 @@
     "garima": {
         "email": "ladharshed@gmail.com",
         "password": "Gari@123"
+    },
+    "Abc": {
+        "email": "abc@gmail.com",
+        "password": "1234"
+    },
+    "null": {
+        "email": null,
+        "password": null
     }
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artist Dashboard</title>
+  <link rel="stylesheet" href="../static/artist-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Dashboard</h2>
+    <div style="margin-bottom: 20px;">
+      <a href="artist-upload.html"><button>➕ Add Artwork</button></a>
+      <a href="artist-event.html"><button>➕ Add Event</button></a>
+    </div>
+    <h3>Artworks</h3>
+    <div id="artworks" class="gallery"></div>
+    <h3>Events</h3>
+    <div id="events" class="gallery"></div>
+  </div>
+  <script>
+    const baseURL = 'http://localhost:5000';
+    window.onload = async () => {
+      const artRes = await fetch(`${baseURL}/get_artworks`, {
+        credentials: 'include'
+      });
+      const eventRes = await fetch(`${baseURL}/get_events`, {
+        credentials: 'include'
+      });
+
+      const artworks = await artRes.json();
+      const events = await eventRes.json();
+
+      const artDiv = document.getElementById('artworks');
+      artworks.forEach(art => {
+        const div = document.createElement('div');
+        div.innerHTML = `<h4>${art.title}</h4><img src="${art.image_url}" width="200"><p>${art.description}</p>`;
+        artDiv.appendChild(div);
+      });
+
+      const eventDiv = document.getElementById('events');
+      events.forEach(evt => {
+        const div = document.createElement('div');
+        div.innerHTML = `<h4>${evt.name}</h4><p>${evt.description}</p><p>${evt.location} - ${evt.date}</p>`;
+        eventDiv.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

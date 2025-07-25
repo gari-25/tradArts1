@@ -22,5 +22,9 @@
     "null": {
         "email": null,
         "password": null
+    },
+    "garima": {
+        "email": "ladharshed@gmail.com",
+        "password": "Gari@123"
     }
 }

@@ -34,5 +34,9 @@
     "null": {
         "email": null,
         "password": null
+    "v": {
+        "email": "hi@gmail.com",
+        "password": "123",
+        "user_type": "visitor"
     }
 }

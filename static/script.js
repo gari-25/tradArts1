@@ -1,74 +1,79 @@
-// Signup
-const signupForm = document.getElementById('signup-form');
-if (signupForm) {
-    signupForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const username = document.getElementById('signup-username').value;
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
+// static/script.js
 
+// Function for Signup
+async function signup() {
+    event.preventDefault(); // Prevent default form submission
+
+    const username = document.getElementById('signup-username').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const userType = document.getElementById('user_type') ? document.getElementById('user_type').value : null; // Get user type, check if element exists
+
+    const resultElement = document.getElementById('signup-result');
+
+    try {
         const response = await fetch('/signup', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, email, password })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password,
+                user_type: userType // Include user_type
+            })
         });
 
-        const result = await response.json();
-        document.getElementById('signup-result').innerText = result.message;
-    });// static/script.js
+        const data = await response.json();
+        resultElement.innerText = data.message;
 
-function signup() {
-  const username = document.getElementById("signup-username").value;
-  const email = document.getElementById("signup-email").value;
-  const password = document.getElementById("signup-password").value;
-
-  fetch("/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      "signup-username": username,
-      "signup-email": email,
-      "signup-password": password,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      document.getElementById("signup-result").innerText = data.message;
-      window.location.href = "/login";
-    })
-    .catch((err) => {
-      document.getElementById("signup-result").innerText = "Something went wrong.";
-    });
+        if (response.ok) {
+            resultElement.style.color = 'green';
+            window.location.href = '/login'; 
+        } else {
+            resultElement.style.color = 'red';
+        }
+    } catch (error) {
+        console.error('Error during signup:', error);
+        resultElement.innerText = 'An error occurred. Please try again.';
+        resultElement.style.color = 'red';
+    }
 }
 
-function login() {
-  console.log("Login button clicked"); 
-  
-  const username = document.getElementById("login-username").value;
-  const password = document.getElementById("login-password").value;
+// Function for Login
+async function login() {
+    event.preventDefault(); // Prevent default form submission
+    console.log("Login button clicked"); 
+    
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
 
-  fetch("/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, password }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      document.getElementById("login-result").innerText = data.message;
-      if (data.redirect) {
-        window.location.href = data.redirect;
-      }
-    })
-    .catch((err) => {
-      console.error("Login error:", err);
-      document.getElementById("login-result").innerText = "Something went wrong.";
-    });
+    const resultElement = document.getElementById('login-result');
+
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: username, password: password })
+        });
+
+        const data = await response.json();
+        resultElement.innerText = data.message;
+
+        if (response.ok) {
+            resultElement.style.color = 'green';
+            if (data.redirect) {
+                window.location.href = data.redirect;
+            }
+        } else {
+            resultElement.style.color = 'red';
+        }
+    } catch (error) {
+        console.error('Login error:', error);
+        resultElement.innerText = 'An error occurred. Please try again.';
+        resultElement.style.color = 'red';
+    }
 }
-
-}
-
-

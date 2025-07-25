@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for
 import json, os
 
 app = Flask(__name__)
-users_file = 'users.json'
+users_file = 'users.json' # Make sure this matches your actual filename (users.json or user.json)
 
 # Load users
 def load_users():
@@ -40,6 +40,7 @@ def signup():
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
+    user_type = data.get("user_type") # Get the user type
 
     users = load_users()
 
@@ -48,7 +49,8 @@ def signup():
 
     users[username] = {
         "email": email,
-        "password": password
+        "password": password,
+        "user_type": user_type # Save the user type
     }
 
     save_users(users)

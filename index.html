@@ -29,7 +29,7 @@
     </div>
     </div>
     <div class="start">
-      <div class="desc">
+      <div class="desc floating-element">
         Step into a world where<br> every artifact tells a story!<br>
         <button onclick="window.open('State-region.html','_blank')">Explore the archive</button>
       </div>
@@ -40,14 +40,14 @@
     </div>
     <br>
 
-    <div class="content-section">
+    <div class="content-section floating-element">
         <img src="line-divider-bg.png" class="design-image">
         <p class="section-title">Indian Arts</p>
         <img src="line-divider-bg.png" class="design-image">
     </div>
     <br>
 
-        <div class="slide-container">
+        <div class="slide-container floating-element">
         <div class="slides-wrapper" id="slidesWrapper">
         <div class="slide fade">
             <img src="Madhubani.jpg">
@@ -80,13 +80,13 @@
 
     </div><br><br>
 
-    <div class="content-section">
+    <div class="content-section floating-element">
         <img src="line-divider-bg.png" class="design-image">
         <p class="section-title">About Us</p>
         <img src="line-divider-bg.png" class="design-image">
     </div>
 
-    <div class="about">
+    <div class="about floating-element">
         <div class="element">
         <div class="title">
             Born of Tradition, Made with Purpose
@@ -123,12 +123,12 @@
         </div>
     </div> <br><br>
 
-    <div class="content-section">
+    <div class="content-section floating-element">
         <img src="line-divider-bg.png" class="design-image">
         <p class="section-title">Folk Art Map</p>
         <img src="line-divider-bg.png" class="design-image">
     </div>
-    <div class="map">
+    <div class="map floating-element">
         <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black;
         height:150vh;width:60vw;">
     </div><br>
@@ -216,6 +216,26 @@
         setInterval(() => {
             changeSlide(1);
         }, 5000);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Trigger once
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Select all elements with the floating class
+    const floatingElements = document.querySelectorAll(".floating-element");
+
+    floatingElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
 
     </script>
 

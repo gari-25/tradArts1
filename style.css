@@ -5,6 +5,7 @@ body{
     background-size:cover;
     background-attachment: fixed;
     font-family: 'Libre Baskerville', serif;
+    scroll-behavior: smoo;
     margin:auto;
     overflow:auto;
 }
@@ -153,11 +154,25 @@ body{
     transform: scale(1.05) translate(-2px);
 }
 
+/* Initially hide elements */
+.floating-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+/* Animate when in view */
+.floating-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* slide-show */
 .slide-container {
   position: relative;
   overflow: hidden;
   width: 100%;
+  height:85vh;
   max-width: 1000px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
@@ -179,7 +194,7 @@ body{
 
 .slide img {
   width: 100%;
-  /* height: 85vh; */
+  height: 85vh;
   aspect-ratio:16/9;
   object-fit: cover;
 }
@@ -300,13 +315,16 @@ body{
 
 /* intro video css */
 #introVideo {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1000;
+  max-height: 100vh;
 }
+
 #mainContent {
     display: none;
     padding: 20px;
@@ -400,4 +418,97 @@ body{
   margin-top: 30px;
   font-size: 14px;
   color: bisque;
+}
+
+/* MOBILE FIRST - Adjust layout for small screens */
+@media (max-width: 768px) {
+
+  .logo{
+    margin-bottom: auto;
+  }
+  #introVideo {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+  .desc {
+    margin:auto;
+    padding: auto auto;
+    font-size: 2.2em;
+    width: 90vw;
+  }
+
+  .desc button {
+    font-size: 0.4em;
+    padding: 4px;
+  }
+
+  .ims {
+    display: none;
+  }
+
+  .about {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .element {
+    width: 90%;
+    align-self: center;
+  }
+
+  .design-image {
+    width: 35%;
+  }
+
+  .section-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .items {
+    width: 90%;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .main_logo img {
+    width: 80vw;
+    height: auto;
+  }
+
+  .slide-container {
+    width: 90%;
+    aspect-ratio: 4/3;
+  }
+
+  .caption {
+    font-size: 0.9em;
+  }
+
+  .map img {
+    width: 90vw;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 90%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .newsletter-form input[type="email"] {
+    width: 90%;
+  }
 }

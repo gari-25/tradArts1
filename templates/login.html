@@ -23,17 +23,17 @@
 
     <div class="container">
        
-        <div class="form-box" id="login-form" method="post">
+        <div class="form-box"> 
            <h2>Welcome</h2>
-           <div class="input-box">
-            <input type="text" id="login-username" placeholder="Username" required>
-
-           </div>
-           <div class="input-box">
-            <input type="password" id="login-password" placeholder="Password" required>
-
-           </div>
-           <button onclick="login()">Sign in</button>
+           <form id="login-form"> 
+               <div class="input-box">
+                <input type="text" id="login-username" placeholder="Username" required>
+               </div>
+               <div class="input-box">
+                <input type="password" id="login-password" placeholder="Password" required>
+               </div>
+               <button type="submit" onclick="login()">Sign in</button> 
+           </form>
            <h4>forgot password?</h4>
            <p>Don't have an account? <a href="signup.html"><u>Sign up</u></a></p>
           </div>
@@ -45,7 +45,6 @@
     <footer class="footer">
   <div class="footer-container">
 
-    <!-- About Kalakosh -->
     <div class="footer-section">
       <h3>About Kalakosh</h3>
       <p>
@@ -54,7 +53,6 @@
       </p>
     </div>
 
-    <!-- Quick Links -->
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
@@ -66,7 +64,6 @@
       </ul>
     </div>
 
-    <!-- Explore By Theme -->
     <div class="footer-section">
       <h3>Explore By Theme</h3>
       <ul>
@@ -78,13 +75,12 @@
       </ul>
     </div>
 
-    <!-- Stay Connected -->
     <div class="footer-section">
       <h3>Stay Connected</h3>
       <p>Follow us on:</p>
       <div class="social-links">
-        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
-        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>     
+        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>    
         <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
       </div>
       <form class="newsletter-form">

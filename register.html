@@ -1,4 +1,3 @@
-<!-- registration.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalakosh Workshop Registration</title>
     <link rel="stylesheet" href="rstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-     <header>
-        <div class="header">
-            <div class="logo"><img src="logo1.jpg" alt="kalakosh logo"></div>
-        <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Art</a>
-        <a href="#" class="active">Events</a>
-        <a href="#">Login</a>
-        <a href="#"><i class="fas fa-user"></i> Contact </a>
+    <div class="logo">
+        <div class="main_logo"><a href="index.html"><img src="Logo.png"></a></div> 
+        <div class="nav">
+        <a href="index.html"><div class="items">Home</div></a>
+        <a href="State-region.html"><div class="items">Artforms</div></a>
+        <a href="events.html"><div class="items">Events</div></a>
+        <a href="login.html"><div class="items">Log in</div></a>
+        <a href="contact.html"><div class="items">Contact Us</div></a>
         </div>
     </div>
-    </header>
 
     <main>
     <div class="registration-container">
@@ -46,17 +45,16 @@
                 <option value="terracotta">Clay &amp; Pottery Workshop</option>
                 <option value="phad">Warli Storytelling</option>
                 <option value="pattachitra">Fabric Painting</option>
-                <option value="kalamkari">Kalamkari Textile Art</option>
             </select>
-            <button type="submit">Register Now</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
     </main>
 
-
 <footer class="footer">
   <div class="footer-container">
 
+    <!-- About Kalakosh -->
     <div class="footer-section">
       <h3>About Kalakosh</h3>
       <p>
@@ -65,28 +63,29 @@
       </p>
     </div>
 
+    <!-- Quick Links -->
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/states">State</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/contact">Contact us</a></li>
-        <li><a href="/login">Log in</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="State-region.html">Artforms</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="login.html">Log in</a></li>
       </ul>
     </div>
 
+    <!-- Help & Support -->
     <div class="footer-section">
-      <h3>Explore By Theme</h3>
+      <h3>Help & Support</h3>
       <ul>
-        <li><a href="#">Folk Paintings</a></li>
-        <li><a href="#">Classical Dance</a></li>
-        <li><a href="#">Handicrafts</a></li>
-        <li><a href="#">Tribal Art</a></li>
-        <li><a href="#">Artisan Stories</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms Of Service</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
 
+    <!-- Stay Connected -->
     <div class="footer-section">
       <h3>Stay Connected</h3>
       <p>Follow us on:</p>
@@ -105,6 +104,63 @@
     <p>© 2025 Kalakosh. Designed with ❤ in India.</p>
   </div>
 </footer>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".registration-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const city = document.getElementById("city");
+        const artForm = document.getElementById("art-form");
+
+        let isValid = true;
+        let errorMessage = "";
+
+        if (name.value.trim() === "") {
+            errorMessage = "Please enter your full name.";
+            isValid = false;
+            name.focus();
+        } else if (!validateEmail(email.value)) {
+            errorMessage = "Please enter a valid email address.";
+            isValid = false;
+            email.focus();
+        } else if (!/^\d{10}$/.test(phone.value)) {
+            errorMessage = "Please enter a valid 10-digit phone number.";
+            isValid = false;
+            phone.focus();
+        } else if (city.value.trim() === "") {
+            errorMessage = "Please enter your city.";
+            isValid = false;
+            city.focus();
+        } else if (artForm.value === "") {
+            errorMessage = "Please select a workshop.";
+            isValid = false;
+            artForm.focus();
+        }
+
+        if (isValid) {
+            alert("Registration successful!");
+            window.location.href = "events.html";
+        } else {
+            alert(errorMessage);
+        }
+    });
+
+    function validateEmail(email) {
+        // Basic email regex
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+});
+
+</script>
+
 
 </body>
 </html>

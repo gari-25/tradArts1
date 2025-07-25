@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2d5a1;
+  color: #3b2007;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.workshop-banner {
+  background: url('https://i.ibb.co/YjTJDQ3/pottery-banner.jpg') no-repeat center center/cover;
+  height: 50vh;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(107, 46, 12, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  padding-left: 3rem;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.details {
+  background-color: #fff9ef;
+  padding: 2rem;
+  border-left: 5px solid #6b2e0c;
+  margin-top: -2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details h2 {
+  font-size: 2rem;
+  color: #6b2e0c;
+}
+
+.details p {
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 30%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.artist-info {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.artist-info img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6b2e0c;
+}
+
+.artist-info h3 {
+  color: #6b2e0c;
+  margin-bottom: 0.5rem;
+}
+
+.register-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.register-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #6b2e0c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #5a260a;
+}

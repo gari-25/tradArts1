@@ -4,36 +4,58 @@
     box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  padding: 10px 40px; 
-  background-color: #6b2e0c;
+.logo{
+    background-color:#6B2E00;
+    display:flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
-.logo img {
-  height: 50px; 
+.main_logo img{
+    height: 7vmax;
+    width:25vmax;   
+} 
+
+.main_logo img:hover{
+  cursor: pointer;
 }
 
-.nav-links {
-  display: flex;
-  gap: 25px; 
+/* nav bar */
+.nav{
+    display:flex;
+    flex-wrap: wrap;
+    padding:1vmax;
+    justify-content: center;
+    gap:1.2em;
+    font-size:1.2em;
 }
 
-.nav-links a {
+.nav a{
   text-decoration: none;
-  color: #f2d5a1;
-  font-size: 18px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-  background-color:#874019;
+.items{
+  width:7em;
+  height: auto;
+  text-align:center;
+  color: rgb(225, 196, 159);
+  background-color:#6B2E00;
+  padding:0.8vmax;
+  border-radius:10px;
+  transition: transform 0.3s ease-in-out;
 }
+
+.items:hover{
+    cursor:pointer;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+    background-color: rgb(245, 225, 189, 0.7);
+    color:maroon;
+    transform: scale(1.05) translate(-2px);
+}
+
 
 main{
   background-image: url("bg.jpg");
@@ -48,12 +70,13 @@ main{
 
 .hero-section {
   position: relative;
-  height: 300px;
+  height: 370px;
   padding: 80px 5% 60px;
   overflow: hidden;
 }
 
 .hero-text {
+  color: #6b2e0c;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -61,44 +84,49 @@ main{
 }
 
 .hero-text h1 {
-  font-family: 'Cinzel', serif;
+  font-family: "PT Serif Caption", serif;
+  font-weight: 800;
   font-size: 3.6rem;
-  color: #6b2e0c;
   margin-bottom: 15px;
   position: relative;
 }
-
 
 .tagline {
   font-size: 1.2rem;
   color: #6b2e0c;
   margin-bottom: 25px;
+  font-weight: 800;
 }
 
-.hero-btn {
-  background-color: #874019;
+.hero-btn{
+  text-align:center;
   color: white;
+  background-color:#874019;
   padding: 12px 30px;
-  border-radius: 30px;
+  font-size: 1.1rem;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  border-radius:10px;
+  border: #874019;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
+
 }
 
-.hero-btn:hover {
-  background-color: #a47100;
-  transform: scale(1.05);
+.hero-btn:hover{
+    cursor:pointer;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+    background-color: #a47100;
+    color: rgb(237, 228, 203);
 }
-
 
 /*Calendar */
 
 #topic{
   text-align: center;
-  color: #6b2e0c;
-  
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-family: 'Lugrasimo', serif;
+  color: blanchedalmond;
 }
 
 .calendar-wrapper {
@@ -176,32 +204,35 @@ main{
 
 
 .calendar-events {
-  background: rgb(255, 243, 216,0.6);
-  padding: 20px;
+  background: #fff3d8;
+  padding: 0.7rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0);
 }
 
 .calendar-events h3 {
-  color: #5a2c0c;
   margin-bottom: 20px;
 }
 
 .event-item {
-  margin-bottom: 20px;
+  padding: 0.8rem;
   background: rgb(255, 243, 216,0.6);
 }
 
 .event-item h4 {
-  font-size: 20px;
-  color: #7a3d00;
+  font-size: 18px;
   margin-bottom: 6px;
+  font-family: 'Artifika', serif;
+  color: #3f2a18;
+  font-weight: 900;
 }
 
 .event-item p {
-  font-size: 14px;
-  color: #3f2a18;
-  line-height: 1.4;
+  font-size: 1rem;
+  font-family: 'Artifika', serif;
+  color: #5a2c0c;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .half{
@@ -222,6 +253,10 @@ main{
   cursor: pointer;
 }
 
+.event-item button:hover{
+  background: #e46a19;
+}
+
 .event-item button a{
   text-decoration: none;
   color: #fff;
@@ -232,32 +267,11 @@ main{
   justify-content: space-around;
 }
 
-/*innernavv*/
-.innernav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px 0;
-      font-weight: bold;
-    }
-
-.innernav div {
-      padding: 10px 20px;
-      background-color: #874019;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-.innernav div:hover {
-      background-color: #a35228;
-    }
-
-.innernav div a{
-  text-decoration: none;
-  color: #fff;
+.cal{
+  background-color: rgba(133, 17, 17, 0.575);
+  padding: 30px;
 }
-/*design*/
+
 
 .content-section {
     display: flex;
@@ -306,11 +320,11 @@ main{
     }
 
 .event-card {
-      background-color: #fff3d8;
+      background: #fff3d8;
       width: 300px;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.7);
       margin: 20px;
     }
 
@@ -326,12 +340,19 @@ main{
 
 .event-details h3 {
       margin-bottom: 10px;
+       font-size: 18px;
+       font-family: 'Artifika', serif;
+       color: #3f2a18;
+      font-weight: 900;
     }
 
 .instructor {
       display: flex;
       align-items: center;
       margin: 10px 0;
+      font-family: 'Artifika', serif;
+      color: #422b17;
+      font-weight: 700;
     }
 
 .instructor img {
@@ -344,6 +365,9 @@ main{
 .event-meta {
       font-size: 14px;
       margin-bottom: 10px;
+     font-family: 'Artifika', serif;
+     color: #5a2c0c;
+     font-weight: 400;
 }
 
 .event-price {
@@ -370,8 +394,15 @@ main{
 }
 
 .event-actions .details {
-      background-color: #dcb28c;
-      color: #3e2f1c;
+  margin-bottom: 5px;
+  padding: 6px 12px;
+  background-color: #cc6f2f;
+  border-radius: 5px;
+}
+
+.event-actions .details a{
+    text-decoration: none;
+  color: #fff;
 }
 
 .register a{
@@ -379,7 +410,15 @@ main{
   color: #fff;
 }
 
+.event-actions .details:hover{
+  background: #e46a19;
+}
+
 /*exhibitions*/
+
+
+
+
 
 .exhibitions-section {
   padding: 60px 20px;
@@ -389,9 +428,11 @@ main{
 
 .exhibition-card {
   display: flex;
+  color: blanchedalmond;
   align-items: center;
+  font-weight: bold;
   gap: 40px;
-  background: #fff3e0;
+  background-color: rgba(133, 17, 17, 0.375);
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -404,7 +445,7 @@ main{
 }
 
 .exhibition-image img {
-  width: 300px;
+  width: 400px;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -415,16 +456,24 @@ main{
 }
 
 .exhibition-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  font-family: 'Lugrasimo', serif;
+  color: blanchedalmond;
   font-size: 28px;
-  color: #874019;
   margin-bottom: 10px;
 }
 
 .exhibition-content p {
-  font-size: 16px;
+  font-family: 'Artifika', serif;
   color: #5a2c0c;
+  font-weight: 900;
   margin-bottom: 10px;
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+.exhibition-content p strong{
+  color: #331907;
 }
 
 .buttons {
@@ -433,19 +482,28 @@ main{
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background: #874019;
-  color: #fff;
   text-decoration: none;
-  border-radius: 6px;
   margin-right: 10px;
-  transition: background 0.3s;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(113, 2, 2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
 
 .btn:hover {
-  background: #5a2c0c;
+  background-color: rgb(140, 5, 5);
 }
-
 
 /*past events*/
 
@@ -455,14 +513,13 @@ main{
   margin: auto;
 }
 
-
 .past-event-wrapper {
   display: flex;
   align-items: center;
   gap: 40px;
   margin-bottom: 60px;
   flex-wrap: wrap;
-  background-color: #fff3dc;
+  background-color: rgba(133, 17, 17, 0.375);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
@@ -487,21 +544,25 @@ main{
 
 .past-event-details h3 {
   font-size: 1.8rem;
-  color: #4b1f00;
+  font-family: 'Lugrasimo', serif;
+  color: blanchedalmond;
   margin-bottom: 10px;
 }
 
 .past-event-date {
   font-size: 1rem;
   font-style: italic;
-  color: #9c693b;
+  color: #e6d9cd;
   margin-bottom: 15px;
 }
 
 .past-event-desc {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #2f1e0f;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Artifika', serif;
+  color: #5a2c0c;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
 
 
@@ -509,7 +570,7 @@ main{
 
 /* featured artists */
 
-.artist-section {
+/* .artist-section {
       padding: 50px 20px;
       text-align: center;
     }
@@ -551,12 +612,12 @@ main{
   color: white;
   padding: 10px;
   border-radius: 10px;
-}
+} */
 
 /*reviews */
 
 .review-section {
-  margin: 40px 0;
+  margin: 40px;
 }
 
 .review-container {
@@ -567,7 +628,7 @@ main{
 }
 
 .review-card {
-  background-color: rgb(255, 243, 216,0.9);
+  background: #fff3d8;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -584,13 +645,22 @@ main{
 
 .review-card h3 {
   font-size: 1.2rem;
-  color: #5a3e36;
+       font-family: 'Artifika', serif;
+       color: #3f2a18;
+      font-weight: 800;
 }
 
 .review-card p {
-  font-size: 0.9rem;
-  color: #6e4d3c;
+  font-size: 1rem;
   margin: 6px 0;
+     color: #5a2c0c;
+     font-weight: 400;
+}
+
+.name{
+      font-family: 'Artifika', serif;
+      color: #422b17;
+      font-weight: 700;
 }
 
 .review-card button {
@@ -694,4 +764,86 @@ main{
   color: bisque;
 }
 
+/* .slideshow-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.artist-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+} */
+
+/* 
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+} */
+
+/* 
+.intro {
+    background: url('Madhubani.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    padding: 80px 20px;
+    color: #fff;
+    background-blend-mode: multiply;
+    background-color: rgba(107, 46, 12, 0.8);
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+} */
+
+/* Responsive adjustments for tablets */
+/* @media (max-width: 991px) {
+  .container, .section, .workshop-card, .exhibition-grid, .event-box {
+    padding: 10px;
+    margin: 10px auto;
+    width: 95%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero h1, .hero p {
+    text-align: center;
+  }
+
+  .grid, .exhibition-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .card img, .workshop-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Responsive adjustments for mobile devices */
 

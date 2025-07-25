@@ -5,37 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
     <link rel="stylesheet" href="estyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="logo"><img src="logo1.jpg" alt="kalakosh logo"></div>
-        <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="State-region.html">Art Forms</a>
-        <a href="events.html" class="active">Events</a>
-        <a href="login.html">Login</a>
-        <a href="contact.html"><i class="fas fa-user"></i> Contact </a>
+    <div class="logo">
+        <div class="main_logo"><a href="index.html"><img src="Logo.png"></a></div> 
+        <div class="nav">
+        <a href="index.html"><div class="items">Home</div></a>
+        <a href="State-region.html"><div class="items">Artforms</div></a>
+        <a href="events.html"><div class="items">Events</div></a>
+        <a href="login.html"><div class="items">Log in</div></a>
+        <a href="contact.html"><div class="items">Contact Us</div></a>
         </div>
     </div>
-    </header>
 
     <main>
       <section class="hero-section">
         <div class="hero-text">
-    <h1>Where Indian Art Comes Alive</h1>
-    <p class="tagline">A blend of workshops, heritage stories, and handmade legacies brought together beautifully.</p>
-    <a href="#a" class="hero-btn">Explore Events</a>
-  </div>
-</section>
-      
+          <h1>Where Indian Art Comes Alive</h1>
+          <p class="tagline"><i>A blend of workshops, heritage stories, and handmade legacies brought together beautifully.</i></p>
+          <a href="#a"><button class="hero-btn">Explore Events</button></a>
+        </div>
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img3"></div>
+      </section>
+ 
+<section class="cal">
+<h1 id="topic">Upcoming Workshops & Exhibitions</h1>      
  <div class="full">
-  <section class="calendar-wrapper">
-  <h1 id="topic">Events Calendar</h1>
-  <br>
+ <div class="calendar-events">
+        <div class="event-item">
+          <h4>Madhuban Canvas Workshop</h4>
+          <p><i>Join us for an enchanting dive into the timeless art of Madhubani painting with vibrant traditions from Bihar!</i></p>
+          <div class="half">
+          <div id="da"><strong>Date:</strong> July 7</div>
+          <div><button><a href="madhubani.html">Details</a></button></div>
+          </div>
+        </div>
+        <hr />
+        <div class="event-item">
+          <h4>Vastra Vismaya</h4>
+          <p><i>Celebrate India’s rich textile heritage with live saree-making demos by artisans from every corner of the country!</i></p>
+          <div class="half">
+          <div id="da"><strong>Date:</strong> July 18</div>
+          <div><button><a href="vastra.html">Details</a></button></div>
+          </div>
+        </div>
+        <hr />
+        <div class="event-item">
+          <h4>Clay Art & Pottery Play</h4>
+          <p><i>Get your hands dirty and your imagination flowing in a soulful pottery session guided by expert artist Rakesh Patel!</i></p>
+          <div class="half">
+          <div id="da"><strong>Date:</strong> July 24</div>
+          <div><button><a href="clay.html">Details</a></button></div>
+          </div>
+        </div>
+      </div>
+<section class="calendar-wrapper">
   <div class="calendar-box">
     <div class="calendar-header">
       <span class="arrow">&#10094;</span>
@@ -55,17 +91,17 @@
       <div class="inactive"></div>
       <div>1</div>
       <div>2</div>
-      <div class="active">3</div>
+      <div>3</div>
       <div>4</div>
       <div>5</div>
       <div>6</div>
       <div class="active">7</div>
-      <div>8</div>
+      <div class="active">8</div>
       <div>9</div>
       <div>10</div>
       <div>11</div>
       <div>12</div>
-      <div class="active">13</div>
+      <div>13</div>
       <div>14</div>
       <div>15</div>
       <div>16</div>
@@ -87,52 +123,11 @@
     </div>
   </div>
 </section>
-
-
- <div class="calendar-events">
-        <h1 id="topic">Upcoming Workshops & Exhibitions</h1>
-        <br>
-        <hr />
-        <div class="event-item">
-          <h4>Madhuban Canvas</h4>
-          <p>Join us for a vibrant Madhubani Workshop where tradition meets creativity. Learn the timeless art of storytelling through intricate patterns and natural colors.</p>
-          <div class="half">
-          <div id="da"><strong>Date:</strong> July 13</div>
-          <div><button><a href="#a">Details</a></button></div>
-          </div>
-        </div>
-        <hr />
-        <div class="event-item">
-          <h4>Vastra Vismaya</h4>
-          <p>Step into the world of India's woven stories. 'Kala Vastra' brings alive traditional textile wonders like Bandhani, KalamKamri and Ajrakh through vibrant displays and live demos.</p>
-          <div class="half">
-          <div id="da"><strong>Date:</strong> July 18</div>
-          <div><button><a href="#a">Details</a></button></div>
-          </div>
-        </div>
-        <hr />
-        <div class="event-item">
-          <h4>Mittika - Clay Art & Pottery Play</h4>
-          <p>Get your hands messy and heart happy. 'Mittika' is a calming pottery workshop where clay takes shape into tradition. Feel the rhythm of the wheel and create your own earthy masterpiece.</p>
-          <div class="half">
-          <div id="da"><strong>Date:</strong> July 24</div>
-          <div><button><a href="#a">Details</a></button></div>
-          </div>
-        </div>
-      </div>
 </div>
-
+</section>
 <br />
 <div class="opt">
-    <section class="innernav">
-    <div><a href="#a">Workshops</a></div>
-    <div><a href="#b">Exhibitions</a></div>
-    <div><a href="#c">Past Events</a></div>
-    <div><a href="#d">Artists</a></div>
-    <div><a href="#e">Reviews</a></div>
-
-    </section>
-
+  
     <div class="content-section">
             <img src="Leftdesign.png" class="design-image">
             <p class="section-title">Workshops</p>
@@ -148,11 +143,11 @@
           <img src="anita.jpeg" alt="Instructor" />
           <span>by Anita Verma</span>
         </div>
-        <div class="event-meta">Date: 13 July 2025 | Time: 11 AM - 2 PM</div>
+        <div class="event-meta">Date: 7 july- 8 july 2025 | Time: 11 AM - 4 PM | Venue: Udaipur </div>
         <div class="event-price">Free</div>
         <div class="event-actions">
           <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details">View Details</button>
+          <button class="details"><a href="madhubani.html">View Details</a></button>
         </div>
       </div>
     </div>
@@ -165,11 +160,11 @@
           <img src="Rakesh.jpeg" alt="Instructor" />
           <span>by Rakesh Patel</span>
         </div>
-        <div class="event-meta">Date: 24 July 2025 | Time: 3 PM - 6 PM</div>
-        <div class="event-price">₹299</div>
+        <div class="event-meta">Date: 24 July 2025 | Time: 3 PM - 6 PM | Venue: Panji, Goa</div>
+        <div class="event-price">Free</div>
         <div class="event-actions">
           <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details">View Details</button>
+          <button class="details"><a href="clay.html">View Details</a></button>
         </div>
       </div>
     </div>
@@ -182,11 +177,11 @@
           <img src="sunita.jpg" alt="Instructor" />
           <span>by Sunita Rao</span>
         </div>
-        <div class="event-meta">Date: 28 July 2025 | Time: 5 PM - 7 PM</div>
+        <div class="event-meta">Date: 28 July 2025 | Time: 5 PM - 7 PM | Venue: Kochi, Kerala</div>
         <div class="event-price">Free</div>
         <div class="event-actions">
           <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details">View Details</button>
+          <button class="details"><a href="warli.html">View Details</a></button>
         </div>
       </div>
     </div>
@@ -199,11 +194,11 @@
           <img src="neha.jpeg" alt="Instructor" />
           <span>by Neha Sharma</span>
         </div>
-        <div class="event-meta">Date: 30 July 2025| Time: 10 AM - 1 PM</div>
-        <div class="event-price">₹199</div>
+        <div class="event-meta">Date: 30 July 2025 | Time: 10 AM - 1 PM | Venue: Mumbai</div>
+        <div class="event-price">Free</div>
         <div class="event-actions">
           <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details">View Details</button>
+          <button class="details"><a href="fabric.html">View Details</a></button>
         </div>
       </div>
     </div>
@@ -224,26 +219,25 @@
         <h3>String Saga</h3>
         <p>String Saga revives the soul of Rajasthani puppetry. Under the evening sky, master puppeteers will narrate folklore with hand-carved puppets, live music and traditional set dramatizations. Visual art panels beside the stage will showcase puppetry history and ornate costume designs. The exhibitions invites audiences to sculpt their own mini puppets at a hands-on workshop.</p>
         <p><strong>Venue:</strong> Kala Darbar, Jawahar Kala Kendra, Jaipur</p>
-        <p><strong>Event Timing:</strong>18 July 2025, 5:00 PM  – 8:00 PM</p>
+        <p><strong>Event Timing:</strong> 18 July 2025, 5:00 PM  – 8:00 PM</p>
         <div class="buttons">
-          <a href="#" class="btn">Meet the Artist</a>
-          <a href="#" class="btn">Buy Art</a>
+          <a href="string.html" class="btn">Inside the Event</a>
         </div>
       </div>
     </div>
 
     <div class="exhibition-card reverse">
       <div class="exhibition-image">
-        <img src="saree.jpeg" alt="Vastra Vismaya">
+        <img src="sareee.jpeg" alt="Vastra Vismaya">
       </div>
       <div class="exhibition-content">
         <h3>Vastra Vismaya</h3>
-        <p>Vastra Vismaya translates to the wonder of cloth and rightly so. Inside the gallery, soft lighting, incense scent and temple chimes create an ambience where every sari, shawl or stole becomes divine. Curated outfits are placed on bronze mannequins draped in tradition - from the wedding rituals of tribal Madhya Pradesh to the spiritual sarees used in Southern shrines. You don't just look. You Feel. You don't just admire. You enter into fabric as faith.</p>
-        <p><strong>Venu:</strong> Artisan Hall, India Habitat Centre, New Delhi</p>
-        <p><strong>Event Timing:</strong>28 July 2025 11:30 AM – 4:30 PM</p>
+        <p>Step into the vibrant world of traditional Indian textiles at VastraVismay, a celebration of regional sarees that narrate stories of heritage, craftsmanship, and elegance. From the royal Kanjeevaram silks of Tamil Nadu, the earthy Chanderi and Maheshwari of Madhya Pradesh, to the intricate Jamdani from Bengal, and the colorful Bandhani of Gujarat and Rajasthan—witness the artistry that transforms threads into timeless drapes.
+Meet the local weavers and textile artists who’ve preserved these legacies for generations. Experience live demonstrations of loom work, natural dyeing, block printing, and much more—all under one roof.</p>
+        <p><strong>Venu:</strong> Textile Hall, India Habitat Centre, Surat</p>
+        <p><strong>Event Timing:</strong> 26th-28th July 2025 10:00 AM – 6:00 PM</p>
         <div class="buttons">
-          <a href="#" class="btn">Meet the Artist</a>
-          <a href="#" class="btn">Buy Art</a>
+          <a href="vastra.html" class="btn">Inside the Event</a>
         </div>
       </div>
     </div>
@@ -288,7 +282,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
   </section>      
 </div>
 
-  
+<!--   
 <div class="content-section">
             <img src="Leftdesign.png" class="design-image1">
             <p class="section-title1">Featured Artists</p>
@@ -339,7 +333,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
         <button>View Profile</button>
       </div>
       </div>
-  </section>
+  </section> -->
 
    <div class="content-section">
             <img src="Leftdesign.png" class="design-image1">
@@ -351,31 +345,62 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
       <div class="review-card">
         <img src="Priya.jpeg" alt="Priya">
         <h3>Truly Magical!</h3>
-        <p>-Priya Mehta, Mumbai</p>
+        <p class="name"><b>-Priya Mehta, Mumbai</b></p>
         <p>Attending the Madhubani Workshop has an unforgettable experience. The way the artist explained each stroke and its cultural meaning was eye-opening. I came as a beginner and left with a beautifully detailed artwork. Highly recommend to anyone who wants to reconnect with traditional Indian Art.</p>
       </div>
       <div class="review-card">
         <img src="Arvind.jpeg" alt="Arvind">
         <h3>Felt like a cultural Journey</h3>
-        <p>-Arvind Sharma, Jaipur</p>
+        <p class="name"><b>-Arvind Sharma, Jaipur</b></p>
         <p>The Rajasthani Folk Dance performance was vibrant, Colorful and full of life. It felt like I was watching a live piece of history unfold. The performers were incredibly talented and the storytelling through dance gave me goosebumps!</p>
       </div>
        <div class="review-card">
         <img src="linh.jpeg" alt="linh">
         <h3>An Unforgettable Artistic Journey with KalaKosh</h3>
-        <p>-Linh Tran from Hanoi,Vietnam</p>
+        <p class="name"><b>-Linh Tran from Hanoi,Vietnam</b></p>
         <p>Attending the Madhubani workshop at KalaKosh was one of the most soulful expreiences I've ever had. The way the instructors blended tradition with hands-on learning was magical. I carried back not just a canvas, but a piece of Indian culture in my heart.</p>
       </div>
      <div class="review-card">
         <img src="minal.jpg" alt="minal">
         <h3>Art came off the walls and into the heart</h3>
-        <p>-Meenal Shah, Visual Artist, Ahemdabad</p>
+        <p class="name"><b>-Meenal Shah, Visual Artist, Ahemdabad</b></p>
         <p>"Bhitti-Chitra" revived my love for native storytelling. The Bhil panel with its vibrant geometry was my favourite. Wish we had more such experiences in urban art spaces.</p>
       </div>
     </div>
   </section>
   </main> 
 
+  <!-- <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="rogan1.jpg" alt="Puppet Artist" class="artist-img">
+        <div class="caption">Laxman Bhatt - 3rd Generation Kathputli Maestro</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="rogan2.jpg" alt="Traditional Performer" class="artist-img">
+        <div class="caption">Pushpa Devi - Folk Dance & Storytelling Expert</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="rogan3.png" alt="Local Artisan" class="artist-img">
+        <div class="caption">Ramesh Ji - Master Puppet Craftsman</div>
+      </div>
+    </div> -->
+<!-- 
+    <section class="gallery">
+        <h2>Moments from Past Workshops</h2>
+        <div class="gallery-grid">
+            <img src="images/gallery1.jpg" alt="Workshop 1">
+            <img src="images/gallery2.jpg" alt="Workshop 2">
+            <img src="images/gallery3.jpg" alt="Workshop 3">
+            <img src="images/gallery4.jpg" alt="Workshop 4">
+            <img src="images/gallery5.jpg" alt="Workshop 5">
+        </div>
+    </section> -->
+
+    <!-- <section class="intro">
+        <h1>Madhuban Canvas: A Journey into Colors & Culture</h1>
+        <p>Immerse yourself in the vibrant world of Madhubani — an art form that speaks the language of heritage and harmony.</p>
+    </section> -->
+    
 <footer class="footer">
   <div class="footer-container">
 
@@ -393,22 +418,20 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
       <h3>Quick Links</h3>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="State-Region.html">Art Form</a></li>
+        <li><a href="State-region.html">Artforms</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">Contact us</a></li>
         <li><a href="login.html">Log in</a></li>
       </ul>
     </div>
 
-    <!-- Explore By Theme -->
+    <!-- Help & Support -->
     <div class="footer-section">
-      <h3>Explore By Theme</h3>
+      <h3>Help & Support</h3>
       <ul>
-        <li><a href="#">Folk Paintings</a></li>
-        <li><a href="#">Classical Dance</a></li>
-        <li><a href="#">Handicrafts</a></li>
-        <li><a href="#">Tribal Art</a></li>
-        <li><a href="#">Artisan Stories</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms Of Service</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
 
@@ -430,9 +453,25 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+    <p>© 2025 Kalakosh. Designed with ❤ in India.</p>
   </div>
 </footer>
+<!-- 
+<script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 sec
+    }
+  </script> -->
+
 </body>
 </html>
 

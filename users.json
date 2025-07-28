@@ -40,5 +40,17 @@
         "email": "gari@gmail.com",
         "password": "456",
         "user_type": "artist"
+    },
+    "usera": {
+        "email": "anotheruser@mail.com",
+        "password": "abcdefg",
+        "user_type": "user",
+        "firebase_uid": "lKnZYJmz6KVowXT44kpbR5ONPKu2"
+    },
+    "artist1": {
+        "email": "testartist@mail.com",
+        "password": "123456",
+        "user_type": "artist",
+        "firebase_uid": "pbMrHKD3QBS595kS0kTQ81uXIaT2"
     }
 }

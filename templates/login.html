@@ -3,101 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Kalakosh</title>
     <link rel="stylesheet" href="/static/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
-  <div class="header">
-    <div class="logo">
-        <img src="/static/images/logo.png" alt="">
+    <div class="header">
+        <div class="logo">
+            <img src="/static/images/logo.png" alt="">
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#">About</a>
+            <a href="/login-events">Events</a>
+            <a href="#"><i class="fas fa-user"></i> Contact </a>
+        </div>
     </div>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Events</a>
-        <a href="#"><i class="fas fa-user"></i> Contact </a>
-    </div>
-</div>
 
     <div class="container">
-       
-        <div class="form-box"> 
+        <div class="form-box">
            <h2>Welcome</h2>
-           <form id="login-form"> 
+           <form id="login-form">
                <div class="input-box">
                 <input type="text" id="login-username" placeholder="Username" required>
                </div>
                <div class="input-box">
                 <input type="password" id="login-password" placeholder="Password" required>
                </div>
-               <button type="submit" onclick="login()">Sign in</button> 
+               <button type="submit">Sign in</button>
+               <p id="login-message" class="message"></p>
            </form>
            <h4>forgot password?</h4>
-           <p>Don't have an account? <a href="signup.html"><u>Sign up</u></a></p>
-          </div>
-         <div class="content">
-            <div class="image"><img src="/static/images/logo.png" alt=""></div>
-         </div>
-    </div>
-    <p id="login-result"></p>
-    <footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-section">
-      <h3>About Kalakosh</h3>
-      <p>
-        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
-        folk, tribal, and classical artforms across every state.
-      </p>
+           <div class="login-register">
+               <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+           </div>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/states">State</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/contact">Contact us</a></li>
-        <li><a href="/login">Log in</a></li>
-      </ul>
+    <div class="footer">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+                Kalakosh is a platform dedicated to preserving and promoting India's rich artistic heritage across every state.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/states">State</a></li>
+                <li><a href="/login-events">Events</a></li>
+                <li><a href="/contact">Contact us</a></li>
+                <li><a href="/login">Log in</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Explore By Theme</h3>
+            <ul>
+                <li><a href="#">Folk Paintings</a></li>
+                <li><a href="#">Classical Dance</a></li>
+                <li><a href="#">Handicrafts</a></li>
+                <li><a href="#">Tribal Art</a></li>
+                <li><a href="#">Artisan Stories</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Stay Connected</h3>
+            <p>Follow us on:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" />
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h3>Explore By Theme</h3>
-      <ul>
-        <li><a href="#">Folk Paintings</a></li>
-        <li><a href="#">Classical Dance</a></li>
-        <li><a href="#">Handicrafts</a></li>
-        <li><a href="#">Tribal Art</a></li>
-        <li><a href="#">Artisan Stories</a></li>
-      </ul>
-    </div>
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
-    <div class="footer-section">
-      <h3>Stay Connected</h3>
-      <p>Follow us on:</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>     
-        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>    
-        <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
-      </div>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email" />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
+        // Your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+            authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+            projectId: "kalakosh-website-bd6a6",
+            storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+            messagingSenderId: "1093917835204",
+            appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+            measurementId: "G-F7N10Z0RGC"
+        };
 
-  </div>
+        // Initialize Firebase client-side app
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-  <div class="footer-bottom">
-    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
-  </div>
-</footer>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+        const loginForm = document.getElementById('login-form');
+        const loginUsernameInput = document.getElementById('login-username');
+        const loginPasswordInput = document.getElementById('login-password');
+        const loginMessage = document.getElementById('login-message');
 
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loginMessage.textContent = '';
+            loginMessage.className = 'message'; // Reset message styling
 
+            const username = loginUsernameInput.value;
+            const password = loginPasswordInput.value;
 
+            try {
+                // 1. Send login data to Flask backend
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    loginMessage.textContent = data.message;
+                    loginMessage.classList.add('success');
+                    console.log("Flask Login Success:", data);
+
+                    // 2. Use the custom token from Flask to sign in to Firebase client-side
+                    if (data.customToken) {
+                        const userCredential = await signInWithCustomToken(auth, data.customToken);
+                        const user = userCredential.user;
+                        console.log("Client-side Firebase sign-in successful with custom token:", user.uid);
+
+                        // 3. Get the Firebase ID Token for redirection (optional, mainly for server-side validation)
+                        const idToken = await user.getIdToken();
+
+                        // 4. Redirect based on user type
+                        if (data.userType === 'artist') {
+                            window.location.href = `/artist-dashboard?token=${idToken}`; // Pass token to artist dashboard
+                        } else {
+                            window.location.href = '/dashboard'; // General user dashboard
+                        }
+                    } else {
+                        loginMessage.textContent = "Login successful, but no custom token received. Please try again.";
+                        loginMessage.classList.add('error');
+                    }
+
+                } else {
+                    loginMessage.textContent = data.message || 'Login failed.';
+                    loginMessage.classList.add('error');
+                    console.error("Flask Login Error:", data);
+                }
+            } catch (error) {
+                loginMessage.textContent = 'An unexpected error occurred. Please try again.';
+                loginMessage.classList.add('error');
+                console.error("Client-side Login Fetch Error:", error);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -3,97 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up - Kalakosh</title>
     <link rel="stylesheet" href="/static/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-     <div class="header">
-    <div class="logo">
-        <img src="/static/images/logo.png" alt="">
-    </div>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Events</a>
-        <a href="#"><i class="fas fa-user"></i> Contact </a>
-    </div>
-</div>
-
-   <div class="container">
-     <h1>Sign Up</h1>
-   <form  method="post" id="signup-form" action="/signup">
-       <input type="text" id="signup-username" name="username" placeholder=" Username" required>
-       <input type="email" id="signup-email" name="email" placeholder=" Email" required>
-       <input type="password" id="signup-password" name="password" placeholder=" Password" required>
-      <select name="user_type" id="user_type" required>
-          <option value="" disabled selected>User Type</option>
-           <option value="artist">Artist</option>
-           <option value="curator">Curator</option>
-           <option value="visitor">Visitor</option>
-       </select>
-        <br>
-       <button type="submit" onclick="signup()">Sign Up</button>
-       <h4>already have an account? <a href="login.html">Log in</a></h4>
-   </form>
-   <p id="signup-result" style="color: white;"></p>
-   </div>
-   <footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-section">
-      <h3>About Kalakosh</h3>
-      <p>
-        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
-        folk, tribal, and classical artforms across every state.
-      </p>
+    <div class="header">
+        <div class="logo">
+            <img src="/static/images/logo.png" alt="">
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#">About</a>
+            <a href="/login-events">Events</a>
+            <a href="#"><i class="fas fa-user"></i> Contact </a>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/states">State</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/contact">Contact us</a></li>
-        <li><a href="/login">Log in</a></li>
-      </ul>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <input type="text" id="signup-username" name="username" placeholder=" Username" required>
+            <input type="email" id="signup-email" name="email" placeholder=" Email" required>
+            <input type="password" id="signup-password" name="password" placeholder=" Password" required>
+            <select id="signup-user-type" name="user_type" required>
+                <option value="">Select User Type</option>
+                <option value="artist">Artist</option>
+                <option value="user">User</option>
+            </select>
+            <button type="submit">Sign Up</button>
+            <p id="signup-message" class="message"></p>
+        </form>
+        <h4>Already have an account? <a href="/login">Log In</a></h4>
     </div>
 
-    <div class="footer-section">
-      <h3>Explore By Theme</h3>
-      <ul>
-        <li><a href="#">Folk Paintings</a></li>
-        <li><a href="#">Classical Dance</a></li>
-        <li><a href="#">Handicrafts</a></li>
-        <li><a href="#">Tribal Art</a></li>
-        <li><a href="#">Artisan Stories</a></li>
-      </ul>
+    <div class="footer">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+                Kalakosh is a platform dedicated to preserving and promoting India's rich artistic heritage across every state.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/states">State</a></li>
+                <li><a href="/login-events">Events</a></li>
+                <li><a href="/contact">Contact us</a></li>
+                <li><a href="/login">Log in</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Explore By Theme</h3>
+            <ul>
+                <li><a href="#">Folk Paintings</a></li>
+                <li><a href="#">Classical Dance</a></li>
+                <li><a href="#">Handicrafts</a></li>
+                <li><a href="#">Tribal Art</a></li>
+                <li><a href="#">Artisan Stories</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Stay Connected</h3>
+            <p>Follow us on:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" />
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h3>Stay Connected</h3>
-      <p>Follow us on:</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>     
-        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>    
-        <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
-      </div>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email" />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
-  </div>
+        // Your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+            authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+            projectId: "kalakosh-website-bd6a6",
+            storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+            messagingSenderId: "1093917835204",
+            appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+            measurementId: "G-F7N10Z0RGC"
+        };
 
-  <div class="footer-bottom">
-    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
-  </div>
-</footer>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+        // Initialize Firebase client-side app
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
+        const signupForm = document.getElementById('signup-form');
+        const signupUsernameInput = document.getElementById('signup-username');
+        const signupEmailInput = document.getElementById('signup-email');
+        const signupPasswordInput = document.getElementById('signup-password');
+        const signupUserTypeSelect = document.getElementById('signup-user-type');
+        const signupMessage = document.getElementById('signup-message');
 
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            signupMessage.textContent = '';
+            signupMessage.className = 'message'; // Reset message styling
+
+            const username = signupUsernameInput.value;
+            const email = signupEmailInput.value;
+            const password = signupPasswordInput.value;
+            const user_type = signupUserTypeSelect.value;
+
+            try {
+                // 1. Send signup data to Flask backend
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password, user_type })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    signupMessage.textContent = data.message;
+                    signupMessage.classList.add('success');
+                    console.log("Flask Signup Success:", data);
+
+                    // 2. Use the custom token from Flask to sign in to Firebase client-side
+                    if (data.customToken) {
+                        const userCredential = await signInWithCustomToken(auth, data.customToken);
+                        const user = userCredential.user;
+                        console.log("Client-side Firebase sign-in successful with custom token:", user.uid);
+
+                        // 3. Get the Firebase ID Token for redirection (optional, mainly for server-side validation)
+                        const idToken = await user.getIdToken();
+
+                        // 4. Redirect based on user type
+                        if (data.userType === 'artist') {
+                            window.location.href = `/artist-dashboard?token=${idToken}`; // Pass token to artist dashboard
+                        } else {
+                            window.location.href = '/dashboard'; // General user dashboard
+                        }
+                    } else {
+                        signupMessage.textContent = "Signup successful, but no custom token received. Please try logging in.";
+                        signupMessage.classList.add('error');
+                    }
+
+                } else {
+                    signupMessage.textContent = data.message || 'Signup failed.';
+                    signupMessage.classList.add('error');
+                    console.error("Flask Signup Error:", data);
+                }
+            } catch (error) {
+                signupMessage.textContent = 'An unexpected error occurred. Please try again.';
+                signupMessage.classList.add('error');
+                console.error("Client-side Signup Fetch Error:", error);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4faff;
+  padding: 30px;
+}
+
+.notice-board {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  border-top: 5px solid #1e88e5;
+}
+
+.notice-board h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1b1b1b;
+}
+
+.slider-window {
+  overflow: hidden;
+  height: 3 * 120px; /* 3 cards shown */
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s ease-in-out;
+}
+
+.event-card {
+  height: 120px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: #e3f2fd;
+  border-left: 4px solid #1565c0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.event-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #0d47a1;
+}
+
+.event-card .desc {
+  font-size: 13px;
+  margin: 4px 0 8px;
+  color: #333;
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-footer span {
+  font-size: 14px;
+  color: #1b1b1b;
+}
+
+.btn-details {
+  padding: 5px 12px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btn-details:hover {
+  background-color: #1565c0;
+}

@@ -1,0 +1,335 @@
+html {
+    height: 100%; /* Ensures HTML takes full viewport height */
+}
+
+body {
+    background-image: url('bg.jpg'); /* Your specified background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Ensures the background stays fixed relative to the viewport */
+    background-position: center center; /* Centers the image */
+    margin: 0; /* Remove default body margin */
+    height: 100vh; /* Set body height to 100% of viewport height for initial view */
+    width: auto; /* Allow width to be determined by content */
+    overflow-y: scroll; /* Enable vertical scrolling if content exceeds viewport height */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+
+    /* Basic typography for the page */
+    font-family: 'Mukta', sans-serif; /* A good readable font for general text */
+    color: #333; /* Default text color */
+    line-height: 1.6; /* Improve readability for paragraphs */
+
+    /* Flexbox for body to stack artform containers and center them */
+    display: flex;
+    flex-direction: column; /* Stack artform containers vertically */
+    align-items: center; /* Center them horizontally */
+    padding: 20px 0; /* Add vertical padding around the entire content */
+    box-sizing: border-box; /* Include padding in element's total height */
+}
+
+#Back {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    padding: 12px 25px;
+    background-color: rgb(113, 2, 2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.15em; /* Using slightly larger font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 100; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#Back:hover {
+    background-color: rgb(140, 5, 5);
+    transform: translateY(-2px);
+}
+
+.gallery {
+    width: fit-content;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(113, 2, 2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.gallery:hover {
+    background-color: rgb(140, 5, 5);
+    transform: translateY(-2px);
+}
+
+.artform-container1 {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    background-color: rgba(133, 17, 17, 0.475);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+    gap: 30px;
+    box-sizing: border-box;
+    color: blanchedalmond;
+    font-weight: bold;
+}
+
+.artform-container2 {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row-reverse;
+    height: auto;
+    background-color: rgba(133, 17, 17, 0.475);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+    gap: 30px;
+    box-sizing: border-box;
+    color: blanchedalmond;
+    font-weight: bold;
+}
+
+.image-container {
+    flex: 0 0 250px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.artform-image {
+    width: 250px;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 2px solid rgb(122, 5, 5);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.artform-image:hover {
+    transform: scale(1.05);
+}
+
+.artform-name {
+    font-size: 1.2em;
+    font-family: 'Lugrasimo', serif;
+    color: blanchedalmond;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.description-container1 {
+    flex: 1;
+    padding-left: 30px;
+    border-left: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    line-height: 1.8;
+    text-align: justify;
+    color: rgb(86, 1, 1);
+    font-weight: 900;
+    font-family: 'Artifika', serif;
+}
+
+.description-container2 {
+    flex: 1;
+    padding-right: 30px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    line-height: 1.8;
+    text-align: justify;
+    color: rgb(86, 1, 1);
+    font-weight: bold;
+    font-family: 'Artifika', serif;
+}
+
+.gallery-title {
+    font-family: 'Almendra SC', serif;
+    font-size: 3.5em;
+    color: rgb(122, 5, 5);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto 50px auto;
+    border-radius: 15px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(87, 4, 4, 0.475);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25); 
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    min-width: 280px;
+    color: blanchedalmond; 
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-media {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(122, 5, 5); 
+}
+
+.image-item {
+    flex: 1 1 300px;
+}
+
+.video-item {
+    flex: 2 1 600px;
+}
+
+.media-caption {
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.1em;
+    color: blanchedalmond; 
+    margin: 0;
+    padding: 5px 0;
+}
+
+@media (max-width: 1024px) {
+    /* Gallery specific adjustments */
+    .gallery-title {
+        font-size: 3em;
+    }
+    .gallery-container {
+        width: 95%;
+        gap: 20px;
+    }
+    .image-item {
+        flex-basis: 280px;
+    }
+    .video-item {
+        flex-basis: 560px;
+    }
+}
+
+@media (max-width: 900px) {
+        .artform-container1, .artform-container2 {
+        flex-direction: column;
+        width: 95%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .image-container {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Consolidated description container for responsiveness */
+    .description-container1, .description-container2 {
+        flex: none;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 20px;
+        margin-top: 0;
+    }
+
+    #Back {
+        top: 10px; 
+        padding: 10px 20px; 
+        font-size: 0.9em; 
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2.5em;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .gallery-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    .gallery-item {
+        flex-basis: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .gallery-media {
+        height: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    #pic {
+        width: 150px;
+        height: 150px;
+    }
+    #pic-name {
+        font-size: 1.5em;
+    }
+    
+    .gallery-title {
+        font-size: 2em;
+    }
+    .gallery-container {
+        padding: 10px;
+    }
+    .gallery-media {
+        height: 150px;
+    }
+}

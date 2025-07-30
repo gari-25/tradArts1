@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Amarante&family=Luxurious+Roman&family=Hind&family=Palatino+Linotype&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video id="introVideo" autoplay muted playsinline>
+    <source src="Intro_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+  <div class="mainContent">
+    
+    <div class="logo">
+        <div class="main_logo"><a href="home.html"><img src="Logo1.png"></a></div> 
+        <!-- <div>Echoes of Tradition &nbsp; <br>in Every Stroke.</div> -->
+        <!-- A digital sanctuary for India’s timeless artistic traditions. -->
+
+        <div class="nav">
+        <a href="index.html"><div class="items">Home</div></a>
+        <a href="State-region.html"><div class="items">Artforms</div></a>
+        <a href="events.html"><div class="items">Events</div></a>
+        <a href="login.html"><div class="items">Log in</div></a>
+        <a href="contact.html"><div class="items">Contact Us</div></a>
+    </div>
+    </div>
+    <div class="start">
+      <div class="desc">
+        Step into a world where<br> every artifact tells a story!<br>
+        <button onclick="window.open('home.html','_blank')">Explore the archive</button>
+      </div>
+      <img src="im1.jpg" id="im1" class="ims">
+      <img src="im2.jpg" id="im2" class="ims">
+      <img src="im3.jpg" id="im3" class="ims">
+      <img src="im4.jpg" id="im4" class="ims">
+    </div>
+    <br>
+
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">Indian Arts</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
+    <br>
+
+        <div class="slide-container">
+        <div class="slides-wrapper" id="slidesWrapper">
+        <div class="slide fade">
+            <img src="Madhubani.jpg">
+            <div class="caption">Madhubani Folk Painting - Mithila</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="warli.jpg">
+            <div class="caption">Warli Tribal Art - Maharashtra</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="Kathakali.jpg">
+            <div class="caption">Kathakali - Kerala's Theatre of Paint and Gesture</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="pattchitra.jpg">
+            <div class="caption">Pattachitra - Timeless Scroll Art from Odisha</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="puppet.jpg">
+            <div class="caption">Kathputli Puppetry - The Colourful Voice of Rajasthani Folk Tradition</div>
+        </div>
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+
+    </div><br><br>
+
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">About Us</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
+
+    <div class="about">
+        <div class="element">
+        <div class="title">
+            Born of Tradition, Made with Purpose
+        </div>
+        <div class="content">
+            Kalakosh is a heartfelt tribute to India's rich artistic heritage — a digital sanctuary where 
+            classical traditions, folk expressions, and timeless craft forms find new light. From the intricate 
+            strokes of Madhubani to the bold weaves of Kanchipuram, we are a celebration of stories passed down 
+            through generations — preserved in color, rhythm, and spirit.
+        </div>
+        </div>
+        <br>
+
+        <div class="element">
+        <div class="title">
+            Preserving Living Legacies
+        </div>
+        <div class="content">
+            At Kalakosh, we curate, showcase, and support traditional Indian art forms — not just as artifacts, 
+            but as living legacies. Our mission is to empower artisans, revive endangered crafts, and build a 
+            community that honors authenticity over imitation. Every creation you see here carries the voice of 
+            a region, the soul of a people, and the rhythm of centuries.
+        </div>
+        </div>
+
+        <div class="element">
+          <div class="title">
+            Join the Journey Back to Our Roots
+          </div>
+          <div class="content">
+            In every thread, every brushstroke, and every rhythm, Kalakosh echoes the beauty of our heritage. 
+            Together, let's keep the art alive.
+          </div>
+        </div>
+    </div> <br><br>
+
+    <div class="content-section">
+        <img src="line-divider-bg.png" class="design-image">
+        <p class="section-title">Folk Art Map</p>
+        <img src="line-divider-bg.png" class="design-image">
+    </div>
+    <div class="map">
+        <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black;
+        height:150vh;width:60vw;">
+    </div><br>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About Kalakosh -->
+    <div class="footer-section">
+      <h3>About Kalakosh</h3>
+      <p>
+        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
+        folk, tribal, and classical artforms across every state.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/states">Artforms</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/contact">Contact us</a></li>
+        <li><a href="/login">Log in</a></li>
+      </ul>
+    </div>
+
+    <!-- Explore By Theme -->
+    <div class="footer-section">
+      <h3>Explore By Theme</h3>
+      <ul>
+        <li><a href="#">Folk Paintings</a></li>
+        <li><a href="#">Classical Dance</a></li>
+        <li><a href="#">Handicrafts</a></li>
+        <li><a href="#">Tribal Art</a></li>
+        <li><a href="#">Artisan Stories</a></li>
+      </ul>
+    </div>
+
+    <!-- Stay Connected -->
+    <div class="footer-section">
+      <h3>Stay Connected</h3>
+      <p>Follow us on:</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+  </div>
+</footer>
+
+    </div>
+
+    <script>
+        const video = document.getElementById('introVideo');
+        video.onended = () => {
+        video.style.display = 'none';
+        document.querySelector('.mainContent').style.display = 'block';
+        document.body.style.overflow = 'auto';
+        };
+
+        let currentSlide = 0;
+        const slidesWrapper = document.getElementById("slidesWrapper");
+        const totalSlides = slidesWrapper.children.length;
+
+        function changeSlide(direction) {
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+          updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+          slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+  // Optional auto-slide
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+    </script>
+
+</body>
+</html>

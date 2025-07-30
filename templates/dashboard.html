@@ -13,10 +13,14 @@
         .font-mukta { font-family: 'Mukta', sans-serif; }
         .font-quintessential { font-family: 'Quintessential', cursive; }
 
-        /* General Body Styling */
-        /* body { */
-            /* @apply bg-gray-100 font-mukta text-gray-900 min-h-screen; */
-        /* } */
+        /* General Body Styling with background image */
+        body {
+            background-image: url('/static/images/bg.jpg'); /* Path to your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep background fixed when scrolling */
+            font-family:"Mukta";
+        }
 
         /* Modal specific styles for scroll behavior */
         .modal-open {
@@ -26,7 +30,7 @@
 </head>
 <body>
 
-    <div class="min-h-screen bg-gray-100 font-mukta text-gray-900">
+    <div class="min-h-screen font-mukta text-gray-900">
         <div class="bg-[#6B2E0D] text-[#F3E3D0] py-4 px-6 shadow-lg flex justify-between items-center rounded-b-lg border-b-4 border-[#A00A0A]">
             <h1 class="text-4xl font-extrabold tracking-tight font-quintessential">General User Dashboard</h1>
             <div class="flex items-center space-x-4">
@@ -43,6 +47,18 @@
         </div>
 
         <div class="container mx-auto px-4 py-8">
+            <!-- Explore Events Section -->
+            <div class="bg-white p-6 rounded-lg shadow-xl mb-8 border-t-4 border-green-700 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 font-quintessential">Discover New Experiences</h2>
+                <p class="text-gray-600 mb-6">Explore a wide range of upcoming workshops, exhibitions, and live demonstrations.</p>
+                <a href="/login-events" class="px-8 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-200 font-semibold inline-flex items-center space-x-2 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Explore Events</span>
+                </a>
+            </div>
+
             <!-- My Registered Events Section -->
             <div class="bg-white p-6 rounded-lg shadow-xl mb-8 border-t-4 border-blue-700">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6 font-quintessential">My Registered Events</h2>
@@ -196,7 +212,7 @@
                 onSnapshot(q, (snapshot) => {
                     registeredEventsList.innerHTML = ''; // Clear on every update for real-time
                     if (snapshot.empty) {
-                        getById('registeredEventsLoading').textContent = "You haven't registered for any events yet.";
+                        getById('registeredEventsLoading').textContent = "You haven't registered for any events yet. Click 'Explore Events' above to find some!";
                         getById('registeredEventsLoading').classList.remove('hidden');
                     } else {
                         getById('registeredEventsLoading').classList.add('hidden');

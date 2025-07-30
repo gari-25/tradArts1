@@ -13,10 +13,14 @@
         .font-mukta { font-family: 'Mukta', sans-serif; }
         .font-quintessential { font-family: 'Quintessential', cursive; }
 
-        /* General Body Styling */
-        /* body { */
-            /* @apply bg-gray-100 font-mukta text-gray-900 min-h-screen; */
-        /* } */
+        /* General Body Styling with background image */
+        body {
+            background-image: url('/static/images/bg.jpg'); /* Path to your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep background fixed when scrolling */
+            font-family:"Mukta";
+        }
 
         /* Modal specific styles for scroll behavior */
         .modal-open {
@@ -26,7 +30,7 @@
 </head>
 <body>
 
-    <div class="min-h-screen bg-gray-100 font-mukta text-gray-900">
+    <div class="min-h-screen font-mukta text-gray-900">
         <div class="bg-[#6B2E0D] text-[#F3E3D0] py-4 px-6 shadow-lg flex justify-between items-center rounded-b-lg border-b-4 border-[#A00A0A]">
             <h1 class="text-4xl font-extrabold tracking-tight font-quintessential">Artist Dashboard</h1>
             <div class="flex items-center space-x-4">
@@ -322,8 +326,11 @@
                             authStatusMessage.classList.remove('hidden'); // Show auth message
                             artworksSection.classList.add('hidden'); // Hide dashboard sections
                             eventsSection.classList.add('hidden');
-                            getById('artworksLoading').textContent = ""; // Clear loading text
-                            getById('eventsLoading').textContent = "";
+                            // Ensure loading texts are visible if no user/data
+                            getById('artworksLoading').textContent = "Please log in to view your artworks.";
+                            getById('eventsLoading').textContent = "Please log in to view your events.";
+                            getById('artworksLoading').classList.remove('hidden');
+                            getById('eventsLoading').classList.remove('hidden');
                         }
                     }
                 });
@@ -343,16 +350,19 @@
         let editingArtworkId = null;
 
         async function loadArtworks() {
+            // Get references to loading elements inside the function to ensure they exist
+            const artworksLoading = getById('artworksLoading');
+            const artworksList = getById('artworksList');
+
             if (!db || !currentUserId || !currentAppId) {
                 console.log("KalaKosh Dashboard: ArtworkList: Missing db, userId, or appId. Skipping fetch.");
-                getById('artworksLoading').textContent = "Please log in to view your artworks.";
-                getById('artworksLoading').classList.remove('hidden');
+                artworksLoading.textContent = "Please log in to view your artworks.";
+                artworksLoading.classList.remove('hidden');
                 return;
             }
-            getById('artworksLoading').textContent = "Loading artworks...";
-            getById('artworksLoading').classList.remove('hidden');
+            artworksLoading.textContent = "Loading artworks...";
+            artworksLoading.classList.remove('hidden');
 
-            const artworksList = getById('artworksList');
             artworksList.innerHTML = ''; // Clear existing list
 
             try {
@@ -360,12 +370,13 @@
                 const q = query(artworksCollectionRef, orderBy('dateAdded', 'desc'));
 
                 onSnapshot(q, (snapshot) => {
+                    console.log("Firebase Debug: Artworks Snapshot received. Number of docs:", snapshot.docs.length); // DEBUG
                     artworksList.innerHTML = ''; // Clear on every update for real-time
                     if (snapshot.empty) {
-                        getById('artworksLoading').textContent = "No artworks added yet. Click 'Add New Artwork' to get started!";
-                        getById('artworksLoading').classList.remove('hidden');
+                        artworksLoading.textContent = "No artworks added yet. Click 'Add New Artwork' to get started!";
+                        artworksLoading.classList.remove('hidden');
                     } else {
-                        getById('artworksLoading').classList.add('hidden');
+                        artworksLoading.classList.add('hidden'); // Hide loading message if data is present
                         snapshot.docs.forEach(doc => {
                             const artwork = { id: doc.id, ...doc.data() };
                             const artworkElement = document.createElement('div');
@@ -378,16 +389,20 @@
                                     <h3 class="text-xl font-semibold text-gray-800 mb-2 font-quintessential">${artwork.title}</h3>
                                     <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-mukta">${artwork.description}</p>
                                     <p class="text-gray-700 text-xs font-medium">By: ${artwork.artistName || 'Unknown Artist'}</p>
+                                    <div class="flex justify-end space-x-3 mt-2">
+                                        <button data-id="${artwork.id}" class="edit-artwork-btn px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200 text-sm font-medium shadow-sm transform hover:scale-105">Edit</button>
+                                        <button data-id="${artwork.id}" class="delete-artwork-btn px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-200 text-sm font-medium shadow-sm transform hover:scale-105">Delete</button>
+                                    </div>
                                 </div>
                             `;
                             artworksList.appendChild(artworkElement);
                         });
-                        addArtworkEventListeners();
+                        addArtworkEventListeners(); // Attach listeners AFTER elements are added
                     }
                 });
             } catch (err) {
                 console.error("KalaKosh Dashboard: Error loading artworks:", err);
-                getById('artworksLoading').textContent = `Error loading artworks: ${err.message}`;
+                artworksLoading.textContent = `Error loading artworks: ${err.message}`;
                 showAlert('Error', `Failed to load artworks: ${err.message}. Please check console for details.`);
             }
         }
@@ -420,7 +435,8 @@
                         try {
                             await deleteDoc(doc(db, `artifacts/${currentAppId}/users/${currentUserId}/artworks`, id));
                             showAlert('Success', 'Artwork deleted successfully!');
-                        } catch (err) {
+                        }
+                        catch (err) {
                             console.error("KalaKosh Dashboard: Error deleting artwork:", err);
                             showAlert('Error', `Failed to delete artwork: ${err.message}.`);
                         }
@@ -478,16 +494,19 @@
         let editingEventId = null;
 
         async function loadEvents() {
+            // Get references to loading elements inside the function to ensure they exist
+            const eventsLoading = getById('eventsLoading');
+            const eventsList = getById('eventsList');
+
             if (!db || !currentUserId || !currentAppId) {
                 console.log("KalaKosh Dashboard: EventList: Missing db, userId, or appId. Skipping fetch.");
-                getById('eventsLoading').textContent = "Please log in to view your events.";
-                getById('eventsLoading').classList.remove('hidden');
+                eventsLoading.textContent = "Please log in to view your events.";
+                eventsLoading.classList.remove('hidden');
                 return;
             }
-            getById('eventsLoading').textContent = "Loading events...";
-            getById('eventsLoading').classList.remove('hidden');
+            eventsLoading.textContent = "Loading events...";
+            eventsLoading.classList.remove('hidden');
 
-            const eventsList = getById('eventsList');
             eventsList.innerHTML = ''; // Clear existing list
 
             try {
@@ -496,12 +515,13 @@
                 const q = query(eventsCollectionRef, orderBy('dateCreated', 'desc'));
 
                 onSnapshot(q, (snapshot) => {
+                    console.log("Firebase Debug: Events Snapshot received. Number of docs:", snapshot.docs.length); // DEBUG
                     eventsList.innerHTML = ''; // Clear on every update for real-time
                     if (snapshot.empty) {
-                        getById('eventsLoading').textContent = "No events or workshops added yet. Click 'Add New Event' to schedule one!";
-                        getById('eventsLoading').classList.remove('hidden');
+                        eventsLoading.textContent = "No events or workshops added yet. Click 'Add New Event' to schedule one!";
+                        eventsLoading.classList.remove('hidden');
                     } else {
-                        getById('eventsLoading').classList.add('hidden');
+                        eventsLoading.classList.add('hidden'); // Hide loading message if data is present
                         snapshot.docs.forEach(doc => {
                             const event = { id: doc.id, ...doc.data() };
                             const eventElement = document.createElement('div');
@@ -531,12 +551,12 @@
                             `;
                             eventsList.appendChild(eventElement);
                         });
-                        addEventEventListeners();
+                        addEventEventListeners(); // Attach listeners AFTER elements are added
                     }
                 });
             } catch (err) {
                 console.error("KalaKosh Dashboard: Error loading events:", err);
-                getById('eventsLoading').textContent = `Error loading events: ${err.message}`;
+                eventsLoading.textContent = `Error loading events: ${err.message}`;
                 showAlert('Error', `Failed to load events: ${err.message}. Please check console for details.`);
             }
         }
@@ -576,7 +596,8 @@
                             const publicEventRef = doc(db, `artifacts/${currentAppId}/public/data/events`, id);
                             await deleteDoc(publicEventRef).catch(err => console.warn("Could not delete from public collection (might not exist):", err));
                             showAlert('Success', 'Event/Workshop deleted successfully!');
-                        } catch (err) {
+                        }
+                        catch (err) {
                             console.error("KalaKosh Dashboard: Error deleting event:", err);
                             showAlert('Error', `Failed to delete event: ${err.message}.`);
                         }

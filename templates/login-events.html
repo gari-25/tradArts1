@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Kalakosh</title>
+    <!-- Link to your custom estyle.css -->
     <link rel="stylesheet" href="/static/estyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <!-- Google Fonts for Kalakosh branding -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Quintessential&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
     <style>
         /* Custom Fonts */
         .font-mukta { font-family: 'Mukta', sans-serif; }
         .font-quintessential { font-family: 'Quintessential', cursive; }
+        .font-almendra-sc { font-family: 'Almendra SC', serif; } /* Added from events.html */
+        .font-lugrasimo { font-family: 'Lugrasimo', cursive; } /* Added from events.html */
+        .font-artifika { font-family: 'Artifika', serif; } /* Added from events.html */
+        .font-pt-serif-caption { font-family: 'PT Serif Caption', serif; } /* Added from events.html */
     </style>
 </head>
 
@@ -101,7 +112,7 @@
                 <hr />
                 <!-- Dynamic Upcoming Events will be loaded here -->
                 <div id="upcomingEventsDynamicList">
-                    <p class='text-gray-500 text-center py-10'>Loading upcoming events...</p>
+                    <p class="text-gray-500 text-center py-10">Loading upcoming events...</p>
                 </div>
             </div>
         </div>
@@ -117,74 +128,83 @@
             </section>
 
             <div class="content-section">
-                <img src="/static/images/Leftdesign.png" class="design-image">
+                <img src="/static/images/Leftdesign.png" class="design-image" alt="Left Design">
                 <p class="section-title">Workshops</p>
-                <img src="/static/images/rightdesign.png" class="design-image">
+                <img src="/static/images/rightdesign.png" class="design-image" alt="Right Design">
             </div>
 
             <section class="event-grid" id="workshops">
                 <!-- Dynamic Workshop Cards will be loaded here -->
-                <p class='text-gray-500 text-center py-10 col-span-full' id="workshopLoading">Loading workshops...</p>
+                <p class="text-gray-500 text-center py-10 col-span-full" id="workshopLoading">Loading workshops...</p>
             </section>
 
             <div class="content-section">
-                <img src="/static/images/Leftdesign.png" class="design-image">
+                <img src="/static/images/Leftdesign.png" class="design-image" alt="Left Design">
                 <p class="section-title">Exhibitions</p>
-                <img src="/static/images/rightdesign.png" class="design-image">
+                <img src="/static/images/rightdesign.png" class="design-image" alt="Right Design">
             </div>
 
             <section class="exhibitions-section" id="exhibitions">
                 <!-- Dynamic Exhibition Cards will be loaded here -->
-                <p class='text-gray-500 text-center py-10 col-span-full' id="exhibitionLoading">Loading exhibitions...</p>
+                <p class="text-gray-500 text-center py-10 col-span-full" id="exhibitionLoading">Loading exhibitions...</p>
             </section>
             <!-- Add sections for Past Events, Artists, Reviews as needed -->
         </div>
     </main>
 
-    <div class="footer">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>
-                Kalakosh is a platform dedicated to preserving and promoting India's rich artistic heritage across every state.
-            </p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/states">State</a></li>
-                <li><a href="/login-events">Events</a></li>
-                <li><a href="/contact">Contact us</a></li>
-                <li><a href="/login">Log in</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Explore By Theme</h3>
-            <ul>
-                <li><a href="#">Folk Paintings</a></li>
-                <li><a href="#">Classical Dance</a></li>
-                <li><a href="#">Handicrafts</a></li>
-                <li><a href="#">Tribal Art</a></li>
-                <li><a href="#">Artisan Stories</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Stay Connected</h3>
-            <p>Follow us on:</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>
-                <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>
-                <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+    <footer>
+        <div class="footer-container">
+            <!-- About Kalakosh -->
+            <div class="footer-section about">
+                <h3>About Kalakosh</h3>
+                <p>
+                    Kalakosh is a vibrant platform dedicated to preserving and promoting the rich cultural heritage of Indian art, showcasing diverse folk, tribal, and classical artforms across every state.
+                </p>
             </div>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email" />
-                <button type="submit">Subscribe</button>
-            </form>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/states">Art Form</a></li>
+                    <li><a href="/login-events">Events</a></li>
+                    <li><a href="/contact">Contact us</a></li>
+                    <li><a href="/login">Log in</a></li>
+                </ul>
+            </div>
+
+            <!-- Explore By Theme -->
+            <div class="footer-section">
+                <h3>Explore By Theme</h3>
+                <ul>
+                    <li><a href="#">Folk Paintings</a></li>
+                    <li><a href="#">Classical Dance</a></li>
+                    <li><a href="#">Handicrafts</a></li>
+                    <li><a href="#">Tribal Art</a></li>
+                    <li><a href="#">Artisan Stories</a></li>
+                </ul>
+            </div>
+
+            <!-- Stay Connected -->
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Follow us on:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kalakosh. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Firebase SDKs -->
     <script type="module">
@@ -222,7 +242,7 @@
                 return;
             }
 
-            // Clear existing content
+            // Clear existing content and show loading messages
             upcomingEventsDynamicList.innerHTML = '';
             workshopsGrid.innerHTML = '';
             exhibitionsSection.innerHTML = '';
@@ -236,7 +256,7 @@
 
                 onSnapshot(q, (snapshot) => {
                     const allEvents = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                    console.log("Fetched events:", allEvents); // Debugging
+                    console.log("Fetched events for public display:", allEvents); // Debugging
 
                     const now = new Date();
                     now.setHours(0, 0, 0, 0); // Normalize to start of today

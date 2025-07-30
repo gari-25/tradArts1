@@ -111,11 +111,6 @@ def signup():
         # If get_user_by_email succeeds, it means the email is already registered in Firebase Auth.
         return jsonify({"message": "Email already registered in Firebase."}), 409
     except exceptions.FirebaseError as e:
-        # --- DEBUGGING LINE (now fixed condition) ---
-        print(f"DEBUG: FirebaseError code during email check: '{e.code}'")
-        # --- END DEBUGGING LINE ---
-
-        # If the error is 'NOT_FOUND', it means the email is available, so we proceed to create.
         # This is the crucial change: 'auth/user-not-found' is actually 'NOT_FOUND'
         if e.code == 'NOT_FOUND': # <--- CHANGED THIS LINE
             pass # Email is available, continue to create user

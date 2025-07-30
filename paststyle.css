@@ -1,0 +1,38 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+  color: #333;
+}
+
+.past-workshop-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.past-workshop-title {
+  font-size: 2.4rem;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+.past-workshop-details {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.past-workshop-status {
+  background-color: #ffeded;
+  color: #b40000;
+  padding: 10px 20px;
+  border-left: 6px solid #ff4d4d;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}

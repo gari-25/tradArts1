@@ -52,5 +52,11 @@
         "password": "123456",
         "user_type": "artist",
         "firebase_uid": "pbMrHKD3QBS595kS0kTQ81uXIaT2"
+    },
+    "artist2": {
+        "email": "artist2@example.com",
+        "password": "abcdefg",
+        "user_type": "artist",
+        "firebase_uid": "Js8U7X3j6Cauuw3metS39NCC7Bd2"
     }
 }

@@ -58,5 +58,23 @@
         "password": "abcdefg",
         "user_type": "artist",
         "firebase_uid": "Js8U7X3j6Cauuw3metS39NCC7Bd2"
+    },
+    "userb": {
+        "email": "userb@test.com",
+        "password": "ABCDEFG",
+        "user_type": "visitor",
+        "firebase_uid": "g22jkso9pfUdeUUUN0fbiGyDRk43"
+    },
+    "Amit": {
+        "email": "amit@mail.com",
+        "password": "amit123",
+        "user_type": "artist",
+        "firebase_uid": "xSuMzZ3uZgameb1p9Xyv2EeJFbl1"
+    },
+    "Vrinda": {
+        "email": "vrinda@mail.com",
+        "password": "vrinda12",
+        "user_type": "artist",
+        "firebase_uid": "pEay2jVlnshUdYu23NruQeRdEOQ2"
     }
 }

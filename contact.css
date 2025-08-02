@@ -1,18 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body{
     background-image:url(ddd.png); 
-    /* background-image: url(border_des1.webp); */
     background-repeat: no-repeat;
     background-size:cover;
+    background-position: center;
     background-attachment: fixed;
     font-family: 'Libre Baskerville', serif;
+    scroll-behavior: smooth;
+    width:100%;
+    height:100%;
     margin:auto;
     overflow:auto;
 }
+
+/* Header and nav bar  */
 .header {
   display: flex;
   justify-content: space-between; 
@@ -45,6 +45,7 @@ body{
   background-color:#874019;
 }
 
+/* Float while appear effect */
 /* Initially hide elements */
 .floating-element {
   opacity: 0;
@@ -57,17 +58,20 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Team Profiles */
 .profiles-head{
     display:flex;
     font-family:'Quintessential';
-    font-size:3.6em;
+    font-size:3.4em;
     font-weight: bold;
     color:#fdd68f;
     text-shadow:0 2px 8px rgba(0, 0, 0);
     justify-content:space-between;
 }
 .profiles-head img{
-    width:30vw;
+    height:13vh;
+    width:35vw;
 } 
 
 .team-cards {
@@ -127,7 +131,6 @@ body{
 .card-body {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   padding: 20px;
   color: #6b2e0c;
   font-family: 'Poppins', sans-serif;
@@ -138,12 +141,6 @@ body{
   font-size: 18px;
   margin-bottom: 5px;
 }
-
-/* .card-body h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  font-weight: bold;
-} */
 
 .card-body p {
   font-size: 14px;
@@ -173,7 +170,7 @@ body{
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
+/* Responsive for team cards */
 @media screen and (max-width: 768px) {
   .team-cards {
     flex-direction: column;
@@ -198,6 +195,8 @@ body{
     align-self: center;
   }
 }
+
+/* Contact Form */
 .page-content {
     background-image:url(bg.jpg);
     background-repeat: no-repeat;
@@ -225,7 +224,6 @@ body{
     margin-top: 30px;
     display: flex;
     flex-wrap:wrap;
-            /* flex-direction: column; */
     gap: 15px;
     align-items: center;
 }
@@ -272,12 +270,12 @@ body{
     transform: translateY(-2px);
 }
 
+/* footer.css */
 
 .footer {
-  background-color: #6B2E0D; /* #4e342e deep brown */
+  background-color: #6B2E0D; 
   color: #fff;
   padding: 40px 20px;
-  /* font-family: 'Segoe UI', sans-serif; */
 }
 
 .footer-container {
@@ -320,6 +318,21 @@ body{
   text-decoration: underline;
 }
 
+.social-links a {
+  color: #6b2e0d;
+  background-color:rgb(220,183,139);
+  padding:3px 3px 0px 3px;
+  margin-right:15px;
+  border-radius:50%;
+}
+
+/* Social Icon Hover Effect */
+.social-links a:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  background-color: #f5deb3;
+}
+
 p i{
   color: rgb(220,183,139);
 }
@@ -334,46 +347,6 @@ p i{
   text-decoration: underline;
 }
 
-.social-links a {
-  color: #6b2e0d;
-  background-color:rgb(220,183,139);
-  padding:3px 3px 0px 3px;
-  margin-right: 15px;
-  border-radius:50%;
-}
-
-/* Social Icon Hover Effect */
-.social-links a:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
-  background-color: #f5deb3;
-}
-
-/* .newsletter-form {
-  margin-top: 10px;
-}
-
-.newsletter-form input[type="email"] {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  width: 80%;
-  margin-bottom: 10px;
-}
-
-.newsletter-form button {
-  padding: 8px 16px;
-  background-color: rgb(220,183,139);
-  color:#6B2E0D ;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.newsletter-form button:hover {
-  background-color: #f5deb3; /* lighter bisque 
-} */
-
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
@@ -383,6 +356,7 @@ p i{
   color: bisque;
 }
 
+/* Responsiveness */
 @media screen and (max-width: 768px) {
   body{
     flex-direction: column;
@@ -433,17 +407,18 @@ p i{
   }
 
 .contact-form button{
-  margin-left:20%;
+  align-self:center;
 }
 
   .footer-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .footer-section {
+    width: 90%;
+    padding: 10px 0;
     text-align: center;
-    margin-bottom: 20px;
   }
   
 }

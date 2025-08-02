@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Kalakosh</title>
-    <link rel="stylesheet" href="/static/signup.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -35,7 +35,7 @@
             <button type="submit">Sign Up</button>
             <p id="signup-message" class="message"></p>
             <div class="login-link">
-                <p>Already have an account? <a href="/login">Log In</a></p>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
             </div>
         </form>
     </div>
@@ -105,9 +105,9 @@
 
                         // 4. Redirect based on user type
                         if (data.userType === 'artist') {
-                            window.location.href = `/artist-dashboard?token=${idToken}`; // Pass token to artist dashboard
+                            window.location.href = `{{ url_for('artist_dashboard') }}?token=${idToken}`; // Pass token to artist dashboard
                         } else {
-                            window.location.href = '/dashboard'; // General user dashboard
+                            window.location.href = `{{ url_for('login_events') }}`; // General user dashboard
                         }
                     } else {
                         signupMessage.textContent = "Signup successful, but no custom token received. Please try logging in.";

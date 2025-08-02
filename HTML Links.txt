@@ -1,0 +1,149 @@
+  Converted HTML link 'BMP.html' to '{{ url_for('BMP') }}'
+
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+
+  Converted HTML link 'Sattriya.html' to '{{ url_for('Sattriya') }}'
+
+  Converted HTML link 'Majuli.html' to '{{ url_for('Majuli') }}'
+
+  Converted HTML link 'Muga.html' to '{{ url_for('Muga') }}'
+
+  Converted HTML link 'index.html' to '{{ url_for('index') }}'
+
+  Converted HTML link 'privacy-policy.html' to '{{ url_for('privacy_policy') }}'
+
+  Converted HTML link 'login.html' to '{{ url_for('login') }}'
+
+  Converted HTML link 'events.html' to '{{ url_for('events') }}'
+
+  Converted HTML link 'register.html' to '{{ url_for('register') }}'
+
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+
+  Converted HTML link 'faq.html' to '{{ url_for('faq') }}'
+
+  Converted HTML link 'contact.html' to '{{ url_for('contact') }}'
+
+  Converted HTML link 'terms-of-service.html' to '{{ url_for('terms_of_service') }}'
+
+  Converted HTML link 'index.html' to '{{ url_for('index') }}'
+
+  Converted HTML link 'privacy-policy.html' to '{{ url_for('privacy_policy') }}'
+
+  Converted HTML link 'login.html' to '{{ url_for('login') }}'
+
+  Converted HTML link 'events.html' to '{{ url_for('events') }}'
+
+  Converted HTML link 'register.html' to '{{ url_for('register') }}'
+
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+
+  Converted HTML link 'warli.html' to '{{ url_for('warli') }}'
+
+  Converted HTML link 'vastra.html' to '{{ url_for('vastra') }}'
+
+  Converted HTML link 'madhubani.html' to '{{ url_for('madhubani') }}'
+
+  Converted HTML link 'faq.html' to '{{ url_for('faq') }}'
+
+  Converted HTML link 'fabric.html' to '{{ url_for('fabric') }}'
+
+  Converted HTML link 'contact.html' to '{{ url_for('contact') }}'
+
+  Converted HTML link 'string.html' to '{{ url_for('string') }}'
+
+  Converted HTML link 'terms-of-service.html' to '{{ url_for('terms_of_service') }}'
+
+  Converted HTML link 'clay.html' to '{{ url_for('clay') }}'
+
+  Converted HTML link 'Rogan.html' to '{{ url_for('Rogan') }}'
+
+  Converted HTML link 'Beadwork.html' to '{{ url_for('Beadwork') }}'
+
+  Converted HTML link 'Lippan.html' to '{{ url_for('Lippan') }}'
+
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+
+  Converted HTML link 'Wood Craft.html' to '{{ url_for('Wood Craft') }}'
+
+  Converted HTML link 'Chamba.html' to '{{ url_for('Chamba') }}'
+
+  Converted HTML link 'pahari.html' to '{{ url_for('pahari') }}'
+
+  Converted HTML link 'hjewellery.html' to '{{ url_for('hjewellery') }}'
+
+  Converted HTML link 'bamboo.html' to '{{ url_for('bamboo') }}'
+
+  Converted HTML link 'kceiling.html' to '{{ url_for('kceiling') }}'
+
+  Converted HTML link 'Papier-Mâché.html' to '{{ url_for('Papier_Mâché') }}'
+
+  Converted HTML link 'Namda.html' to '{{ url_for('Namda') }}'
+
+  Converted HTML link 'wicker.html' to '{{ url_for('wicker') }}'
+
+  Converted HTML link 'kinnal.html' to '{{ url_for('kinnal') }}'
+
+  Converted HTML link 'bidri.html' to '{{ url_for('bidri') }}'
+
+  Converted HTML link 'mysore.html' to '{{ url_for('mysore') }}'
+
+  Converted HTML link 'ilkal.html' to '{{ url_for('ilkal') }}'
+
+  Converted HTML link 'kathakali.html' to '{{ url_for('kathakali') }}'
+
+  Converted HTML link 'aranmula.html' to '{{ url_for('aranmula') }}'
+
+  Converted HTML link 'coir.html' to '{{ url_for('coir') }}'
+
+  Converted HTML link 'mural.html' to '{{ url_for('mural') }}'
+Converted HTML link 'Stone.html' to '{{ url_for('Stone') }}'
+  Converted HTML link 'Terracotta.html' to '{{ url_for('Terracotta') }}'
+  Converted HTML link 'Gond.html' to '{{ url_for('Gond') }}'
+  Converted HTML link 'Chanderi.html' to '{{ url_for('Chanderi') }}'
+    Converted HTML link 'Gotipua.html' to '{{ url_for('Gotipua') }}'
+  Converted HTML link 'Ikat Weaving.html' to '{{ url_for('Ikat Weaving') }}'
+  Converted HTML link 'dhokra.html' to '{{ url_for('dhokra') }}'
+  Converted HTML link 'Pattachitra.html' to '{{ url_for('Pattachitra') }}'
+    Converted HTML link 'Kalbelia.html' to '{{ url_for('Kalbelia') }}'
+  Converted HTML link 'Pichwai.html' to '{{ url_for('Pichwai') }}'
+  Converted HTML link 'Lakh Bangles.html' to '{{ url_for('Lakh Bangles') }}'
+  Converted HTML link 'Puppetry.html' to '{{ url_for('Puppetry') }}'
+    Converted HTML link 'events.html' to '{{ url_for('events') }}'
+  Converted HTML link 'J&K.html' to '{{ url_for('J&K') }}'
+  Converted HTML link 'faq.html' to '{{ url_for('faq') }}'
+  Converted HTML link 'contact.html' to '{{ url_for('contact') }}'
+  Converted HTML link 'Assam.html' to '{{ url_for('Assam') }}'
+  Converted HTML link 'terms-of-service.html' to '{{ url_for('terms_of_service') }}'
+  Converted HTML link 'privacy-policy.html' to '{{ url_for('privacy_policy') }}'
+  Converted HTML link 'kerala.html' to '{{ url_for('kerala') }}'
+  Converted HTML link 'West Bengal.html' to '{{ url_for('West Bengal') }}'
+  Converted HTML link 'index.html' to '{{ url_for('index') }}'
+  Converted HTML link 'karnataka.html' to '{{ url_for('karnataka') }}'
+  Converted HTML link 'UP.html' to '{{ url_for('UP') }}'
+  Converted HTML link 'Odisha.html' to '{{ url_for('Odisha') }}'
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+  Converted HTML link 'Tamil-Nadu.html' to '{{ url_for('Tamil_Nadu') }}'
+  Converted HTML link 'Himachal.html' to '{{ url_for('Himachal') }}'
+  Converted HTML link 'Rajasthan.html' to '{{ url_for('Rajasthan') }}'
+  Converted HTML link 'MP.html' to '{{ url_for('MP') }}'
+  Converted HTML link 'login.html' to '{{ url_for('login') }}'
+  Converted HTML link 'Gujarat.html' to '{{ url_for('Gujarat') }}'
+  Converted HTML link 'kalakosh_events.html' to '{{ url_for('kalakosh_events') }}'
+    Converted HTML link 'bharatnatyam.html' to '{{ url_for('bharatnatyam') }}'
+  Converted HTML link 'thanjavur.html' to '{{ url_for('thanjavur') }}'
+  Converted HTML link 'chola.html' to '{{ url_for('chola') }}'
+  Converted HTML link 'kanchi.html' to '{{ url_for('kanchi') }}'
+    Converted HTML link 'vastra.html' to '{{ url_for('vastra') }}'
+  Converted HTML link 'madhubani.html' to '{{ url_for('madhubani') }}'
+  Converted HTML link 'clay.html' to '{{ url_for('clay') }}'
+    Converted HTML link 'Swood.html' to '{{ url_for('Swood') }}'
+  Converted HTML link 'State-region.html' to '{{ url_for('State_region') }}'
+  Converted HTML link 'chikankari.html' to '{{ url_for('chikankari') }}'
+  Converted HTML link 'Fglass.html' to '{{ url_for('Fglass') }}'
+  Converted HTML link 'bsilk.html' to '{{ url_for('bsilk') }}'
+    Converted HTML link 'Kantha.html' to '{{ url_for('Kantha') }}'
+  Converted HTML link 'TerracottaWB.html' to '{{ url_for('TerracottaWB') }}'
+  Converted HTML link 'Kalighat.html' to '{{ url_for('Kalighat') }}'
+  Converted HTML link 'Chhau.html' to '{{ url_for('Chhau') }}'
+  

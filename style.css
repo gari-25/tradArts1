@@ -107,14 +107,14 @@ body{
 @media  (max-width:768px) {
   .desc{
     margin:2vmax;
-    height:20vmax;
+    height:30vmax;
     width:auto;
   }
   #typewriterText {
-    font-size: 2.2em;
+    font-size: 4em;
   }
   .desc button{
-    font-size:0.6em;
+    font-size:1em;
   }
 }
 

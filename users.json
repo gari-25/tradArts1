@@ -82,5 +82,11 @@
         "password": "user12",
         "user_type": "visitor",
         "firebase_uid": "o6VKSwgxKeMnS1n0eUT2rdDHlKl2"
+    },
+    "ArtistA": {
+        "email": "artista@mail.com",
+        "password": "artista12",
+        "user_type": "artist",
+        "firebase_uid": "2jJlwbUKxEQ8plqoNEZrM0EPHvJ3"
     }
 }

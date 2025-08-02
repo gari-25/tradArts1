@@ -15,7 +15,7 @@
         <a href="index.html"><div class="items">Home</div></a>
         <a href="State-region.html"><div class="items">Artforms</div></a>
         <a href="events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
+        <a href="login.html"><div class="items active">Log in</div></a>
         <a href="contact.html"><div class="items">Contact Us</div></a>
         </div>
     </div>
@@ -108,7 +108,7 @@
                         if (data.userType === 'artist') {
                             window.location.href = `/artist-dashboard?token=${idToken}`; // Pass token to artist dashboard
                         } else {
-                            window.location.href = '/dashboard'; // General user dashboard
+                            window.location.href = '/login-events'; // General user dashboard
                         }
                     } else {
                         loginMessage.textContent = "Login successful, but no custom token received. Please try again.";

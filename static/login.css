@@ -59,7 +59,7 @@ body{
   border-radius:10px;
   transition: transform 0.3s ease-in-out;
 }
-.items:hover{
+.items:hover, .items.active{
     cursor:pointer;
     box-shadow: 0 3px 5px rgba(0,0,0,0.5);
     background-color: rgb(245, 225, 189, 0.7);

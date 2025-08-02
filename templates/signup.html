@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Kalakosh</title>
+    <link rel="stylesheet" href="/static/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="logo">
+        <div class="main_logo"><a href="index.html"><img src="/static/images/logo.png"></a></div> 
+
+        <div class="nav">
+        <a href="index.html"><div class="items">Home</div></a>
+        <a href="State-region.html"><div class="items">Artforms</div></a>
+        <a href="events.html"><div class="items">Events</div></a>
+        <a href="login.html"><div class="items">Log in</div></a>
+        <a href="contact.html"><div class="items">Contact Us</div></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <input type="text" id="signup-username" name="username" placeholder=" Username" required>
+            <input type="email" id="signup-email" name="email" placeholder=" Email" required>
+            <input type="password" id="signup-password" name="password" placeholder=" Password" required>
+            <select id="signup-user-type" name="user_type" required>
+                <option value="">Select Account Type</option>
+                <option value="visitor">Visitor</option>
+                <option value="artist">Artist</option>
+            </select>
+            <button type="submit">Sign Up</button>
+            <p id="signup-message" class="message"></p>
+            <div class="login-link">
+                <p>Already have an account? <a href="/login">Log In</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+        // Your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+            authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+            projectId: "kalakosh-website-bd6a6",
+            storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+            messagingSenderId: "1093917835204",
+            appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+            measurementId: "G-F7N10Z0RGC"
+        };
+
+        // Initialize Firebase client-side app
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const signupForm = document.getElementById('signup-form');
+        const signupUsernameInput = document.getElementById('signup-username');
+        const signupEmailInput = document.getElementById('signup-email');
+        const signupPasswordInput = document.getElementById('signup-password');
+        const signupUserTypeSelect = document.getElementById('signup-user-type');
+        const signupMessage = document.getElementById('signup-message');
+
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            signupMessage.textContent = '';
+            signupMessage.className = 'message'; // Reset message styling
+
+            const username = signupUsernameInput.value;
+            const email = signupEmailInput.value;
+            const password = signupPasswordInput.value;
+            const user_type = signupUserTypeSelect.value;
+
+            try {
+                // 1. Send signup data to Flask backend
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password, user_type })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    signupMessage.textContent = data.message;
+                    signupMessage.classList.add('success');
+                    console.log("Flask Signup Success:", data);
+
+                    // 2. Use the custom token from Flask to sign in to Firebase client-side
+                    if (data.customToken) {
+                        const userCredential = await signInWithCustomToken(auth, data.customToken);
+                        const user = userCredential.user;
+                        console.log("Client-side Firebase sign-in successful with custom token:", user.uid);
+
+                        // 3. Get the Firebase ID Token for redirection
+                        const idToken = await user.getIdToken();
+
+                        // 4. Redirect based on user type
+                        if (data.userType === 'artist') {
+                            window.location.href = `/artist-dashboard?token=${idToken}`; // Pass token to artist dashboard
+                        } else {
+                            window.location.href = '/dashboard'; // General user dashboard
+                        }
+                    } else {
+                        signupMessage.textContent = "Signup successful, but no custom token received. Please try logging in.";
+                        signupMessage.classList.add('error');
+                    }
+
+                } else {
+                    signupMessage.textContent = data.message || 'Signup failed.';
+                    signupMessage.classList.add('error');
+                    console.error("Flask Signup Error:", data);
+                }
+            } catch (error) {
+                signupMessage.textContent = 'An unexpected error occurred. Please try again.';
+                signupMessage.classList.add('error');
+                console.error("Client-side Signup Fetch Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>

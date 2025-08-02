@@ -1,0 +1,720 @@
+/* Universal Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles (EXACTLY AS PROVIDED BY USER) */
+.logo {
+    background-color: #6B2E00;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vmax; /* Added padding to ensure space around logo/nav */
+}
+
+.main_logo img {
+    height: 6vmax; /* Adjusted for better proportion */
+    width: 22vmax; /* Adjusted for better proportion */
+    max-width: 250px; /* Max width to prevent excessive growth */
+    min-width: 150px; /* Min width to prevent becoming too small */
+}
+
+.main_logo img:hover {
+    cursor: pointer;
+}
+
+/* nav bar */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vmax;
+    justify-content: center;
+    gap: 1.2em;
+    font-size: 1.2em;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.items {
+    width: auto; /* Allow width to be determined by content */
+    padding: 0.8em 1.2em; /* Adjusted padding using em for responsiveness */
+    text-align: center;
+    color: rgb(225, 196, 159);
+    background-color: #6B2E00;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    white-space: nowrap; /* Prevent text wrapping within nav items */
+}
+
+.items:hover, .items.active {
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(245, 225, 189, 0.7);
+    color: maroon;
+    transform: scale(1.05) translate(-2px);
+}
+
+/* Main Content Background */
+main {
+    background-image: url("/static/images/bg.jpg"); /* Ensure this path is correct */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 2px solid #6b2e0d;
+    padding-top: 100px; /* ADDED: To push content down below the header */
+}
+
+/* Hero Section */
+.hero-section {
+    /* background-image: url('https://placehold.co/1200x400/6B2E0D/F3E3D0?text=KalaKosh+Events'); */
+    background-size: cover;
+    background-position: center;
+    color: #5d030f;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-family: 'Quintessential', cursive;
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-text .tagline {
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #A00A0A;
+    color: #F3E3D0;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.hero-btn:hover {
+    background-color: #C00C0C;
+    transform: translateY(-3px);
+}
+
+/* Calendar and Upcoming Events Wrapper */
+.full-content-wrapper { /* Renamed from .full to avoid conflict and be more descriptive */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-wrapper, .upcoming-events-list-section { /* Renamed .calendar-events to .upcoming-events-list-section */
+    background-color: rgba(255, 255, 255, 0.475);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 1 1 450px;
+    max-width: 550px;
+}
+
+.section-main-title {
+    font-family: 'Quintessential', cursive;
+    color: #6B2E0D;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendar-header {
+    background-color: #6B2E0D;
+    color: #F3E3D0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.calendar-days, .calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.calendar-days div {
+    font-weight: bold;
+    color: #A00A0A;
+    padding: 0.5rem;
+}
+
+.calendar-dates div {
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+.calendar-dates div:hover:not(.inactive):not(.active) {
+    background-color: #f0f0f0;
+}
+
+.calendar-dates .inactive {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.calendar-dates .active {
+    background-color: #A00A0A;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Upcoming Events List */
+.upcoming-events-list-section .section-divider {
+    border-top: 1px solid #eee;
+    margin-bottom: 1.5rem;
+}
+
+.event-item {
+    padding: 1rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-item h4 {
+    font-size: 1.2rem;
+    color: #6B2E0D;
+    margin-bottom: 0.5rem;
+}
+
+.event-item p {
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.event-item .half {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-item .half button {
+    background-color: #A00A0A;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.event-item .half button:hover {
+    background-color: #C00C0C;
+}
+
+.event-item .half button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Dynamic Events Wrapper (for Workshops and Exhibitions sections) */
+.dynamic-events-wrapper { /* New wrapper for the dynamic sections */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Content Sections (Titles with images) */
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0 1.5rem;
+}
+
+.content-section .design-image {
+    width: 180px; /* INCREASED SIZE */
+    height: auto;
+    margin: 0 3rem; /* INCREASED MARGIN */
+    vertical-align: middle;
+}
+
+.content-section .section-title {
+    font-family: 'Quintessential', cursive;
+    font-size: 2.8rem; /* Adjusted font size */
+    color: #6B2E0D;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Dynamic Event Cards Grid (for Workshops and Exhibitions) */
+.event-cards-grid { /* New class for the grids that hold dynamic cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min-width for cards */
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.dynamic-event-card { /* New class for individual dynamic event/workshop cards */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.dynamic-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.dynamic-event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.dynamic-event-details { /* New class for dynamic card content */
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dynamic-event-details h3 {
+    font-size: 1.3rem;
+    color: #6B2E0D;
+    margin-bottom: 0.5rem;
+    font-family: 'Quintessential', cursive;
+}
+
+.dynamic-event-details .instructor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.dynamic-event-details .instructor img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.dynamic-event-details .event-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.3rem;
+}
+
+.dynamic-event-details .event-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #A00A0A;
+    margin-bottom: 1rem;
+}
+
+.dynamic-event-details .event-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+.dynamic-event-details .event-actions button, .dynamic-event-details .buttons .btn {
+    background-color: #6B2E0D;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dynamic-event-details .event-actions button:hover, .dynamic-event-details .buttons .btn:hover {
+    background-color: #A00A0A;
+}
+
+.dynamic-event-details .event-actions button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dynamic-event-details p {
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+
+/* Static Sections (Past Events, Artists, Reviews) - Original styling from events.html */
+/* I am keeping these styles as they were in your original events.html,
+   assuming you want their appearance to be exactly preserved if they were present.
+   If these sections are completely removed from HTML, these styles will simply not apply. */
+.past-events-section, .artists-section, .reviews-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.past-event-card, .artist-card, .review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.past-event-card:hover, .artist-card:hover, .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.past-event-card h3, .artist-card h3 {
+    font-size: 1.3rem;
+    color: #6B2E0D;
+    margin-bottom: 0.5rem;
+    font-family: 'Quintessential', cursive;
+}
+
+.past-event-card p, .artist-card p, .review-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+}
+
+.artist-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid #6B2E0D;
+}
+
+.view-profile-btn {
+    display: inline-block;
+    background-color: #A00A0A;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #C00C0C;
+}
+
+.review-card .review-text {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.review-card .reviewer-name {
+    font-weight: bold;
+    color: #6B2E0D;
+    margin-bottom: 0.5rem;
+}
+
+.review-card .stars {
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin-top: auto;
+}
+
+
+/* Footer Styles (EXACTLY AS PROVIDED BY USER) */
+.footer {
+    background-color: #6B2E0D;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    padding: 20px;
+}
+
+.footer-section h3 {
+    color: bisque;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #dda96a;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #6b2e0d;
+    background-color: rgb(220, 183, 139);
+    padding: 3px 3px 0px 3px;
+    margin-right: 15px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    background-color: #f5deb3;
+}
+
+p i {
+    color: rgb(220, 183, 139);
+}
+
+#mail a {
+    color: white;
+    text-decoration: none;
+}
+
+#mail a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid bisque;
+    margin-top: 30px;
+    font-size: 14px;
+    color: bisque;
+}
+
+/* Loading messages */
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .main_logo img {
+        height: 6vmax;
+        width: 22vmax;
+    }
+    .nav {
+        gap: 1em;
+        font-size: 1.1em;
+    }
+    .items {
+        padding: 0.7vmax;
+    }
+    .hero-text h1 {
+        font-size: 3.5em;
+    }
+    .hero-text .tagline {
+        font-size: 1.3em;
+    }
+    .section-main-title {
+        font-size: 2rem;
+    }
+    .content-section .section-title {
+        font-size: 2.2rem;
+    }
+    .content-section .design-image {
+        width: 120px; /* Adjusted for smaller screens */
+        margin: 0 2rem; /* Adjusted for smaller screens */
+    }
+    main {
+        padding-top: 90px; /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .main_logo img {
+        height: 5vmax;
+        width: 20vmax;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 1em;
+        padding: 0;
+    }
+    .items {
+        width: 100%;
+        padding: 0.6rem;
+    }
+    .hero-section {
+        padding: 80px 15px;
+    }
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+    .hero-text .tagline {
+        font-size: 1.2em;
+    }
+    .full-content-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    .calendar-wrapper, .upcoming-events-list-section {
+        max-width: 100%;
+        flex: none;
+    }
+    .dynamic-events-wrapper {
+        padding: 1rem;
+    }
+    .content-section {
+        margin: 2.5rem 0 1rem;
+    }
+    .content-section .section-title {
+        font-size: 1.8rem;
+    }
+    .content-section .design-image {
+        width: 90px; /* Adjusted for smaller screens */
+        margin: 0 1.5rem; /* Adjusted for smaller screens */
+    }
+    .event-cards-grid, .past-events-section, .artists-section, .reviews-section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        padding: 15px 0;
+    }
+    .social-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    main {
+        padding-top: 80px; /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .main_logo img {
+        height: 4vmax;
+        width: 18vmax;
+    }
+    .nav {
+        font-size: 0.9em;
+    }
+    .items {
+        padding: 0.5vmax;
+    }
+    .hero-text h1 {
+        font-size: 2.2em;
+    }
+    .hero-text .tagline {
+        font-size: 1em;
+    }
+    .section-main-title {
+        font-size: 1.6rem;
+    }
+    .content-section .design-image {
+        width: 60px; /* Adjusted for smallest screens */
+        margin: 0 0.8rem; /* Adjusted for smallest screens */
+    }
+    .content-section .section-title {
+        font-size: 1.4rem;
+    }
+    .dynamic-event-card img {
+        height: 150px;
+    }
+    .dynamic-event-details h3 {
+        font-size: 1.1rem;
+    }
+    .dynamic-event-details .event-price {
+        font-size: 1rem;
+    }
+    .dynamic-event-details .event-actions button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    .dynamic-event-details p {
+        font-size: 0.8rem;
+    }
+    main {
+        padding-top: 70px; /* Adjusted for smallest screens */
+    }
+}

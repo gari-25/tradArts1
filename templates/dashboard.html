@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General User Dashboard - Kalakosh</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Kalakosh branding -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Quintessential&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Fonts */
+        .font-mukta { font-family: 'Mukta', sans-serif; }
+        .font-quintessential { font-family: 'Quintessential', cursive; }
+
+        /* General Body Styling with background image */
+        body {
+            background-image: url('/static/images/bg.jpg'); /* Path to your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep background fixed when scrolling */
+            font-family:"Mukta";
+        }
+
+        /* Modal specific styles for scroll behavior */
+        .modal-open {
+            overflow: hidden; /* Prevent scrolling on body when modal is open */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="min-h-screen font-mukta text-gray-900">
+        <div class="bg-[#6B2E0D] text-[#F3E3D0] py-4 px-6 shadow-lg flex justify-between items-center rounded-b-lg border-b-4 border-[#A00A0A]">
+            <h1 class="text-4xl font-extrabold tracking-tight font-quintessential">General User Dashboard</h1>
+            <div class="flex items-center space-x-4">
+                <div id="userIdDisplay" class="text-sm bg-[#4E2C1E] px-4 py-2 rounded-full shadow-inner font-mukta">
+                    User ID: <span class="font-mono text-[#F3E3D0]">Not logged in</span>
+                </div>
+                <button id="logoutBtn" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition duration-200 font-medium shadow-sm flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-8">
+            <!-- Explore Events Section -->
+            <div class="bg-white p-6 rounded-lg shadow-xl mb-8 border-t-4 border-green-700 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 font-quintessential">Discover New Experiences</h2>
+                <p class="text-gray-600 mb-6">Explore a wide range of upcoming workshops, exhibitions, and live demonstrations.</p>
+                <a href="/login-events" class="px-8 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-200 font-semibold inline-flex items-center space-x-2 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Explore Events</span>
+                </a>
+            </div>
+
+            <!-- My Registered Events Section -->
+            <div class="bg-white p-6 rounded-lg shadow-xl mb-8 border-t-4 border-blue-700">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 font-quintessential">My Registered Events</h2>
+                <div id="registeredEventsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <p class="text-gray-500 text-center py-10 font-mukta col-span-full" id="registeredEventsLoading">Loading your registered events...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Alert Modal -->
+    <div id="alertModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 p-4 hidden font-mukta">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm border-t-4 border-red-700">
+            <h3 id="alertModalTitle" class="text-2xl font-semibold text-gray-800 mb-4 font-quintessential"></h3>
+            <p id="alertModalMessage" class="text-gray-600 mb-6"></p>
+            <div class="flex justify-end space-x-3">
+                <button type="button" id="alertModalCloseBtn" class="px-5 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition duration-200 shadow-sm font-medium">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, query, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Global Variables ---
+        let app;
+        let db;
+        let auth;
+        let currentUserId = null;
+        let currentAppId = 'default-app-id'; // Default value
+
+        // --- Utility Functions for Modals ---
+        const getById = (id) => document.getElementById(id);
+
+        const alertModal = getById('alertModal');
+        const alertModalTitle = getById('alertModalTitle');
+        const alertModalMessage = getById('alertModalMessage');
+        const alertModalCloseBtn = getById('alertModalCloseBtn');
+        const userIdDisplay = getById('userIdDisplay');
+        const logoutBtn = getById('logoutBtn');
+
+        function showModal(modalElement) {
+            modalElement.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+
+        function hideModal(modalElement) {
+            modalElement.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        }
+
+        function showAlert(title, message) {
+            alertModalTitle.textContent = title;
+            alertModalMessage.textContent = message;
+            showModal(alertModal);
+        }
+
+        alertModalCloseBtn.onclick = () => hideModal(alertModal);
+
+        // --- Firebase Initialization ---
+        async function initializeFirebase() {
+            try {
+                // These are provided by the Canvas environment or you can hardcode for local testing
+                const canvasAppId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const firebaseConfigRaw = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
+                const urlParams = new URLSearchParams(window.location.search);
+                const idTokenFromUrl = urlParams.get('token'); // Check for token from login page
+
+                console.log(`Firebase Debug: __app_id: ${canvasAppId}`);
+                console.log(`Firebase Debug: __firebase_config (raw): ${firebaseConfigRaw}`);
+                console.log(`Firebase Debug: ID Token from URL: ${idTokenFromUrl ? 'present' : 'absent'}`);
+
+                currentAppId = canvasAppId;
+
+                // Your Firebase project configuration
+                const firebaseConfig = {
+                    apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+                    authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+                    projectId: "kalakosh-website-bd6a6",
+                    storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+                    messagingSenderId: "1093917835204",
+                    appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+                    measurementId: "G-F7N10Z0RGC"
+                };
+
+                if (!firebaseConfig || Object.keys(firebaseConfig).length === 0 || !firebaseConfig.apiKey || !firebaseConfig.projectId) {
+                    throw new Error("Firebase configuration is missing essential keys (e.g., apiKey, projectId) or is empty.");
+                }
+
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                console.log("Firebase Debug: Firebase app initialized successfully. Setting up auth listener...");
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        console.log(`Firebase Debug: Auth State Changed: User authenticated with UID: ${user.uid}`);
+                        currentUserId = user.uid;
+                        userIdDisplay.innerHTML = `User ID: <span class="font-mono text-[#F3E3D0]">${currentUserId}</span>`;
+                        loadRegisteredEvents(); // Load registered events for the logged-in user
+                    } else {
+                        console.log("Firebase Debug: Auth State Changed: No user. Attempting sign-in with URL token if available.");
+                        if (idTokenFromUrl) {
+                            try {
+                                await signInWithCustomToken(auth, idTokenFromUrl);
+                                console.log("Firebase Debug: Successfully signed in with ID token from URL.");
+                                // onAuthStateChanged will trigger again with the user
+                            } catch (authError) {
+                                console.error("Firebase Debug: Firebase Auth Error signing in with URL token:", authError);
+                                showAlert('Authentication Error', `Failed to authenticate with provided token: ${authError.message}. Please log in again.`);
+                                userIdDisplay.innerHTML = `User ID: <span class="font-mono text-[#F3E3D0]">Login Required</span>`;
+                            }
+                        } else {
+                            console.log("Firebase Debug: No user and no ID token from URL. User is not logged in.");
+                            userIdDisplay.innerHTML = `User ID: <span class="font-mono text-[#F3E3D0]">Not logged in</span>`;
+                        }
+                    }
+                });
+
+            } catch (err) {
+                console.error("Firebase Debug: Firebase Initialization or Setup Error:", err);
+                showAlert('Initialization Error', `Failed to initialize Firebase: ${err.message}. Please check console for details.`);
+                userIdDisplay.innerHTML = `User ID: <span class="font-mono text-[#F3E3D0]">Error</span>`;
+                getById('registeredEventsLoading').textContent = `Error: ${err.message}`;
+            }
+        }
+
+        // --- My Registered Events Functions ---
+        async function loadRegisteredEvents() {
+            if (!db || !currentUserId || !currentAppId) {
+                console.log("KalaKosh Dashboard: Registered Events: Missing db, userId, or appId. Skipping fetch.");
+                getById('registeredEventsLoading').textContent = "Please log in to view your registered events.";
+                getById('registeredEventsLoading').classList.remove('hidden');
+                return;
+            }
+            getById('registeredEventsLoading').textContent = "Loading your registered events...";
+            getById('registeredEventsLoading').classList.remove('hidden');
+
+            const registeredEventsList = getById('registeredEventsList');
+            registeredEventsList.innerHTML = ''; // Clear existing list
+
+            try {
+                // Fetch from the user's private registeredEvents collection
+                const registrationsCollectionRef = collection(db, `artifacts/${currentAppId}/users/${currentUserId}/registeredEvents`);
+                const q = query(registrationsCollectionRef);
+
+                onSnapshot(q, (snapshot) => {
+                    registeredEventsList.innerHTML = ''; // Clear on every update for real-time
+                    if (snapshot.empty) {
+                        getById('registeredEventsLoading').textContent = "You haven't registered for any events yet. Click 'Explore Events' above to find some!";
+                        getById('registeredEventsLoading').classList.remove('hidden');
+                    } else {
+                        getById('registeredEventsLoading').classList.add('hidden');
+
+                        // Get all docs and sort them by registrationDate
+                        const events = [];
+                        snapshot.forEach(doc => {
+                            events.push({ id: doc.id, ...doc.data() });
+                        });
+                        
+                        events.sort((a, b) => {
+                            // Check if registrationDate is a Timestamp object and handle conversion
+                            const dateA = a.registrationDate?.toDate ? a.registrationDate.toDate() : new Date(a.registrationDate);
+                            const dateB = b.registrationDate?.toDate ? b.registrationDate.toDate() : new Date(b.registrationDate);
+                            return dateB - dateA;
+                        });
+
+                        events.forEach(registration => {
+                            const eventElement = document.createElement('div');
+                            eventElement.className = "bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-200 p-4 hover:shadow-lg transition duration-200 transform hover:scale-[1.02]";
+                            eventElement.innerHTML = `
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2 font-quintessential">${registration.eventTitle}</h3>
+                                <p class="text-gray-600 text-sm mb-2">Registered on: ${registration.registrationDate?.toDate ? new Date(registration.registrationDate.toDate()).toLocaleDateString() : 'N/A'}</p>
+                                <div class="text-gray-700 text-sm mb-1">
+                                    <span class="font-medium">Date:</span> ${registration.eventDate}
+                                </div>
+                                <div class="text-gray-700 text-sm mb-1">
+                                    <span class="font-medium">Time:</span> ${registration.eventTime}
+                                </div>
+                                <div class="text-gray-700 text-sm mb-1">
+                                    <span class="font-medium">Location:</span> ${registration.eventLocation}
+                                </div
+                                <!-- Add a button to view event details or cancel registration if desired -->
+                            `;
+                            registeredEventsList.appendChild(eventElement);
+                        });
+                    }
+                }, (err) => {
+                    console.error("KalaKosh Dashboard: Error loading registered events:", err);
+                    getById('registeredEventsLoading').textContent = `Error loading registered events: ${err.message}`;
+                    showAlert('Error', `Failed to load your registered events: ${err.message}. Please check console for details.`);
+                });
+            } catch (err) {
+                console.error("KalaKosh Dashboard: Error in loadRegisteredEvents setup:", err);
+                getById('registeredEventsLoading').textContent = `Error: ${err.message}`;
+                showAlert('Error', `An error occurred while setting up registered event loading: ${err.message}.`);
+            }
+        }
+
+        // --- Logout Functionality ---
+        if (logoutBtn) {
+            logoutBtn.onclick = async () => {
+                try {
+                    await signOut(auth);
+                    console.log("User signed out from general dashboard.");
+                    window.location.href = "/login"; // Redirect to your login page
+                } catch (error) {
+                    console.error("Error signing out:", error);
+                    showAlert('Logout Error', `Failed to log out: ${error.message}`);
+                }
+            };
+        }
+
+        // --- Initial Load ---
+        window.onload = initializeFirebase;
+    </script>
+</body>
+</html>

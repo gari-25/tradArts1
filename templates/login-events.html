@@ -29,13 +29,13 @@
     <header>
         <!-- EXACT USER-PROVIDED HEADER -->
         <div class="logo">
-            <div class="main_logo"><a href="/"><img src="/static/images/Logo.png" alt="Kalakosh Logo"></a></div>
+            <div class="main_logo"><a href="/"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Kalakosh Logo"></a></div>
             <div class="nav">
-                <a href="index.html"><div class="items">Home</div></a>
-                <a href="State-region.html"><div class="items">Artforms</div></a>
-                <a href="events.html"><div class="items active">Events</div></a>
+                <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+                <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+                <a href="{{ url_for('events') }}"><div class="items active">Events</div></a>
                 <a href="/login"><div class="items">Log in</div></a>
-                <a href="contact.html"><div class="items">Contact Us</div></a>
+                <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
             </div>
         </div>
     </header>
@@ -116,9 +116,9 @@
 
         <section class="dynamic-events-wrapper">
             <div class="content-section">
-                <img src="/static/images/nLeftdesign.png" class="design-image" alt="Design Element">
+                <img src="{{ url_for('static', filename='images/nLeftdesign.png') }}" class="design-image" alt="Design Element">
                 <p class="section-title">Workshops</p>
-                <img src="/static/images/nrightdesign.png" class="design-image" alt="Design Element">
+                <img src="{{ url_for('static', filename='images/nrightdesign.png') }}" class="design-image" alt="Design Element">
             </div>
 
             <section class="event-cards-grid" id="workshops">
@@ -127,9 +127,9 @@
             </section>
 
             <div class="content-section">
-                <img src="/static/images/nLeftdesign.png" class="design-image" alt="Design Element">
+                <img src="{{ url_for('static', filename='images/nLeftdesign.png') }}" class="design-image" alt="Design Element">
                 <p class="section-title">Exhibitions</p>
-                <img src="/static/images/nrightdesign.png" class="design-image" alt="Design Element">
+                <img src="{{ url_for('static', filename='images/nrightdesign.png') }}" class="design-image" alt="Design Element">
             </div>
 
             <section class="event-cards-grid" id="exhibitions">
@@ -159,9 +159,9 @@
             <div class="footer-section">
                 <h3>Help & Support</h3>
                 <ul>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms Of Service</a></li>
+                    <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+                    <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                 </ul>
             </div>

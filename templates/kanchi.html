@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanchipuram Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="Tamil-Nadu.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('Tamil_Nadu') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Kanchipuram Weaves Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kanchi1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kanchi1.jpg') }}" class="gallery-media">
             <p class="media-caption">Kanchipuram Fabric</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kanchi2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kanchi2.jpg') }}" class="gallery-media">
             <p class="media-caption">Kanchipuram Sarees</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kanchi3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kanchi3.jpg') }}" class="gallery-media">
             <p class="media-caption">Kanchipuram Weaving</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kanchi4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kanchi4.jpg') }}" class="gallery-media">
             <p class="media-caption">Kanchipuram Silk</p>
         </div>
 

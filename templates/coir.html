@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coir Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="kerala.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('kerala') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Coir Craft Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="coir1.webp" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/coir1.webp') }}" class="gallery-media">
             <p class="media-caption">Coir Handicrafts</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="coir2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/coir2.jpg') }}" class="gallery-media">
             <p class="media-caption">Coconut Shell Products</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="coir3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/coir3.jpg') }}" class="gallery-media">
             <p class="media-caption">Coir Fibre Mats</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="coir4.png" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/coir4.png') }}" class="gallery-media">
             <p class="media-caption">Coir Jutes</p>
         </div>
 

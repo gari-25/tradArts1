@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KalaKosh Gallery - Mughal Painting</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="MP.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('MP') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Mughal Miniature Painting Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="Terracotta1.jpg" alt="Mughal Court Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/Terracotta1.jpg') }}" alt="Mughal Court Painting" class="gallery-media">
             <p class="media-caption">Royal Court Scene</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="terracotta2.webp" alt="Mughal Portrait Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/terracotta2.webp') }}" alt="Mughal Portrait Painting" class="gallery-media">
             <p class="media-caption">Emperor's Portrait</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="Terracotta3.jpg" alt="Mughal Flora Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/Terracotta3.jpg') }}" alt="Mughal Flora Painting" class="gallery-media">
             <p class="media-caption">Exquisite Floral Designs</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="terracotta4.jpg" alt="Mughal Hunting Scene" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/terracotta4.jpg') }}" alt="Mughal Hunting Scene" class="gallery-media">
             <p class="media-caption">Dynamic Hunting Scene</p>
         </div>
 

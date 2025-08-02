@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Madhuban Canvas Workshop</title>
-    <link rel="stylesheet" href="mstyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
      <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
@@ -12,13 +12,13 @@
 <body>
 
      <div class="logo">
-        <div class="main_logo"><a href="index.html"><img src="Logo.png"></a></div> 
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo.png') }}"></a></div> 
         <div class="nav">
-        <a href="index.html"><div class="items">Home</div></a>
-        <a href="State-region.html"><div class="items">Artforms</div></a>
-        <a href="events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
-        <a href="contact.html"><div class="items">Contact Us</div></a>
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
         </div>
     </div>
 
@@ -35,14 +35,14 @@
             </p>
         </div>
         <div class="about-img">
-            <img src="madhubani2.jpeg" alt="Map of Madhubani">
+            <img src="{{ url_for('static', filename='images/madhubani2.jpeg') }}" alt="Map of Madhubani">
         </div>
     </section>
 
     <section class="instructor">
         <h2>Your Workshop Guide</h2>
         <div class="artist-card">
-            <img src="anita.jpeg" alt="Workshop Instructor">
+            <img src="{{ url_for('static', filename='images/anita.jpeg') }}" alt="Workshop Instructor">
             <div class="artist-info">
                 <h3>Anita Verma</h3>
                 <p>
@@ -58,7 +58,7 @@
         <p><strong>Location:</strong> Bagore Ki Haveli Museum Courtyard, Udaipur</p>
         <p><strong>Dates:</strong> 7–8 July 2025</p>
         <p><strong>Time:</strong> 11 AM – 4 PM</p>
-        <a href="register.html" class="register-btn">Register Here</a>
+        <a href="{{ url_for('register') }}" class="register-btn">Register Here</a>
     </section>
 </main>
 <footer class="footer">
@@ -77,10 +77,10 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="State-region.html">Artforms</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="login.html">Log in</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+        <li><a href="{{ url_for('events') }}">Events</a></li>
+        <li><a href="{{ url_for('login') }}">Log in</a></li>
       </ul>
     </div>
 
@@ -88,10 +88,10 @@
     <div class="footer-section">
       <h3>Help & Support</h3>
       <ul>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-of-service.html">Terms Of Service</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
       </ul>
     </div>
 

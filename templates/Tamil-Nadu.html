@@ -4,56 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamil Nadu Artforms</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="State-region.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('State_region') }}"><button id="Back">Back</button></a>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="bharatnatyam.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/bharatnatyam.jpg') }}" class="artform-image">
             <p class="artform-name">Bharatanatyam: Tamil Nadu's Classical Dance of Devotion</p>
         </div>
         <div class="description-container1">
             Bharatanatyam, one of the oldest and most prominent Indian classical dance forms, originates from Tamil Nadu. Its history traces back to ancient temple dancers (Devadasis) in South Indian temples, evolving over centuries from ritualistic performance to a highly refined art form. The beauty of Bharatanatyam lies in its geometric lines, intricate footwork (adavus), expressive facial gestures (abhinaya), and symbolic mudras (hand gestures). Dancers, adorned in elaborate costumes and jewelry, interpret mythological narratives with precision and grace to Carnatic music. Culturally significant, Bharatanatyam is a profound spiritual practice, often conveying philosophical and devotional themes from Hindu scriptures. It's a living tradition, meticulously preserved and propagated through generations of gurus and disciples, embodying Tamil Nadu's rich artistic and spiritual heritage.
-            <a href="bharatnatyam.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('bharatnatyam') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="thanjavur.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/thanjavur.jpg') }}" class="artform-image">
             <p class="artform-name">Thanjavur Painting: Tamil Nadu's Gilded Art</p>
         </div>
         <div class="description-container2">
             Thanjavur Painting, or Tanjore Painting, is a classical South Indian painting style originating in Thanjavur (Tanjore), Tamil Nadu, with a history dating back to the 17th century under the Nayaka and Maratha rulers. It flourished as a devotional art form, mainly depicting Hindu deities. The beauty of Thanjavur painting lies in its vibrant colors, sparkling gold leaf work, and use of semi-precious stones or glass beads for embellishment. Figures are typically depicted with round faces and stylized features, often set in elaborate architectural backdrops. Culturally significant, Thanjavur paintings are revered as sacred objects of worship, often placed in homes and temples. This unique style, characterized by its raised relief work and opulent decoration, reflects a deep sense of devotion and contributes significantly to Tamil Nadu's rich artistic legacy.
-            <a href="thanjavur.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('thanjavur') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="chola.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/chola.jpg') }}" class="artform-image">
             <p class="artform-name">Chola Bronze: Tamil Nadu's Metal Masterpieces</p>
         </div>
         <div class="description-container1">
             Bronze Idols from Tamil Nadu, particularly the Chola Bronzes, possess an unparalleled history dating primarily from the 9th to 13th centuries under the Chola dynasty. These cast metal sculptures set a benchmark for artistic excellence in Indian art. The beauty of Chola Bronzes lies in their graceful postures (tribhanga), fluid lines, balanced proportions, and expressive features, often depicting Shiva Nataraja, Vishnu, and various goddesses. Made using the lost-wax technique, they capture dynamic motion and divine serenity. Culturally significant, these bronze idols were primarily cult images used in temple processions, serving a profound spiritual purpose. They reflect the sophisticated metallurgical and artistic prowess of the Chola period, representing a zenith of South Indian sculptural art and a vital part of Tamil Nadu's religious and cultural identity.
-            <a href="chola.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('chola') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="kanchi.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/kanchi.jpg') }}" class="artform-image">
             <p class="artform-name">Kanchipuram Silks: Tamil Nadu's Royal Weave</p>
         </div>
         <div class="description-container2">
             Kanchipuram Silks are iconic handloom sarees from Kanchipuram, Tamil Nadu, boasting a history of over 400 years. Weavers, believed to be descendants of Sage Markanda (the master weaver for gods), brought this intricate craft from Andhra Pradesh. The beauty of Kanchipuram sarees lies in their rich texture, vibrant color combinations, and distinctive contrasting borders and pallu (pallav), often woven separately and then meticulously interlocked with the body. Traditional motifs include temple borders, checks, stripes, floral, and animal designs. Culturally significant, Kanchipuram silks are considered auspicious and are indispensable for South Indian weddings, festivals, and grand occasions. They represent a legacy of exceptional weaving skill and cultural identity, symbolizing prosperity and elegance in Tamil Nadu's textile heritage.
-            <a href="kanchi.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('kanchi') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 

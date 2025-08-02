@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Warli Art Workshop - Recap</title>
-  <link rel="stylesheet" href="mstyle.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
@@ -11,13 +11,13 @@
 </head>
 <body>
   <div class="logo">
-    <div class="main_logo"><a href="index.html"><img src="Logo.png" alt="Kalakosh Logo" /></a></div>
+    <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Kalakosh Logo" /></a></div>
     <div class="nav">
-      <a href="index.html"><div class="items">Home</div></a>
-      <a href="State-region.html"><div class="items">Artforms</div></a>
-      <a href="events.html"><div class="items">Events</div></a>
-      <a href="login.html"><div class="items">Log in</div></a>
-      <a href="contact.html"><div class="items">Contact Us</div></a>
+      <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+      <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+      <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+      <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+      <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
     </div>
   </div>
 
@@ -29,14 +29,14 @@
         <p>Through guided practice, everyone created beautiful Rangoli pieces blending classic motifs with modern freestyle expressions.</p>
       </div>
       <div class="about-img">
-        <img src="past4.jpeg" alt="rangoli" />
+        <img src="{{ url_for('static', filename='images/past4.jpeg') }}" alt="rangoli" />
       </div>
     </section>
 
     <section class="instructor">
       <h2>Workshop Instructor</h2>
       <div class="artist-card">
-        <img src="neha.jpeg" alt="neha" />
+        <img src="{{ url_for('static', filename='images/neha.jpeg') }}" alt="neha" />
         <div class="artist-info">
           <h3>Neha Verma</h3>
           <p>A folk art revivalist and cultural educator who has conducted 100+ workshops across India.</p>
@@ -67,20 +67,20 @@
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="State-region.html">Artforms</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="login.html">Log in</a></li>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('login') }}">Log in</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h3>Help & Support</h3>
         <ul>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-of-service.html">Terms Of Service</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+          <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+          <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
         </ul>
       </div>
 

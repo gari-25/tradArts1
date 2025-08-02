@@ -4,56 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madhya Pradesh Artforms</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="State-region.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('State_region') }}"><button id="Back">Back</button></a>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="Gond.jpg" class="artform-image" alt="Traditional Painting">
+            <img src="{{ url_for('static', filename='images/Gond.jpg') }}" class="artform-image" alt="Traditional Painting">
             <p class="artform-name">Gond Painting: The Indigenous Narrative</p>
         </div>
         <div class="description-container1">
             Gond painting, from Madhya Pradesh's Gond community, has a history deeply rooted in their spiritual beliefs and connection to nature. Traditionally, these paintings adorned mud walls, believed to bring good luck and reflect ancestral stories. The beauty of Gond art lies in its intricate patterns of fine lines, dots, and dashes, creating a sense of movement. Artists use vibrant natural pigments to depict animals, birds, trees, and mythological figures, each developing a unique signature style. Culturally significant, Gond painting is a profound expression of community identity and environmental reverence. It serves as a visual narrative of their myths and daily life, passed down generations, and has gained global recognition.
-            <a href="Gond.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Gond') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="Stone.jpg" class="artform-image" alt="Ancient Indian Sculpture">
+            <img src="{{ url_for('static', filename='images/Stone.jpg') }}" class="artform-image" alt="Ancient Indian Sculpture">
             <p class="artform-name">Stone Carving: Madhya Pradesh's Sculptural Heritage</p>
         </div>
         <div class="description-container2">
             Madhya Pradesh has an illustrious history of Stone Carving, evident in magnificent ancient temples like Khajuraho, Sanchi, and Mandu, dating back over a thousand years. Master sculptors created intricate deities and narrative panels under royal patronage. The beauty lies in remarkable precision and intricate detailing, as artisans transform sandstone, marble, and granite into exquisite sculptures and jali screens. Fluid forms and expressive figures showcase their mastery. Culturally significant, this craft preserves religious narratives and history in tangible form. It reflects deep devotional fervor and artistic ingenuity, with contemporary artisans continuing these ancient skills, connecting to Madhya Pradesh's monumental artistic heritage.
-            <a href="Stone.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Stone') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="Terracotta.jpg" class="artform-image" alt="Indian Textile Art">
+            <img src="{{ url_for('static', filename='images/Terracotta.jpg') }}" class="artform-image" alt="Indian Textile Art">
             <p class="artform-name">Terracotta and Pottery: Madhya Pradesh's Earthen Craft</p>
         </div>
         <div class="description-container1">
             Madhya Pradesh boasts a long history of Terracotta and Pottery, evident since ancient times, deeply rooted in rural and tribal communities for functional and ceremonial use. Different regions developed distinct styles based on local clay and practices. The beauty lies in its rustic charm, earthy tones, and skilled hand-modeling. Artisans create cookware, ritualistic figures, deities, and decorative items, often unglazed or adorned with incised patterns, reflecting a raw aesthetic. Culturally significant, this craft is integral to daily life and spiritual practices, central to festivals and ceremonies. It sustains artisan families, preserving ancient techniques and forming a fundamental part of Madhya Pradesh's traditional craftsmanship and rural economy.
-            <a href="Terracotta.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Terracotta') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="Chanderi.webp" class="artform-image" alt="Indian Textile Art">
+            <img src="{{ url_for('static', filename='images/Chanderi.webp') }}" class="artform-image" alt="Indian Textile Art">
             <p class="artform-name">Chanderi Weaving: The Royal Fabric</p>
         </div>
         <div class="description-container2">
             Chanderi weaving, from Chanderi, Madhya Pradesh, boasts a glorious history dating to the Vedic period, making it one of India's oldest weaving traditions. It flourished under Mughal and Scindia patronage, renowned for lightweight, transparent fabrics. The beauty of Chanderi lies in its sheer texture, created by weaving fine silk, cotton, and often zari threads. Traditional motifs draw inspiration from nature, ancient coins, and geometry. This delicate blend offers a distinct regal elegance. Culturally significant, Chanderi weaving represents refined craftsmanship and royal taste. Highly valued for intricate designs and lightweight feel, it's a popular choice for ceremonial wear and remains a symbol of Madhya Pradesh's rich textile heritage.
-            <a href="Chanderi.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Chanderi') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 

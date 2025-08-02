@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khatamband Ceiling Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="J&K.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('J&K') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Khatamband Ceiling Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kceiling1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kceiling1.jpg') }}" class="gallery-media">
             <p class="media-caption">Luxurious Ceilings</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kceiling2.jpg"class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kceiling2.jpg') }}"class="gallery-media">
             <p class="media-caption">Ceiling Designs</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kceiling3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kceiling3.jpg') }}" class="gallery-media">
             <p class="media-caption">Old-House Designs</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kceiling4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kceiling4.jpg') }}" class="gallery-media">
             <p class="media-caption">Floral Designs</p>
         </div>
 

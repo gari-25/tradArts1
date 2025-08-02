@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajasthan Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="Rajasthan.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('Rajasthan') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Kalbelia Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalbelia1.jpg" alt="Dance Form" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalbelia1.jpg') }}" alt="Dance Form" class="gallery-media">
             <p class="media-caption">Dance Form</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalbelia2.jpg" alt="Traditional Folk" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalbelia2.jpg') }}" alt="Traditional Folk" class="gallery-media">
             <p class="media-caption">Traditional Folk</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalbelia3.jpg" alt="Dance Festival" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalbelia3.jpg') }}" alt="Dance Festival" class="gallery-media">
             <p class="media-caption">Dance Festival</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalbelia4.jpg" alt="Snake Charmers" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalbelia4.jpg') }}" alt="Snake Charmers" class="gallery-media">
             <p class="media-caption">Snake Charmers</p>
         </div>
 

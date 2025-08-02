@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gond Painting Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="MP.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('MP') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Gond Painting Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="gond1.jpeg" alt="Traditional Gond" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/gond1.jpeg') }}" alt="Traditional Gond" class="gallery-media">
             <p class="media-caption">Traditional Gond</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="gond2.jpeg" alt="The Gond Tree of Life" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/gond2.jpeg') }}" alt="The Gond Tree of Life" class="gallery-media">
             <p class="media-caption">The Gond Tree of Life</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="gond3.jpg" alt="Gond Folk" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/gond3.jpg') }}" alt="Gond Folk" class="gallery-media">
             <p class="media-caption">Gond Folk</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="gond4.jpg" alt="Gond Tribe" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/gond4.jpg') }}" alt="Gond Tribe" class="gallery-media">
             <p class="media-caption">Gond Tribe</p>
         </div>
 

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banarasi Silk Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="UP.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('UP') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Banarasi Silk Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bsilk1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bsilk1.jpg') }}" class="gallery-media">
             <p class="media-caption">Banarasi Designs</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bsilk2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bsilk2.jpg') }}" class="gallery-media">
             <p class="media-caption">Banarasi Fabric</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bsilk3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bsilk3.jpg') }}" class="gallery-media">
             <p class="media-caption">Banarasi Saree</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bsilk4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bsilk4.jpg') }}" class="gallery-media">
             <p class="media-caption">Banarasi Silk</p>
         </div>
 

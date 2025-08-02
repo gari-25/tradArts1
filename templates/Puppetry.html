@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puppets Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="Rajasthan.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('Rajasthan') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Puppetry Gallery</h1>
 
     <div class="gallery-container">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="puppet2.webp" alt="Puppetry Show" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/puppet2.webp') }}" alt="Puppetry Show" class="gallery-media">
             <p class="media-caption">Puppetry Show</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="puppet3.jpg" alt="Puppet Making" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/puppet3.jpg') }}" alt="Puppet Making" class="gallery-media">
             <p class="media-caption">Puppet Making</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="Puppets4.jpg" alt="Traditional Puppet Dance" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/Puppets4.jpg') }}" alt="Traditional Puppet Dance" class="gallery-media">
             <p class="media-caption">Traditional Puppet Dance</p>
         </div>
 

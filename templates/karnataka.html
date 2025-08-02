@@ -4,45 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karnataka Artforms</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="State-region.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('State_region') }}"><button id="Back">Back</button></a>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="mysore.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/mysore.jpg') }}" class="artform-image">
             <p class="artform-name">Mysore Painting: Karnataka's Royal Art Form</p>
         </div>
         <div class="description-container1">
             Mysore Painting, originating from the city of Mysore in Karnataka, boasts a rich history dating back to the Wodeyar dynasty in the 17th century. This classical South Indian painting style flourished under royal patronage, adapting and evolving from Vijayanagara and Tanjore schools. The beauty of Mysore painting lies in its delicate lines, intricate details, and luminous colors, often featuring gesso work and gold leaf embellishments. Artists typically depict Hindu gods, goddesses, and scenes from mythology, radiating a unique divine glow. Culturally significant, Mysore painting is a profound expression of devotion and royal artistry. It serves as a visual narrative of Hindu epics and Puranas, meticulously passed down through generations of artists, embodying Karnataka's rich cultural and spiritual heritage.
-            <a href="mysore.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('mysore') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="bidri.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/bidri.jpg') }}" class="artform-image">
             <p class="artform-name">Bidriware: Karnataka's Metal Inlay Craft</p>
         </div>
         <div class="description-container2">
             Bidriware is a unique metal inlay craft originating from Bidar (now in Karnataka, historically part of Hyderabad Deccan), with a history tracing back to the 14th century under the Bahamani sultans. It's renowned for its distinctive silver and gold inlay work on a blackened alloy. The beauty of Bidriware lies in its striking contrast between the lustrous silver/gold inlay and the matte black background. Artisans meticulously engrave patterns onto a zinc-copper alloy, then inlay pure silver or gold wire, before oxidizing the surface to achieve its characteristic black finish. Culturally significant, Bidriware represents a sophisticated blend of Persian, Arabic, and local Deccan artistic traditions. It has historically produced elegant decorative items, ceremonial objects, and hookah bases, cherished as a symbol of luxury and skilled craftsmanship unique to Karnataka.
-            <a href="bidri.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('bidri') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="kinnal.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/kinnal.jpg') }}" class="artform-image">
             <p class="artform-name">Kinnal Craft: Karnataka's Lacquerware Legacy</p>
         </div>
         <div class="description-container1">
             Kinnal Craft is a traditional wooden toy and craft art originating from Kinnal village in Koppal district, Karnataka, with a history believed to be centuries old. It is specifically known for its lightweight wooden figures adorned with vibrant colors and lacquerwork. The beauty of Kinnal Craft lies in its smooth finish, bright natural dyes, and depictions of mythological figures, birds, and animals. Artisans carve soft wood, coat it with a mixture of tamarind seed paste and sawdust, then apply natural dyes and lacquer, often with gold foil details. Culturally significant, Kinnal Craft is intrinsically linked to local festivals and religious traditions, with toys and figures often used in temple chariots and ceremonial displays. This unique handicraft sustains the artisan community, preserving ancient painting and lacquering techniques as a cherished cultural legacy of Karnataka.
-            <a href="kinnal.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('kinnal') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
         </div>
         <div class="description-container2">
             Ilkal Sarees are a distinctive handloom creation from Ilkal town in Bagalkot district, Karnataka, boasting a history of several centuries. These sarees are renowned for their unique 'tope teni' technique, where the body warp is joined to the pallu (pallav) warp using a series of loops. The beauty of Ilkal Sarees lies in their characteristic borders of Chikki Paras (a serrated design), Gomi (rope design), or Jari (zari woven in temple designs), often in contrasting colors to the main body. The pallu typically features traditional temple towers or geometric patterns in silk. Culturally significant, Ilkal sarees are an integral part of women's traditional attire in North Karnataka, often worn during festivals, weddings, and special occasions. The weaving tradition supports numerous families, making it a vital symbol of Karnataka's rich handloom heritage and regional identity.
-            <a href="ilkal.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('ilkal') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pichwai Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="Rajasthan.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('Rajasthan') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Pichwai  Painting Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="pichwai1.webp" alt="Mughal Court Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/pichwai1.webp') }}" alt="Mughal Court Painting" class="gallery-media">
             <p class="media-caption">Pichwai Folk</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="pichwai2.jpg" alt="Mughal Portrait Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/pichwai2.jpg') }}" alt="Mughal Portrait Painting" class="gallery-media">
             <p class="media-caption">Pichwai Plates</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="pichwai3.jpg" alt="Mughal Flora Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/pichwai3.jpg') }}" alt="Mughal Flora Painting" class="gallery-media">
             <p class="media-caption">Pichwai Krishna</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="pichwai4.jpg" alt="Mughal Hunting Scene" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/pichwai4.jpg') }}" alt="Mughal Hunting Scene" class="gallery-media">
             <p class="media-caption">Nathdwara Pichwai</p>
         </div>
 

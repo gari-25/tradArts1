@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bamboo & Grass Weaving Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="Himachal.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('Himachal') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Bamboo & Grass Weaving Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bamboo1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bamboo1.jpg') }}" class="gallery-media">
             <p class="media-caption">Bamboo Baskets</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bamboo2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bamboo2.jpg') }}" class="gallery-media">
             <p class="media-caption">Grass Weaves</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bamboo3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bamboo3.jpg') }}" class="gallery-media">
             <p class="media-caption">Bamboo Weaves</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="bamboo4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/bamboo4.jpg') }}" class="gallery-media">
             <p class="media-caption">Woven Carpets</p>
         </div>
 

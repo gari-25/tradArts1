@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kalakosh | Treasure of Arts</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Amarante&family=Luxurious+Roman&family=Hind&family=Palatino+Linotype&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
@@ -22,14 +22,14 @@
     <!-- Header -->
     <div class="logo">
       <div class="main_logo">
-        <a href="index.html"><img src="Logo1.png" /></a>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo1.png') }}" /></a>
       </div>
       <div class="nav">
-        <a href="index.html"><div class="items">Home</div></a>
-        <a href="State-region.html"><div class="items">Artforms</div></a>
-        <a href="kalakosh_events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
-        <a href="contact.html"><div class="items">Contact Us</div></a>
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('kalakosh_events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
       </div>
     </div>
 
@@ -42,9 +42,9 @@
     
     <!-- Section Divider Heading -->
 <div class="content-section floating-element reveal">
-  <img src="line-divider-bg.png" class="design-image">
+  <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
   <p class="section-title">Legacy Counts</p>
-  <img src="line-divider-bg.png" class="design-image">
+  <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
 </div>
 
 <!-- Counter Section -->
@@ -65,32 +65,32 @@
  
     <!-- Section Divider -->
     <div class="content-section floating-element reveal">
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
       <p class="section-title">Indian Arts</p>
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
     </div>
 
     <!-- Image Slider -->
     <div class="slide-container">
       <div class="slides-wrapper" id="slidesWrapper">
         <div class="slide fade">
-          <img src="Madhubani.jpg" />
+          <img src="{{ url_for('static', filename='images/Madhubani.jpg') }}" />
           <div class="caption">Madhubani Folk Painting - Mithila</div>
         </div>
         <div class="slide fade">
-          <img src="warli.jpg" />
+          <img src="{{ url_for('static', filename='images/warli.jpg') }}" />
           <div class="caption">Warli Tribal Art - Maharashtra</div>
         </div>
         <div class="slide fade">
-          <img src="katha.jpg" />
+          <img src="{{ url_for('static', filename='images/katha.jpg') }}" />
           <div class="caption">Kathakali - Kerala's Theatre of Paint and Gesture</div>
         </div>
         <div class="slide fade">
-          <img src="pattchitra.jpg" />
+          <img src="{{ url_for('static', filename='images/pattchitra.jpg') }}" />
           <div class="caption">Pattachitra - Timeless Scroll Art from Odisha</div>
         </div>
         <div class="slide fade">
-          <img src="puppet.jpg" />
+          <img src="{{ url_for('static', filename='images/puppet.jpg') }}" />
           <div class="caption">Kathputli Puppetry - The Colourful Voice of Rajasthani Folk Tradition</div>
         </div>
       </div>
@@ -103,19 +103,19 @@
    
     <!-- Folk Art Map -->
     <div class="content-section floating-element reveal">
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
       <p class="section-title">Folk Art Map</p>
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
     </div>
     <div class="map floating-element reveal">
-      <img src="tradMap.jpg" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black; height:150vh;width:60vw;">
+      <img src="{{ url_for('static', filename='images/tradMap.jpg') }}" style="align-self: center;border-radius: 5px;box-shadow:0px 4px 8px black; height:150vh;width:60vw;">
     </div>
 
      <!-- About Section -->
     <div class="content-section floating-element reveal">
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
       <p class="section-title">About Us</p>
-      <img src="line-divider-bg.png" class="design-image">
+      <img src="{{ url_for('static', filename='images/line-divider-bg.png') }}" class="design-image">
     </div>
     <div class="about">
       <div class="element reveal">
@@ -157,19 +157,19 @@
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="State-region.html">Artforms</a></li>
-            <li><a href="kalakosh_events.html">Events</a></li>
-            <li><a href="login.html">Log in</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+            <li><a href="{{ url_for('kalakosh_events') }}">Events</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Help & Support</h3>
           <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms Of Service</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+            <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+            <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-section">

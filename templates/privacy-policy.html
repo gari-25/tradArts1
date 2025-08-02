@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Kalakosh</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .page-content {
@@ -109,7 +109,7 @@
         <p>If you have any questions about this Privacy Policy, please contact us:</p>
         <ul>
             <li>By email: info@kalakosh.com</li>
-            <li>By visiting this page on our website: <a href="contact.html">Contact Us</a></li>
+            <li>By visiting this page on our website: <a href="{{ url_for('contact') }}">Contact Us</a></li>
         </ul>
     </div>
 </body>

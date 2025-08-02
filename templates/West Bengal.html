@@ -4,56 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>West Bengal Artforms</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="State-region.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('State_region') }}"><button id="Back">Back</button></a>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="kalighat.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/kalighat.jpg') }}" class="artform-image">
             <p class="artform-name">Kalighat Painting</p>
         </div>
         <div class="description-container1">
             Kalighat Painting emerged in 19th-century Kolkata, West Bengal, around the Kalighat Kali Temple. Its history is rooted in pilgrims seeking souvenirs, evolving from religious themes to depict social commentary and everyday life. The beauty lies in bold, flowing brushstrokes, vibrant colors, and simplified yet expressive figures. Artists used natural dyes on cloth or paper, capturing the essence of characters and scenes with striking immediacy. Culturally significant, Kalighat painting provided an accessible visual narrative for the masses, reflecting societal changes. It's an early example of modern art in India, bridging traditional folk art with an emerging urban sensibility.
-            <a href="Kalighat.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Kalighat') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="kantha.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/kantha.jpg') }}" class="artform-image">
             <p class="artform-name">Kantha Embroidery</p>
         </div>
         <div class="description-container2">
             Kantha Embroidery, from West Bengal (and Bangladesh), has an ancient history, originating as a frugal art where rural women repurposed old saris and dhotis. This traditional quilting and embroidery technique transformed discarded fabric into functional and decorative items. The beauty of Kantha lies in its simple running stitch that creates intricate motifs of flora, fauna, mythological figures, and daily life scenes. The subtle texture and often asymmetrical designs reveal a unique charm and personal narrative. Culturally significant, Kantha embodies domestic artistry, resourcefulness, and storytelling, often made for family members, especially children, reflecting shared experiences and spiritual beliefs.
-            <a href="Kantha.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Kantha') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container1">
         <div class="image-container">
-            <img src="Chhau.jpg" class="artform-image">
+            <img src="{{ url_for('static', filename='images/Chhau.jpg') }}" class="artform-image">
             <p class="artform-name">Chhau Dance</p>
         </div>
         <div class="description-container1">
             Chhau Dance, a semi-classical Indian dance with martial, tribal, and folk origins, is prevalent in West Bengal (Purulia Chhau). Its history traces back centuries, evolving from martial practices and incorporating elements of folk theatre and indigenous rituals. The beauty of Purulia Chhau lies in its powerful, athletic movements, vibrant masks representing mythological characters, and dramatic storytelling. Dancers perform energetic acrobatics and mock combat sequences to vigorous percussion music. Culturally significant, Chhau serves as a vibrant community ritual, particularly during the spring festival of Chaitra Parva, reflecting ancient warrior traditions and mythological narratives, recognized by UNESCO in 2010.
-            <a href="Chhau.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('Chhau') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 
     <div class="artform-container2">
         <div class="image-container">
-            <img src="TerracottaWb.jpg" class="artform-image" alt="Indian Textile Art">
+            <img src="{{ url_for('static', filename='images/TerracottaWb.jpg') }}" class="artform-image" alt="Indian Textile Art">
             <p class="artform-name">Terracotta Art</p>
         </div>
         <div class="description-container2">
             Terracotta Art in West Bengal boasts an extensive history, particularly flourishing from the Malla dynasty period (16th-17th centuries) in regions like Bishnupur. Temples adorned with intricate terracotta panels showcase its architectural and devotional significance. The beauty of Bengal's terracotta lies in its detailed craftsmanship, warm reddish-brown hues, and narrative richness. Artisans mold clay into tiles and sculptures depicting mythological scenes, epic battles, and daily life, often with remarkable expressive quality. Culturally significant, terracotta art is deeply embedded in Bengal's spiritual landscape and architectural identity, transforming humble clay into timeless narratives, and continues to be practiced by skilled artisans.
-            <a href="TerracottaWB.html"><button class="gallery">View Gallery</button></a>
+            <a href="{{ url_for('TerracottaWB') }}"><button class="gallery">View Gallery</button></a>
         </div>
     </div>
 

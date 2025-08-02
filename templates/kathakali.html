@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kathakali Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="kerala.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('kerala') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Kathakali Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kathakali1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kathakali1.jpg') }}" class="gallery-media">
             <p class="media-caption">Kathakali Female Look</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kathakali2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kathakali2.jpg') }}" class="gallery-media">
             <p class="media-caption">Kathakali Male Look</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kathakali3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kathakali3.jpg') }}" class="gallery-media">
             <p class="media-caption">Performance</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kathakali4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kathakali4.jpg') }}" class="gallery-media">
             <p class="media-caption">Expressions</p>
         </div>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VastraVismay</title>
-  <link rel="stylesheet" href="vstyle.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='vstyle.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
 
       <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
 </head>
 <body>
   <div class="logo">
-        <div class="main_logo"><a href="index.html"><img src="Logo.png"></a></div> 
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo.png') }}"></a></div> 
         <div class="nav">
-        <a href="index.html"><div class="items">Home</div></a>
-        <a href="State-region.html"><div class="items">Artforms</div></a>
-        <a href="events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
-        <a href="contact.html"><div class="items">Contact Us</div></a>
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
         </div>
     </div>
    
@@ -34,12 +34,12 @@
   <section class="gallery-section">
   <h2>Hands Behind the Heritage</h2>
   <div class="artist-gallery">
-    <div class="artist-img"><img src="vastra1.jpeg" alt="Weaver from Banaras" /></div>
-    <div class="artist-img"><img src="vastra2.jpeg" alt="Chikankari Artist" /></div>
-    <div class="artist-img"><img src="vastra3.jpeg" alt="Bandhani Art" /></div>
-    <div class="artist-img"><img src="vastra4.jpeg" alt="Kerala Saree Craft" /></div>
-    <div class="artist-img"><img src="vastra5.jpeg" alt="Chanderi Looms" /></div>
-    <div class="artist-img"><img src="vastra6.jpeg" alt="Block Printing Artist" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra1.jpeg') }}" alt="Weaver from Banaras" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra2.jpeg') }}" alt="Chikankari Artist" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra3.jpeg') }}" alt="Bandhani Art" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra4.jpeg') }}" alt="Kerala Saree Craft" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra5.jpeg') }}" alt="Chanderi Looms" /></div>
+    <div class="artist-img"><img src="{{ url_for('static', filename='images/vastra6.jpeg') }}" alt="Block Printing Artist" /></div>
   </div>
 </section>
 
@@ -83,10 +83,10 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="State-region.html">Artforms</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="login.html">Log in</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+        <li><a href="{{ url_for('events') }}">Events</a></li>
+        <li><a href="{{ url_for('login') }}">Log in</a></li>
       </ul>
     </div>
 
@@ -94,10 +94,10 @@
     <div class="footer-section">
       <h3>Help & Support</h3>
       <ul>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-of-service.html">Terms Of Service</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
       </ul>
     </div>
 

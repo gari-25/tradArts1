@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
-    <link rel="stylesheet" href="estyle.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='estyle.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
@@ -20,13 +20,13 @@
 
 <body>
     <div class="logo">
-        <div class="main_logo"><a href="index.html"><img src="Logo1.png"></a></div> 
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo1.png') }}"></a></div> 
         <div class="nav">
-        <a href="index.html"><div class="items">Home</div></a>
-        <a href="State-region.html"><div class="items">Artforms</div></a>
-        <a href="events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
-        <a href="contact.html"><div class="items">Contact Us</div></a>
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
           <p><i>Join us for an enchanting dive into the timeless art of Madhubani painting with vibrant traditions from Bihar!</i></p>
           <div class="half">
           <div id="da"><strong>Date:</strong> July 7</div>
-          <div><button><a href="madhubani.html">Details</a></button></div>
+          <div><button><a href="{{ url_for('madhubani') }}">Details</a></button></div>
           </div>
         </div>
         <hr />
@@ -61,7 +61,7 @@
           <p><i>Celebrate India’s rich textile heritage with live saree-making demos by artisans from every corner of the country!</i></p>
           <div class="half">
           <div id="da"><strong>Date:</strong> July 18</div>
-          <div><button><a href="vastra.html">Details</a></button></div>
+          <div><button><a href="{{ url_for('vastra') }}">Details</a></button></div>
           </div>
         </div>
         <hr />
@@ -70,7 +70,7 @@
           <p><i>Get your hands dirty and your imagination flowing in a soulful pottery session guided by expert artist Rakesh Patel!</i></p>
           <div class="half">
           <div id="da"><strong>Date:</strong> July 24</div>
-          <div><button><a href="clay.html">Details</a></button></div>
+          <div><button><a href="{{ url_for('clay') }}">Details</a></button></div>
           </div>
         </div>
       </div>
@@ -102,91 +102,91 @@
 <div class="opt">
   
     <div class="content-section">
-            <img src="Leftdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/Leftdesign.png') }}" class="design-image">
             <p class="section-title">Workshops</p>
-            <img src="rightdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/rightdesign.png') }}" class="design-image">
     </div>
 
   <section class="event-grid" id="a">
     <div class="event-card">
-      <img src="madhu work.jpeg" alt="Madhubani Workshop">
+      <img src="{{ url_for('static', filename='images/madhu work.jpeg') }}" alt="Madhubani Workshop">
       <div class="event-details">
         <h3>Create Your First Madhubani Canvas</h3>
         <div class="instructor">
-          <img src="anita.jpeg" alt="Instructor" />
+          <img src="{{ url_for('static', filename='images/anita.jpeg') }}" alt="Instructor" />
           <span>by Anita Verma</span>
         </div>
         <div class="event-meta">Date: 7 july- 8 july 2025 | Time: 11 AM - 4 PM | Venue: Udaipur </div>
         <div class="event-price">Free</div>
         <div class="event-actions">
-          <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details"><a href="madhubani.html">View Details</a></button>
+          <button class="register"><a href="{{ url_for('register') }}">Register Now</a></button>
+          <button class="details"><a href="{{ url_for('madhubani') }}">View Details</a></button>
         </div>
       </div>
     </div>
 
     <div class="event-card">
-      <img src="Pottery.jpeg" alt="Pottery Class">
+      <img src="{{ url_for('static', filename='images/Pottery.jpeg') }}" alt="Pottery Class">
       <div class="event-details">
         <h3>Clay & Soul Pottery Workshop</h3>
         <div class="instructor">
-          <img src="Rakesh.jpeg" alt="Instructor" />
+          <img src="{{ url_for('static', filename='images/Rakesh.jpeg') }}" alt="Instructor" />
           <span>by Rakesh Patel</span>
         </div>
         <div class="event-meta">Date: 24 July 2025 | Time: 3 PM - 6 PM | Venue: Panji, Goa</div>
         <div class="event-price">Free</div>
         <div class="event-actions">
-          <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details"><a href="clay.html">View Details</a></button>
+          <button class="register"><a href="{{ url_for('register') }}">Register Now</a></button>
+          <button class="details"><a href="{{ url_for('clay') }}">View Details</a></button>
         </div>
       </div>
     </div>
     
     <div class="event-card">
-      <img src="warli.jpeg" alt="Warli Art">
+      <img src="{{ url_for('static', filename='images/warli.jpeg') }}" alt="Warli Art">
       <div class="event-details">
         <h3>Warli Storytelling in Symbols</h3>
         <div class="instructor">
-          <img src="sunita.jpg" alt="Instructor" />
+          <img src="{{ url_for('static', filename='images/sunita.jpg') }}" alt="Instructor" />
           <span>by Sunita Rao</span>
         </div>
         <div class="event-meta">Date: 28 July 2025 | Time: 5 PM - 7 PM | Venue: Kochi, Kerala</div>
         <div class="event-price">Free</div>
         <div class="event-actions">
-          <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details"><a href="warli.html">View Details</a></button>
+          <button class="register"><a href="{{ url_for('register') }}">Register Now</a></button>
+          <button class="details"><a href="{{ url_for('warli') }}">View Details</a></button>
         </div>
       </div>
     </div>
     
     <div class="event-card">
-      <img src="fabric.jpeg" alt="Fabric Painting">
+      <img src="{{ url_for('static', filename='images/fabric.jpeg') }}" alt="Fabric Painting">
       <div class="event-details">
         <h3>Fabric Painting for Beginners</h3>
         <div class="instructor">
-          <img src="neha.jpeg" alt="Instructor" />
+          <img src="{{ url_for('static', filename='images/neha.jpeg') }}" alt="Instructor" />
           <span>by Neha Sharma</span>
         </div>
         <div class="event-meta">Date: 30 July 2025 | Time: 10 AM - 1 PM | Venue: Mumbai</div>
         <div class="event-price">Free</div>
         <div class="event-actions">
-          <button class="register"><a href="register.html">Register Now</a></button>
-          <button class="details"><a href="fabric.html">View Details</a></button>
+          <button class="register"><a href="{{ url_for('register') }}">Register Now</a></button>
+          <button class="details"><a href="{{ url_for('fabric') }}">View Details</a></button>
         </div>
       </div>
     </div>
   </section>
 
    <div class="content-section">
-            <img src="Leftdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/Leftdesign.png') }}" class="design-image">
             <p class="section-title">Exhibitions</p>
-            <img src="rightdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/rightdesign.png') }}" class="design-image">
     </div>
 
      <section class="exhibitions-section" id="b">
     <div class="exhibition-card">
       <div class="exhibition-image">
-        <img src="kathaputli.jpeg" alt="String Saga">
+        <img src="{{ url_for('static', filename='images/kathaputli.jpeg') }}" alt="String Saga">
       </div>
       <div class="exhibition-content">
         <h3>String Saga</h3>
@@ -194,14 +194,14 @@
         <p><strong>Venue:</strong> Kala Darbar, Jawahar Kala Kendra, Jaipur</p>
         <p><strong>Event Timing:</strong> 18 July 2025, 5:00 PM  – 8:00 PM</p>
         <div class="buttons">
-          <a href="string.html" class="btn">Inside the Event</a>
+          <a href="{{ url_for('string') }}" class="btn">Inside the Event</a>
         </div>
       </div>
     </div>
 
     <div class="exhibition-card reverse">
       <div class="exhibition-image">
-        <img src="sareee.jpeg" alt="Vastra Vismaya">
+        <img src="{{ url_for('static', filename='images/sareee.jpeg') }}" alt="Vastra Vismaya">
       </div>
       <div class="exhibition-content">
         <h3>Vastra Vismaya</h3>
@@ -210,7 +210,7 @@ Meet the local weavers and textile artists who’ve preserved these legacies for
         <p><strong>Venu:</strong> Textile Hall, India Habitat Centre, Surat</p>
         <p><strong>Event Timing:</strong> 26th-28th July 2025 10:00 AM – 6:00 PM</p>
         <div class="buttons">
-          <a href="vastra.html" class="btn">Inside the Event</a>
+          <a href="{{ url_for('vastra') }}" class="btn">Inside the Event</a>
         </div>
       </div>
     </div>
@@ -218,15 +218,15 @@ Meet the local weavers and textile artists who’ve preserved these legacies for
    
 
      <div class="content-section">
-            <img src="Leftdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/Leftdesign.png') }}" class="design-image">
             <p class="section-title">Past Events</p>
-            <img src="rightdesign.png" class="design-image">
+            <img src="{{ url_for('static', filename='images/rightdesign.png') }}" class="design-image">
     </div> 
 
  <section class="past-events" id="c">
     <div class="past-event-wrapper">
       <div class="past-event-image">
-        <img src="wall.jpg" alt="Bhitti Chitra">
+        <img src="{{ url_for('static', filename='images/wall.jpg') }}" alt="Bhitti Chitra">
       </div>
       <div class="past-event-details">
         <h3>Bhitti Chitra</h3>
@@ -248,7 +248,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
 “Taal-Tarang” reminded us that before Spotify, before records, and before studios — music was born in hearts, heard in forests, and carried in feet.</p>
       </div>
        <div class="past-event-image">
-        <img src="music.jpg" alt="Taal Tarang">
+        <img src="{{ url_for('static', filename='images/music.jpg') }}" alt="Taal Tarang">
       </div>
     </div>
 
@@ -257,15 +257,15 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
 
 <!--   
 <div class="content-section">
-            <img src="Leftdesign.png" class="design-image1">
+            <img src="{{ url_for('static', filename='images/Leftdesign.png') }}" class="design-image1">
             <p class="section-title1">Featured Artists</p>
-            <img src="rightdesign.png" class="design-image1">
+            <img src="{{ url_for('static', filename='images/rightdesign.png') }}" class="design-image1">
     </div> 
 
  <section class="artist-section" id="d">
     <div class="artist-container">
       <div class="artist-card">
-        <img src="ravi kumar.jpg" alt="Ravi Kumar">
+        <img src="{{ url_for('static', filename='images/ravi kumar.jpg') }}" alt="Ravi Kumar">
         <h3>Ravi Kumar</h3>
         <p>Puppeteer, Rajasthan</p>
         <p>Preserving the vibrant tradition of Kathputli through captivating performances.</p>
@@ -273,7 +273,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
         <button>View Profile</button>
       </div>
       <div class="artist-card">
-        <img src="Meer Nair.jpg" alt="Meera Nair">
+        <img src="{{ url_for('static', filename='images/Meer Nair.jpg') }}" alt="Meera Nair">
         <h3>Meera Nair</h3>
         <p>Madhubani Artist, Bihar</p>
         <p>Blending tradition with modern themes on both canvas and walls.</p>
@@ -281,7 +281,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
         <button>View Profile</button>
       </div>
     <div class="artist-card">
-        <img src="bhairav.jpg" alt="Bhairav Singh">
+        <img src="{{ url_for('static', filename='images/bhairav.jpg') }}" alt="Bhairav Singh">
         <h3>Bhairav Singh</h3>
         <p>Sanjhi Art Expert, Uttar Pradesh</p>
         <p>Through paper and precision, Carve divine patterns of devotion and light.</p>
@@ -289,7 +289,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
         <button>View Profile</button>
       </div>
       <div class="artist-card">
-        <img src="Niti Arora.jpg" alt="Niti Arora">
+        <img src="{{ url_for('static', filename='images/Niti Arora.jpg') }}" alt="Niti Arora">
         <h3>Niti Arora</h3>
         <p>Puppeteer, Rajasthan</p>
         <p>Preserving the vibrant tradition of Kathputli through captivating performances.</p>
@@ -298,7 +298,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
       </div>
       
       <div class="artist-card">
-        <img src="sunitha.jpg" alt="sunitha natesan">
+        <img src="{{ url_for('static', filename='images/sunitha.jpg') }}" alt="sunitha natesan">
         <h3>Sunitha Natesan</h3>
         <p>Bharatnatyam Dancer, Tamil Nadu</p>
         <p>With every anklet's beat, Meera narrates tales from ancient temples in rhythmic grace.</p>
@@ -309,32 +309,32 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
   </section> -->
 
    <div class="content-section">
-            <img src="Leftdesign.png" class="design-image1">
+            <img src="{{ url_for('static', filename='images/Leftdesign.png') }}" class="design-image1">
             <p class="section-title1">Reviews &amp; Experiences</p>
-            <img src="rightdesign.png" class="design-image1">
+            <img src="{{ url_for('static', filename='images/rightdesign.png') }}" class="design-image1">
     </div> 
   <section class="review-section" id="e">
     <div class="review-container">
       <div class="review-card">
-        <img src="Priya.jpeg" alt="Priya">
+        <img src="{{ url_for('static', filename='images/Priya.jpeg') }}" alt="Priya">
         <h3>Truly Magical!</h3>
         <p class="name"><b>-Priya Mehta, Mumbai</b></p>
         <p>Attending the Madhubani Workshop has an unforgettable experience. The way the artist explained each stroke and its cultural meaning was eye-opening. I came as a beginner and left with a beautifully detailed artwork. Highly recommend to anyone who wants to reconnect with traditional Indian Art.</p>
       </div>
       <div class="review-card">
-        <img src="Arvind.jpeg" alt="Arvind">
+        <img src="{{ url_for('static', filename='images/Arvind.jpeg') }}" alt="Arvind">
         <h3>Felt like a cultural Journey</h3>
         <p class="name"><b>-Arvind Sharma, Jaipur</b></p>
         <p>The Rajasthani Folk Dance performance was vibrant, Colorful and full of life. It felt like I was watching a live piece of history unfold. The performers were incredibly talented and the storytelling through dance gave me goosebumps!</p>
       </div>
        <div class="review-card">
-        <img src="linh.jpeg" alt="linh">
+        <img src="{{ url_for('static', filename='images/linh.jpeg') }}" alt="linh">
         <h3>An Unforgettable Artistic Journey with KalaKosh</h3>
         <p class="name"><b>-Linh Tran from Hanoi,Vietnam</b></p>
         <p>Attending the Madhubani workshop at KalaKosh was one of the most soulful expreiences I've ever had. The way the instructors blended tradition with hands-on learning was magical. I carried back not just a canvas, but a piece of Indian culture in my heart.</p>
       </div>
      <div class="review-card">
-        <img src="minal.jpg" alt="minal">
+        <img src="{{ url_for('static', filename='images/minal.jpg') }}" alt="minal">
         <h3>Art came off the walls and into the heart</h3>
         <p class="name"><b>-Meenal Shah, Visual Artist, Ahemdabad</b></p>
         <p>"Bhitti-Chitra" revived my love for native storytelling. The Bhil panel with its vibrant geometry was my favourite. Wish we had more such experiences in urban art spaces.</p>
@@ -345,15 +345,15 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
 
   <!-- <div class="slideshow-container">
       <div class="mySlides fade">
-        <img src="rogan1.jpg" alt="Puppet Artist" class="artist-img">
+        <img src="{{ url_for('static', filename='images/rogan1.jpg') }}" alt="Puppet Artist" class="artist-img">
         <div class="caption">Laxman Bhatt - 3rd Generation Kathputli Maestro</div>
       </div>
       <div class="mySlides fade">
-        <img src="rogan2.jpg" alt="Traditional Performer" class="artist-img">
+        <img src="{{ url_for('static', filename='images/rogan2.jpg') }}" alt="Traditional Performer" class="artist-img">
         <div class="caption">Pushpa Devi - Folk Dance & Storytelling Expert</div>
       </div>
       <div class="mySlides fade">
-        <img src="rogan3.png" alt="Local Artisan" class="artist-img">
+        <img src="{{ url_for('static', filename='images/rogan3.png') }}" alt="Local Artisan" class="artist-img">
         <div class="caption">Ramesh Ji - Master Puppet Craftsman</div>
       </div>
     </div> -->
@@ -361,11 +361,11 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
     <section class="gallery">
         <h2>Moments from Past Workshops</h2>
         <div class="gallery-grid">
-            <img src="images/gallery1.jpg" alt="Workshop 1">
-            <img src="images/gallery2.jpg" alt="Workshop 2">
-            <img src="images/gallery3.jpg" alt="Workshop 3">
-            <img src="images/gallery4.jpg" alt="Workshop 4">
-            <img src="images/gallery5.jpg" alt="Workshop 5">
+            <img src="{{ url_for('static', filename='images/gallery1.jpg') }}" alt="Workshop 1">
+            <img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Workshop 2">
+            <img src="{{ url_for('static', filename='images/gallery3.jpg') }}" alt="Workshop 3">
+            <img src="{{ url_for('static', filename='images/gallery4.jpg') }}" alt="Workshop 4">
+            <img src="{{ url_for('static', filename='images/gallery5.jpg') }}" alt="Workshop 5">
         </div>
     </section> -->
 
@@ -387,19 +387,19 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="State-region.html">Artforms</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="login.html">Log in</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+            <li><a href="{{ url_for('events') }}">Events</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Help & Support</h3>
           <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms Of Service</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+            <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+            <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -434,7 +434,7 @@ The heart of the event was “Raag-Saanjh,” a collaborative evening jam where 
       setTimeout(showSlides, 3000); // Change image every 3 sec
     }
   </script> -->
-<script src="app.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Almendra+SC&family=Amarante&family=Luxurious+Roman&family=Hind&family=Palatino+Linotype&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
@@ -13,14 +13,14 @@
 <!-- Header and nav bar -->
      <div class="header">
     <div class="logo">
-        <div class="main_logo"><a href="index.html"><img src="Logo1.png"></a></div> 
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo1.png') }}"></a></div> 
 
         <div class="nav">
-        <a href="index.html"><div class="items">Home</div></a>
-        <a href="State-region.html"><div class="items">Artforms</div></a>
-        <a href="events.html"><div class="items">Events</div></a>
-        <a href="login.html"><div class="items">Log in</div></a>
-        <a href="contact.html"><div class="items active">Contact Us</div></a>
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items active">Contact Us</div></a>
         </div>
     </div>
 </div>
@@ -28,9 +28,9 @@
 
 <!-- Team Profiles -->
 <div class="profiles-head">
-    <img src="left-sep.png">
+    <img src="{{ url_for('static', filename='images/left-sep.png') }}">
     <div>Meet Our Team</div>
-    <img src="right-sep.png">
+    <img src="{{ url_for('static', filename='images/right-sep.png') }}">
 </div>
 
 <div class="team-cards">
@@ -38,7 +38,7 @@
   <div class="team-card floating-element">
     <div class="card-header">
       <div class="image-wrapper">
-      <img src="Drashti.jpeg" alt="Drashti">
+      <img src="{{ url_for('static', filename='images/Drashti.jpeg') }}" alt="Drashti">
       </div>
     </div>
     <div class="card-body">
@@ -54,7 +54,7 @@
   <div class="team-card floating-element">
     <div class="card-header">
       <div class="image-wrapper">
-      <img src="Iti.jpeg" alt="Iti">
+      <img src="{{ url_for('static', filename='images/Iti.jpeg') }}" alt="Iti">
       </div>
     </div>
     <div class="card-body">
@@ -70,7 +70,7 @@
   <div class="team-card floating-element">
     <div class="card-header">
       <div class="image-wrapper">
-      <img src="Vaibhavi.jpeg" alt="Vaibhavi">
+      <img src="{{ url_for('static', filename='images/Vaibhavi.jpeg') }}" alt="Vaibhavi">
       </div>
     </div>
     <div class="card-body">
@@ -85,7 +85,7 @@
   <div class="team-card floating-element">
     <div class="card-header">
       <div class="image-wrapper">
-      <img src="Garima.jpeg" alt="Garima">
+      <img src="{{ url_for('static', filename='images/Garima.jpeg') }}" alt="Garima">
       </div>
     </div>
     <div class="card-body">
@@ -142,19 +142,19 @@
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="State-region.html">Artforms</a></li>
-            <li><a href="kalakosh_events.html">Events</a></li>
-            <li><a href="login.html">Log in</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+            <li><a href="{{ url_for('kalakosh_events') }}">Events</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Help & Support</h3>
           <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms Of Service</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+            <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+            <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-section">

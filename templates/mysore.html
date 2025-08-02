@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mysore Painting</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="karnataka.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('karnataka') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Mysore Painting Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="mysore1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/mysore1.jpg') }}" class="gallery-media">
             <p class="media-caption">Traditional Painting</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="mysore2.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/mysore2.jpg') }}" class="gallery-media">
             <p class="media-caption">Maa Saraswati</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="mysore3.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/mysore3.jpg') }}" class="gallery-media">
             <p class="media-caption">Maa Durga</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="mysore4.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/mysore4.jpg') }}" class="gallery-media">
             <p class="media-caption">Maa Lakshmi</p>
         </div>
 

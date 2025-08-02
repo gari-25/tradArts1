@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalighat Painting Gallery</title>
-    <link rel="stylesheet" type="text/css" href="artform-gallery.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="West Bengal.html"><button id="Back">Back</button></a>
+    <a href="{{ url_for('West Bengal') }}"><button id="Back">Back</button></a>
     <h1 class="gallery-title">Kalighat Painting Gallery</h1>
 
     <div class="gallery-container">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalighat1.jpg" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalighat1.jpg') }}" class="gallery-media">
             <p class="media-caption">Kalighat Shiv-Shakti</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalighat2.jpg" alt="Mughal Portrait Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalighat2.jpg') }}" alt="Mughal Portrait Painting" class="gallery-media">
             <p class="media-caption">Kalighat Portrait</p>
         </div>
 
@@ -34,12 +34,12 @@
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalighat3.jpg" alt="Mughal Flora Painting" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalighat3.jpg') }}" alt="Mughal Flora Painting" class="gallery-media">
             <p class="media-caption">Traditional Kalighat</p>
         </div>
 
         <div class="gallery-item image-item">
-            <img src="kalighat4.jpg" alt="Mughal Hunting Scene" class="gallery-media">
+            <img src="{{ url_for('static', filename='images/kalighat4.jpg') }}" alt="Mughal Hunting Scene" class="gallery-media">
             <p class="media-caption">Kalighat Painting</p>
         </div>
 

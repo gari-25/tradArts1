@@ -1,7 +1,6 @@
 /* Ensure parallax effect works */
 body{
     background-image:url(man_bg2.avif); 
-    /* background-image: url(border_des1.webp); */
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -53,6 +52,7 @@ body{
   display: none;
 }
 
+/* Hero Section */
 .desc{
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@ body{
 }
 
 #typewriterText {
-  color:white;/*#dda96a;*/
+  color:white;
   font-family: 'Tangerine';
   font-size:6em;
   text-shadow:1px 2px 4px #6B2E00;
@@ -152,55 +152,6 @@ body{
   }
 }
 
-/* .ims{
-  border-radius: 5px;
-  margin:2%;
-  height:35vh;
-  width:15vw;
-}
-#im1{
-  position:absolute;
-  animation-name:im1;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes im1{
-  from{bottom:0}to{bottom:43%}
-}
-
-#im2{
-  position:absolute;
-  bottom:0;
-  animation-name:im2;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes im2{
-  from{right:0}to{right:81%}
-}
-
-#im3{
-  position:absolute;
-  animation-name:im3;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes im3{
-  from{right:85%}to{right:0}
-}
-
-#im4{
-  position:absolute;
-  right:0;
-  animation-name:im4;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes im4{
-  from{bottom:55%}to{bottom:0}
-} */
-
-
 .logo{
     background-color:#6B2E00;
     display:flex;
@@ -215,13 +166,10 @@ body{
     
 }
 .main_logo img{
-    /* border-style: groove ; */
-    /* border-radius:50%; */
     height: 7vmax;
     width:25vmax;   
 } 
 .main_logo img:hover{
-  /* transform:0.3s translate(2px,-2px) ease; */
   cursor: pointer;
 }
 
@@ -239,16 +187,12 @@ body{
 
 /* nav bar */
 .nav{
-    /* background-color: rgba(250, 242, 184); */
     display:flex;
     flex-wrap: wrap;
     padding:1vmax;
     justify-content: center;
     gap:1.2em;
     font-size:1em;
-    /* border-style:dashed; */
-    /* border:2px black; */
-    /* border-radius:20px; */
 }
 .nav a{
   text-decoration: none;
@@ -257,18 +201,15 @@ body{
   width:7em;
   height: auto;
   text-align:center;
-  color: rgb(107,46,13);/*#6b2e0d; */
+  color: rgb(107,46,13);
   background-color:rgb(225, 196, 159);
   padding:0.8vmax;
-  /* border:1px solid black; */
   border-radius:20px;
   transition: transform 0.3s ease-in-out;
 }
 .items:hover{
     cursor:pointer;
     box-shadow: 0 3px 5px rgba(0,0,0,0.5);
-    /*#faf2b8;/*rgb(255, 215, 0,0.5);*/
-    /* color:rgb(149, 121, 49,0.5); */
     background-color: #f5e1bd;
     color:maroon;
     transform: scale(1.05) translate(-2px);
@@ -330,32 +271,6 @@ body{
   border-bottom-right-radius: 10px;
 }
 
-/* Dot Indicators for Slider */
-.dots {
-  text-align: center; /* Pull it upward into slider area */
-  /* position: relative; Required for z-index to work */
-  /* z-index: 999; Ensure it's on top */
-  pointer-events: auto;
-}
-
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background-color:white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  opacity: 0.5;
-}
-
-.dot:hover,
-.dot.active {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -384,6 +299,31 @@ body{
     }
 }
 
+/* Dot Indicators for Slider */
+.dots {
+  text-align: center; /* Pull it upward into slider area */
+  pointer-events: auto;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color:white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.5;
+}
+
+.dot:hover,
+.dot.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Counter css */
 .stats-section {
   display: flex;
   justify-content: center;
@@ -447,12 +387,10 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 .title{
-    /* text-align: center; */
     font-weight: bold;
     font-size:1.8em;
     color:maroon;
-    font-family:Amarante
-    /* color:#6B2E0D;   */
+    font-family:'Amarante';
 }
 .content{
    font-family: 'Merienda';
@@ -510,10 +448,9 @@ body{
 /* footer.css */
 
 .footer {
-  background-color: #6B2E0D; /* #4e342e deep brown */
+  background-color: #6B2E0D; 
   color: #fff;
   padding: 40px 20px;
-  /* font-family: 'Segoe UI', sans-serif; */
 }
 
 .footer-container {
@@ -585,31 +522,6 @@ p i{
   text-decoration: underline;
 }
 
-/* .newsletter-form {
-  margin-top: 10px;
-}
-
-.newsletter-form input[type="email"] {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  width: 80%;
-  margin-bottom: 10px;
-}
-
-.newsletter-form button {
-  padding: 8px 16px;
-  background-color: rgb(220,183,139);
-  color:#6B2E0D ;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.newsletter-form button:hover {
-  background-color: #f5deb3; /* lighter bisque 
-} */
-
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
@@ -619,7 +531,7 @@ p i{
   color: bisque;
 }
 
-/* MOBILE FIRST - Adjust layout for small screens */
+/*Layout adjustment for small screens */
 @media (max-width: 768px) {
 
   .logo{
@@ -631,18 +543,6 @@ p i{
     width: 100vw;
     object-fit: cover;
   }
-
-  /* .desc {
-    margin:auto;
-    padding: auto auto;
-    font-size: 2.2em;
-    width: 90vw;
-  }
-
-  .desc button {
-    font-size: 0.4em;
-    /* padding: 4px; 
-  } */
 
   .about {
     flex-direction: column;

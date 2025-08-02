@@ -7,8 +7,11 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     color: #2c1a0e;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
 
 .logo{
     background-color:#6B2E00;
@@ -17,7 +20,6 @@ body {
     font-weight: bold;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 .main_logo img{
@@ -29,7 +31,6 @@ body {
   cursor: pointer;
 }
 
-/* nav bar */
 .nav{
     display:flex;
     flex-wrap: wrap;
@@ -62,147 +63,110 @@ body {
     transform: scale(1.05) translate(-2px);
 }
 
+.hero-section {
+  position: relative;
+  height: 250px;
+  padding: 80px 5% 60px;
+  overflow: hidden;
+}
 
-main{
-  background-image: url("bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  border: 2px solid #6b2e0d;
+.hero-text {
+  color: #6b2e0c;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-family: "PT Serif Caption", serif;
+  font-weight: 900;
+  font-size: 3.6rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #6b2e0c;
+  margin-bottom: 25px;
+  font-weight: 800;
 }
 
 
-h1, h2 {
-    text-align: center;
+.content-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 30px;
+    width: 100%; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 
-section {
-    padding: 30px;
-    max-width: 1000px;
+.design-image {
+    width: 55%;
+    max-width: 550px; 
+    height: auto;
+}
+
+.design-image1{
+  width: 30%;
+  height: auto;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
     margin: auto;
 }
 
-.about-art {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
+.event-card {
+    background: #fff8ee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.about-text {
-    flex: 1 1 400px;
-}
-
-.about-text h2{
-  font-size: 2rem;
-  font-family: 'Lugrasimo', serif;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.about-text p {
-  font-size: 1.2rem;
-  font-family: 'Artifika', serif;
-  color: #5a2c0c;
-  font-weight: 600;
-}
-
-
-.about-img {
-    flex: 1 1 300px;
-    text-align: center;
-}
-
-.about-img img {
-    width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-#clay{
-  width: 70%;
-}
-
-.instructor {
-    text-align: center;
-}
-
-
-.instructor h2{
-  font-size: 2rem;
-  font-family: 'Lugrasimo', serif;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.artist-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.artist-card img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+.event-card img {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-    border: 5px solid #f2d5a1;
-    margin-bottom: 20px;
 }
 
-.artist-info {
-    max-width: 600px;
-  background: #fff3d8;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 5px solid #6b2e0c;
+.event-info {
+    padding: 1.5rem;
 }
 
-.artist-info h3{
-  font-size: 1.2rem;
-  font-family: 'Artifika', serif;
-  color: #5a2c0c;
-  font-weight: 700;
+.event-info h3 {
+    margin: 0 0 0.5rem;
+      color: #3f2a18;
+    font-family: 'Artifika', serif;
 }
 
-.register-section {
-    text-align: center;
-  background: #fff3d8;
-    padding: 40px 30px;
-    border-radius: 12px;
-    margin-top: 20px;
+.event-info p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+      color: #5a2c0c;
 }
 
-.register-section h2{
-  color: #5a2c0c;
-  font-size: 2rem;
-  font-family: 'Lugrasimo', serif;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.register-section p{
-  font-size: 1.2rem;
-}
-
-.register-btn {
+.details-btn {
     display: inline-block;
-    margin-top: 15px;
-    background-color: #6b2e0c;
+    background-color: #d85b01;
     color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
     text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
-.register-btn:hover {
-    background-color: #5a240b;
+.details-btn:hover {
+    background-color: #b24a00;
 }
-
 
 
 .footer {

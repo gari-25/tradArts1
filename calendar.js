@@ -7,17 +7,15 @@ let currentDate = new Date();
 
 // Define active event days (can add links here too)
 const eventsData = {
-  "2025-06-02": "candle.html?date=2025-07-07",
-  "2025-06-15": "rangoli.html?date=2025-07-07",
-  "2025-06-23": "pattachitra.html?date=2025-07-07",
-  "2025-06-07": "past4.html?date=2025-07-07",
-  "2025-09-08": "string.html?date=2025-07-07",
-  "2025-07-04": "madhubani.html?date=2025-07-07",
-  "2025-07-15": "vastra.html?date=2025-07-07",
-  "2025-07-25": "clay.html?date=2025-07-07",
+  "2025-06-07": "candle.html?date=2025-07-07",
+  "2025-07-04": "rangoli.html?date=2025-07-07",
+  "2025-07-15": "pattachitra.html?date=2025-07-07",
   "2025-08-07": "madhubani.html?date=2025-07-07",
   "2025-08-18": "vastra.html?date=2025-07-18",
   "2025-08-24": "clay.html?date=2025-07-24",
+  "2025-09-08": "string.html?date=2025-07-07",
+  "2025-09-15": "warli.html?date=2025-07-07",
+  "2025-10-08": "fabric.html?date=2025-07-07",
 };
 
 function renderCalendar(date) {
@@ -78,3 +76,44 @@ renderCalendar(currentDate);
 
 
 
+const eventList = document.getElementById("verticalEvents");
+  const eventItems = eventList.children;
+  const itemHeight = eventItems[0].offsetHeight + 8;
+  const totalItems = eventItems.length;
+  const visibleCount = 3;
+  let index = 0;
+  let scrollInterval;
+
+  function verticalAutoScroll() {
+    index++;
+    if (index > totalItems - visibleCount) {
+      index = 0;
+    }
+    eventList.style.transform = `translateY(-${index * itemHeight}px)`;
+  }
+
+  function startScroll() {
+    scrollInterval = setInterval(verticalAutoScroll, 2800);
+  }
+
+  function stopScroll() {
+    clearInterval(scrollInterval);
+  }
+
+  // Start auto-scroll
+  startScroll();
+
+  // 🛑 Stop when any "Details" button or event item is clicked
+  document.querySelectorAll(".event-item a, .event-item button").forEach(el => {
+    el.addEventListener("click", () => {
+      stopScroll();
+
+      // Optional: restart scroll after 10 sec
+      setTimeout(() => {
+        startScroll();
+      }, 0); //
+    });
+  });
+
+
+    

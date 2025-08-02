@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c1a0e;
+}
+
 .logo{
     background-color:#6B2E00;
     display:flex;
@@ -11,8 +16,7 @@
     font-weight: bold;
     justify-content: space-around;
     align-items: center;
-    /* position: fixed;
-    z-index: 10; */
+    
 }
 
 .main_logo img{
@@ -65,6 +69,7 @@ main{
   background-attachment: fixed;
   border: 2px solid #6b2e0d;
 }
+
 
 
 /* Hero Section */
@@ -204,6 +209,7 @@ main{
 }
 
 
+
 .calendar-events {
   background: #fff3d8;
   padding: 0.7rem;
@@ -216,8 +222,15 @@ main{
 }
 
 .event-item {
-  padding: 0.8rem;
-  background: rgb(255, 243, 216,0.6);
+  /* padding: 0.8rem;
+  background: rgb(255, 243, 216,0.6); */
+  /* height: 160px;  */
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .event-item h4 {
@@ -262,6 +275,20 @@ main{
   text-decoration: none;
   color: #fff;
 }
+
+  .event-scroll-container {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s ease-in-out;
+}
+
+
 
 .full{
   display: flex;
@@ -313,42 +340,51 @@ main{
 }
 /*workshops*/
 
-.event-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+    .event-section {
       padding: 40px 20px;
+      text-align: center;
     }
 
-.event-card {
+    .scroll-wrapper {
+      overflow: hidden;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .event-grid {
+      display: flex;
+      gap: 30px;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .event-card {
       background: #fff3d8;
       width: 300px;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.7);
-      margin: 20px;
+      flex-shrink: 0;
     }
 
-.event-card img {
+    .event-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
 
-.event-details {
+    .event-details {
       padding: 20px;
     }
 
-.event-details h3 {
+    .event-details h3 {
       margin-bottom: 10px;
-       font-size: 18px;
-       font-family: 'Artifika', serif;
-       color: #3f2a18;
+      font-size: 18px;
+      font-family: 'Artifika', serif;
+      color: #3f2a18;
       font-weight: 900;
     }
 
-.instructor {
+    .instructor {
       display: flex;
       align-items: center;
       margin: 10px 0;
@@ -357,71 +393,77 @@ main{
       font-weight: 700;
     }
 
-.instructor img {
+    .instructor img {
       height: 40px;
       width: 40px;
       border-radius: 50%;
       margin-right: 10px;
-}
+    }
 
-.event-meta {
+    .event-meta {
       font-size: 14px;
       margin-bottom: 10px;
-     font-family: 'Artifika', serif;
-     color: #5a2c0c;
-     font-weight: 400;
-}
+      font-family: 'Artifika', serif;
+      color: #5a2c0c;
+      font-weight: 400;
+    }
 
-.event-price {
-      font-weight: bold;
-      color: #6b2e0c;
-      margin-bottom: 10px;
-}
-
-.event-actions button {
+    .event-actions button {
       margin-right: 10px;
       padding: 6px 12px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-}
+    }
 
-
-.event-actions .register {
+    .event-actions .register {
       background-color: #874019;
+    }
+
+    .event-actions .register:hover {
+      background: #5a2c0c;
+    }
+
+    .event-actions .details {
+      margin-bottom: 5px;
+      padding: 6px 12px;
+      background-color: #cc6f2f;
+      border-radius: 5px;
+    }
+
+    .event-actions .details a,
+    .register a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .event-actions .details:hover {
+      background: #e46a19;
+    }
+
+.more-button {
+  margin-top: 30px;
+  text-align: right;
 }
 
-.event-actions .register:hover{
-  background: #5a2c0c;
-}
-
-.event-actions .details {
-  margin-bottom: 5px;
-  padding: 6px 12px;
-  background-color: #cc6f2f;
-  border-radius: 5px;
-}
-
-.event-actions .details a{
-    text-decoration: none;
-  color: #fff;
-}
-
-.register a{
+.more-button a {
+  font-family: 'Artifika', serif;
+  font-size: 18px;
   text-decoration: none;
-  color: #fff;
+  background-color: #cc6f2f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
-.event-actions .details:hover{
-  background: #e46a19;
+.more-button a:hover {
+  background-color: #5a2c0c;
 }
 
 
 /*exhibitions*/
-
-
-
-
 
 .exhibitions-section {
   padding: 60px 20px;
@@ -765,83 +807,119 @@ main{
   font-size: 14px;
   color: bisque;
 }
-/* .slideshow-container {
-  position: relative;
-  max-width: 700px;
-  margin: auto;
-}
 
-.mySlides {
-  display: none;
-}
+/* RESPONSIVE STYLES */
 
-.artist-img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-} */
-
-/* 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.gallery-grid img {
+/* Adjust navigation for smaller screens */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .items {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-} */
-
-/* 
-.intro {
-    background: url('Madhubani.jpg') no-repeat center;
-    background-size: cover;
-    text-align: center;
-    padding: 80px 20px;
-    color: #fff;
-    background-blend-mode: multiply;
-    background-color: rgba(107, 46, 12, 0.8);
-}
-
-.intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-} */
-
-/* Responsive adjustments for tablets */
-/* @media (max-width: 991px) {
-  .container, .section, .workshop-card, .exhibition-grid, .event-box {
-    padding: 10px;
-    margin: 10px auto;
-    width: 95%;
+    font-size: 1em;
   }
 
-  .navbar ul {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text .tagline {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Adjust event section grid and scrolling */
+@media (max-width: 768px) {
+  .scroll-wrapper {
+    overflow-x: auto;
+  }
+  .event-grid {
+    flex-wrap: nowrap;
+    gap: 15px;
+  }
+  .event-card {
+    min-width: 240px;
+  }
+}
+
+/* Exhibition cards stack on mobile */
+@media (max-width: 768px) {
+  .exhibition-card,
+  .exhibition-card.reverse {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .exhibition-image,
+  .exhibition-content {
+    width: 100%;
+  }
+
+  .exhibition-content {
+    padding: 20px;
+  }
+}
+
+/* Past events stack */
+@media (max-width: 768px) {
+  .past-event-wrapper {
+    flex-direction: column;
     align-items: center;
   }
 
-  .hero h1, .hero p {
+  .past-event-image,
+  .past-event-details {
+    width: 100%;
     text-align: center;
   }
 
-  .grid, .exhibition-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  .past-event-details {
+    padding: 20px;
+  }
+}
+
+/* Reviews - make cards stack nicely */
+@media (max-width: 768px) {
+  .review-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .card img, .workshop-card img {
-    width: 100%;
-    height: auto;
+  .review-card {
+    width: 90%;
+  }
+}
+
+/* Adjust content sections and images */
+@media (max-width: 768px) {
+  .design-image,
+  .design-image1 {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .section-title,
+  .section-title1 {
+    font-size: 30px;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
   }
 }

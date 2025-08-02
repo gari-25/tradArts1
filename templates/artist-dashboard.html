@@ -22,6 +22,16 @@
             font-family:"Mukta";
         }
 
+        .artwork-description-container {
+            height: 80px; /* Adjust this height as needed */
+            overflow-y: auto;
+        }
+
+        .modal-content-area {
+            max-height: 80vh; /* This sets the maximum height to 80% of the viewport height */
+            overflow-y: auto; /* This adds a vertical scrollbar when content overflows */
+        }
+
         /* Modal specific styles for scroll behavior */
         .modal-open {
             overflow: hidden; /* Prevent scrolling on body when modal is open */
@@ -125,8 +135,8 @@
         </div>
     </div>
 
-    <div id="eventModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 p-4 hidden font-mukta">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md border-t-4 border-red-700">
+    <div id="eventModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl mx-auto overflow-y-auto p-5 modal-content-area">
             <h3 id="eventModalTitle" class="text-3xl font-bold text-gray-800 mb-6 font-quintessential">Add New Event/Workshop</h3>
             <form id="eventForm" class="space-y-4">
                 <div>
@@ -140,6 +150,10 @@
                 <div>
                     <label for="eventArtistName" class="block text-sm font-medium text-gray-700 mb-1">Artist Name</label>
                     <input type="text" id="eventArtistName" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 transition duration-200" required>
+                </div>
+                <div>
+                    <label for="eventImageUrl" class="block text-sm font-medium text-gray-700 mb-1">Image URL (Placeholder)</label>
+                    <input type="url" id="eventImageUrl" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 transition duration-200" placeholder="e.g., https://placehold.co/400x300/FF0000/FFFFFF?text=Event" required>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -155,14 +169,14 @@
                     <label for="eventLocation" class="block text-sm font-medium text-gray-700 mb-1">Location</label>
                     <input type="text" id="eventLocation" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 transition duration-200" required>
                 </div>
+                <div class="flex space-x-4 mb-4">
                 <div>
                     <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Type</label>
-                    <select id="eventType" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 transition duration-200" required>
-                        <option value="Workshop">Workshop</option>
-                        <option value="Exhibition">Exhibition</option>
-                        <option value="Live Demo">Live Demo</option>
-                        <option value="Talk">Talk</option>
-                    </select>
+                        <select id="eventType" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 transition duration-200" required>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Exhibition">Exhibition</option>
+                        </select>
+                </div>
                 </div>
                 <p id="eventFormError" class="text-red-600 text-sm mt-2 hidden"></p>
                 <div class="flex justify-end space-x-3 mt-6">
@@ -223,6 +237,7 @@
         const eventModalTitle = getById('eventModalTitle');
         const eventTitleInput = getById('eventTitle');
         const eventDescriptionInput = getById('eventDescription');
+        const eventImageUrlInput = getById('eventImageUrl');
         const eventDateInput = getById('eventDate');
         const eventTimeInput = getById('eventTime');
         const eventLocationInput = getById('eventLocation');
@@ -539,6 +554,9 @@
                             const eventElement = document.createElement('div');
                             eventElement.className = "bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition duration-200 transform hover:scale-[1.02]";
                             eventElement.innerHTML = `
+                                <img src="${event.imageUrl || "https://placehold.co/400x300/CCCCCC/333333?text=No+Image"}" alt="${event.title}"
+                                    class="w-full h-48 object-cover"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
                                 <div class="p-4">
                                     <h3 class="text-xl font-semibold text-gray-800 mb-2 font-quintessential">${event.title}</h3>
                                     <p class="text-gray-600 text-sm mb-2 line-clamp-2 font-mukta">${event.description}</p>
@@ -710,11 +728,12 @@
             const eventData = {
                 title: eventTitleInput.value,
                 description: eventDescriptionInput.value,
+                imageUrl: eventImageUrlInput.value,
                 date: eventDateInput.value,
                 time: eventTimeInput.value,
                 location: eventLocationInput.value,
                 type: eventTypeSelect.value,
-                artistName: eventArtistNameInput.value
+                artistName: eventArtistNameInput.value,
             };
 
             try {

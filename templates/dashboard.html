@@ -84,7 +84,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInWithCustomToken, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, query, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- Global Variables ---
         let app;
@@ -207,7 +207,7 @@
             try {
                 // Fetch from the user's private registeredEvents collection
                 const registrationsCollectionRef = collection(db, `artifacts/${currentAppId}/users/${currentUserId}/registeredEvents`);
-                const q = query(registrationsCollectionRef, orderBy('registrationDate', 'desc'));
+                const q = query(registrationsCollectionRef);
 
                 onSnapshot(q, (snapshot) => {
                     registeredEventsList.innerHTML = ''; // Clear on every update for real-time
@@ -216,13 +216,26 @@
                         getById('registeredEventsLoading').classList.remove('hidden');
                     } else {
                         getById('registeredEventsLoading').classList.add('hidden');
-                        snapshot.docs.forEach(doc => {
-                            const registration = { id: doc.id, ...doc.data() };
+
+                        // Get all docs and sort them by registrationDate
+                        const events = [];
+                        snapshot.forEach(doc => {
+                            events.push({ id: doc.id, ...doc.data() });
+                        });
+                        
+                        events.sort((a, b) => {
+                            // Check if registrationDate is a Timestamp object and handle conversion
+                            const dateA = a.registrationDate?.toDate ? a.registrationDate.toDate() : new Date(a.registrationDate);
+                            const dateB = b.registrationDate?.toDate ? b.registrationDate.toDate() : new Date(b.registrationDate);
+                            return dateB - dateA;
+                        });
+
+                        events.forEach(registration => {
                             const eventElement = document.createElement('div');
                             eventElement.className = "bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-200 p-4 hover:shadow-lg transition duration-200 transform hover:scale-[1.02]";
                             eventElement.innerHTML = `
                                 <h3 class="text-xl font-semibold text-gray-800 mb-2 font-quintessential">${registration.eventTitle}</h3>
-                                <p class="text-gray-600 text-sm mb-2">Registered on: ${new Date(registration.registrationDate.toDate()).toLocaleDateString()}</p>
+                                <p class="text-gray-600 text-sm mb-2">Registered on: ${registration.registrationDate?.toDate ? new Date(registration.registrationDate.toDate()).toLocaleDateString() : 'N/A'}</p>
                                 <div class="text-gray-700 text-sm mb-1">
                                     <span class="font-medium">Date:</span> ${registration.eventDate}
                                 </div>
@@ -231,10 +244,7 @@
                                 </div>
                                 <div class="text-gray-700 text-sm mb-1">
                                     <span class="font-medium">Location:</span> ${registration.eventLocation}
-                                </div>
-                                <div class="text-gray-700 text-sm mb-4">
-                                    <span class="font-medium">Price:</span> ${registration.eventPrice === 'Free' ? 'Free' : `₹${registration.eventPrice}`}
-                                </div>
+                                </div
                                 <!-- Add a button to view event details or cancel registration if desired -->
                             `;
                             registeredEventsList.appendChild(eventElement);

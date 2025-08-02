@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('/static/images/bg.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keep background fixed when scrolling */
+    font-family:"Mukta";
+}
+
 .logo {
     background-color: #6B2E00;
     display: flex;

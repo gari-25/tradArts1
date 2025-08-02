@@ -76,5 +76,11 @@
         "password": "vrinda12",
         "user_type": "artist",
         "firebase_uid": "pEay2jVlnshUdYu23NruQeRdEOQ2"
+    },
+    "User1": {
+        "email": "user1@mail.com",
+        "password": "user12",
+        "user_type": "visitor",
+        "firebase_uid": "o6VKSwgxKeMnS1n0eUT2rdDHlKl2"
     }
 }

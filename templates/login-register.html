@@ -36,19 +36,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="logo"><a href="/"><img src="/static/images/logo1.jpg" alt="kalakosh logo"></a></div>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/states">Art</a>
-                <a href="/login-events" class="active">Events</a>
-                <a href="/login">Login</a>
-                <a href="/contact"><i class="fas fa-user"></i> Contact </a>
-            </div>
-        </div>
-    </header>
-
+    
     <main>
         <div class="registration-container">
             <h1 class="font-quintessential">Register Now</h1>
@@ -60,7 +48,7 @@
                 <p class="text-gray-700 text-sm mb-1" id="event-time-display">Time: </p>
                 <p class="text-gray-700 text-sm mb-1" id="event-location-display">Location: </p>
                 <p class="text-gray-700 text-sm mb-1" id="event-type-display">Type: </p>
-                <p class="text-gray-700 text-sm mb-1" id="event-price-display">Price: </p>
+                <!-- <p class="text-gray-700 text-sm mb-1" id="event-price-display">Price: </p> -->
                 <p class="text-red-500 text-sm mt-2 hidden" id="event-load-error">Error loading event details.</p>
             </div>
 
@@ -82,51 +70,6 @@
             </form>
         </div>
     </main>
-
-    <div class="footer">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>
-                Kalakosh is a platform dedicated to preserving and promoting India's rich artistic heritage across every state.
-            </p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/states">Art</a></li>
-                <li><a href="/login-events">Events</a></li>
-                <li><a href="/contact">Contact us</a></li>
-                <li><a href="/login">Log in</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Explore By Theme</h3>
-            <ul>
-                <li><a href="#">Folk Paintings</a></li>
-                <li><a href="#">Classical Dance</a></li>
-                <li><a href="#">Handicrafts</a></li>
-                <li><a href="#">Tribal Art</a></li>
-                <li><a href="#">Artisan Stories</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Stay Connected</h3>
-            <p>Follow us on:</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>
-                <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>
-                <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
-            </div>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email" />
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Firebase SDKs -->
     <script type="module">
@@ -165,7 +108,7 @@
         const eventTimeDisplay = document.getElementById('event-time-display');
         const eventLocationDisplay = document.getElementById('event-location-display');
         const eventTypeDisplay = document.getElementById('event-type-display');
-        const eventPriceDisplay = document.getElementById('event-price-display');
+        // const eventPriceDisplay = document.getElementById('event-price-display');
         const eventLoadError = document.getElementById('event-load-error');
 
         // Function to load event details based on URL parameter
@@ -198,7 +141,7 @@
                     eventTimeDisplay.textContent = `Time: ${selectedEvent.time}`;
                     eventLocationDisplay.textContent = `Location: ${selectedEvent.location}`;
                     eventTypeDisplay.textContent = `Type: ${selectedEvent.type}`;
-                    eventPriceDisplay.textContent = `Price: ${selectedEvent.price === 'Free' ? 'Free' : `₹${selectedEvent.price}`}`;
+                    // eventPriceDisplay.textContent = `Price: ${selectedEvent.price === 'Free' ? 'Free' : `₹${selectedEvent.price}`}`;
                     eventLoadError.classList.add('hidden');
                     registrationForm.style.display = 'block'; // Show form
                 } else {
@@ -242,7 +185,7 @@
                 eventDate: selectedEvent.date,
                 eventTime: selectedEvent.time,
                 eventLocation: selectedEvent.location,
-                eventPrice: selectedEvent.price,
+                // eventPrice: selectedEvent.price,
                 userName: nameInput.value,
                 userEmail: emailInput.value,
                 userPhone: phoneInput.value,

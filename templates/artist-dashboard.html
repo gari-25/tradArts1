@@ -15,7 +15,7 @@
 
         /* General Body Styling with background image */
         body {
-            background-image: url('/static/images/bg.jpg'); /* Path to your background image */
+            background-image:"{{ url_for('static' filename='images/bg.jpg') }}"; /* Path to your background image */
             background-size: cover; /* Cover the entire background */
             background-position: center; /* Center the image */
             background-attachment: fixed; /* Keep background fixed when scrolling */
@@ -60,7 +60,7 @@
         <div class="container mx-auto px-4 py-8">
             <div id="authStatusMessage" class="hidden bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8 rounded-lg shadow-md" role="alert">
                 <p class="font-bold">Authentication Required</p>
-                <p>Please <a href="/login" class="text-blue-700 underline hover:text-blue-900 font-semibold">log in to your Kalakosh account</a> to access the Artist Dashboard.</p>
+                <p>Please <a href="{{ url_for('login') }}" class="text-blue-700 underline hover:text-blue-900 font-semibold">log in to your Kalakosh account</a> to access the Artist Dashboard.</p>
             </div>
 
             <!-- Artworks Section -->

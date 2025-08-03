@@ -300,7 +300,7 @@
                                     </div>
                                     <div class="event-meta">Date: ${event.date} | Time: ${event.time}</div>
                                     <div class="event-actions">
-                                        <button class="register"><a href="/login-register?event_id=${event.id}">Register Now</a></button>
+                                        <button class="register"><a href="{{ url_for('login-register') }}?event_id=${event.id}">Register Now</a></button>
                                         <button class="details">View Details</button>
                                     </div>
                                 </div>
@@ -326,7 +326,7 @@
                                     <p><strong>Venue:</strong> ${event.location}</p>
                                     <p><strong>Event Timing:</strong> ${event.date}, ${event.time}</p>
                                     <div class="buttons">
-                                        <a href="/login-register?event_id=${event.id}" class="btn">Register / Details</a>
+                                        <a href="{{ url_for('login-register') }}?event_id=${event.id}" class="btn">Register / Details</a>
                                     </div>
                                 </div>
                             `;

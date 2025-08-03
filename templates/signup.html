@@ -107,7 +107,7 @@
                         if (data.userType === 'artist') {
                             window.location.href = `{{ url_for('artist_dashboard') }}?token=${idToken}`; // Pass token to artist dashboard
                         } else {
-                            window.location.href = `{{ url_for('login_events') }}`; // General user dashboard
+                            window.location.href = `{{ url_for('login_events') }}`;
                         }
                     } else {
                         signupMessage.textContent = "Signup successful, but no custom token received. Please try logging in.";

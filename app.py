@@ -148,8 +148,7 @@ def signup_post():
         return jsonify({"message": "Error creating user."}), 500
 
 
-# --- New Routes from link_converter.py output ---
-
+# --- Routes for all HTML pages ---
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -457,6 +456,10 @@ def login_events():
 @app.route('/login-register')
 def login_events():
     return render_template('login-register.html')
+
+@app.route('/artist-dashboard')
+def artist_dashboard():
+    return render_template('artist-dashboard.html')
 
 # --- Main Execution Block ---
 if __name__ == '__main__':

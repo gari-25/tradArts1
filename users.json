@@ -106,5 +106,17 @@
         "password": "scrypt:32768:8:1$xATwRpHb6MpUEQ9A$90c0d24767015e4c7176de3e4d587dfdb7d900faaaa81c523410f8ab9816aba1df91d952f04ae8193664f25bd911fd08fceef9af25aeceec10e638b72f9e583e",
         "user_type": "visitor",
         "firebase_uid": "wOGhyowiu3ObuIcKZuLQuGOwi1B2"
+    },
+    "VA": {
+        "email": "va@mail.com",
+        "password": "scrypt:32768:8:1$AV02aeO7eRA47zcT$dd2650bcb90a0e579cf7dd61bfa6b873970db07cd5a4bbcdd06f94d9a8b3f428f8634827b29b1afd49cba3e893f25042357d20276642ebb2e1dcec4e365f7139",
+        "user_type": "artist",
+        "firebase_uid": "9VYpQZIQjEYIUAwEBNfnUuo06dJ2"
+    },
+    "VU": {
+        "email": "vu@mail.com",
+        "password": "scrypt:32768:8:1$GSYxCvp2LJovUzmD$95ed2183d011d78cf71481dd7fd3ee955239d6fa1e2f0e7fbcbe43020136a6968307b11da2237bc11f61bbc162731af5b17fce82c6f3f49a96d2c993df56fdd4",
+        "user_type": "visitor",
+        "firebase_uid": "11fO7RtWmyc1ddSewLFdd7JgSIn2"
     }
 }

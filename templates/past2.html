@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Warli Art Workshop - Recap</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="logo">
+    <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Kalakosh Logo" /></a></div>
+    <div class="nav">
+      <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+      <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+      <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+      <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+      <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
+    </div>
+  </div>
+
+  <main>
+    <section class="about-art">
+      <div class="about-text">
+      
+        <h2>Pattachitra – A Journey in Strokes and Stories</h2>
+<p>
+Our Pattachitra Art Workshop brought to life one of India’s oldest storytelling traditions, where every stroke echoes folklore and devotion. Participants immersed themselves in the graceful intricacies of natural dyes, mythological themes, and iconic motifs that define this heritage art.
+</p>
+<p>
+Guided by a seasoned artisan, the session was a serene dive into disciplined brushwork, traditional canvas preparation, and the soulful philosophy behind each design. The air was filled with the scent of tamarind paste and colors extracted from nature — just like the age-old practice.
+</p>
+<p>
+From curious beginners to passionate art lovers, everyone left not just with their own masterpiece, but with a deeper respect for the legacy carried in every Pattachitra.
+</p>
+
+      </div>
+      <div class="about-img">
+        <img src="{{ url_for('static', filename='images/past2.jpeg') }}" alt="Pattachitra" />
+      </div>
+    </section>
+
+    <section class="instructor">
+      <h2>Workshop Instructor</h2>
+      <div class="artist-card">
+        <img src="{{ url_for('static', filename='images/rameshwar-artist.jpeg') }}" alt="Rameshwar Mohite - Warli Artist" />
+        <div class="artist-info">
+          <h3>Bijay Mohapatra</h3>
+          <p>A master Pattachitra artist from Raghurajpur, Odisha — Bijay ji carries a lineage of traditional storytelling through his brush. With decades of experience, his calm presence and deep knowledge made the session both educational and spiritually enriching.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="register-section">
+      <h2>This Workshop Has Ended</h2>
+      <p>
+        Thank you to all the participants who joined us and made this workshop a success! Stay tuned for more such cultural experiences in the coming months.
+      </p>
+      <p><strong>Location:</strong> Jawahar Kala Kendra, Jaipur</p>
+      <p><strong>Dates:</strong> 15–16 June 2025</p>
+      <p><strong>Time:</strong> 10 AM – 3 PM</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Kalakosh</h3>
+        <p>
+          Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of folk, tribal, and classical artforms across every state.
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('login') }}">Log in</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Help & Support</h3>
+        <ul>
+          <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+          <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+          <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Follow us on:</p><br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/kalakosh.kala" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61578851587605" target="_blank"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://pin.it/1hq42s0dv" target="_blank"><i class="bx bxl-pinterest"></i></a>
+                </div><br>
+                <p id="mail"><a href="mailto:kalakoshinfo@gmail.com"><i class="bx bxs-envelope"></i>: kalakoshinfo@gmail.com</a></p>
+            </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Kalakosh. Designed with ❤ in India.</p>
+    </div>
+  </footer>
+</body>
+</html>

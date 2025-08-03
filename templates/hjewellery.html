@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himachal Jewellery Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('Himachal') }}"><button id="Back">Back</button></a>
+    <h1 class="gallery-title">Himachal Jewellery Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RC1GD0_3CHk?si=sMnjqYvjlbudGiKR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Traditional Jewellery of Himachal</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/hjewellery1.jpg') }}" class="gallery-media">
+            <p class="media-caption">Jewellery</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/hjewellery2.jpg') }}" class="gallery-media">
+            <p class="media-caption">Jhumkas</p>
+        </div>
+
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4hTFdZOmTlg?si=vhavZ6Dg4xf5VPla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Traditional Jewellery</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/hjewellery3.jpg') }}" class="gallery-media">
+            <p class="media-caption">Rings</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/hjewellery4.jpg') }}" class="gallery-media">
+            <p class="media-caption">Necklaces</p>
+        </div>
+
+    </div>
+</body>
+</html>

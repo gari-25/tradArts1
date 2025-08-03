@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalaKosh State-region</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='State-Artform.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Mukta&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="logo">
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo1.png') }}"></a></div> 
+
+        <div class="nav">
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items active">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
+        </div>
+    </div>
+
+    <div class="content-section">
+            <img src="{{ url_for('static', filename='images/LeftDesign2.png') }}" class="design-image">
+            <p class="section-title">North</p>
+            <img src="{{ url_for('static', filename='images/Flipped right design2.png') }}" class="design-image">
+    </div>
+    <div class="states">
+        <div class="sitem-container">
+                <a href="{{ url_for('UP') }}"><img src="{{ url_for('static', filename='images/UP.png') }}" class="sitem"></a>
+                <p class="sitem-text">Uttar Pradesh</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('J&K') }}"><img src="J&K" class="sitem"></a>
+                <p class="sitem-text">Jammu & Kashmir</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('Himachal') }}"><img src="{{ url_for('static', filename='images/Himachal.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Himachal Pradesh</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+            <img src="{{ url_for('static', filename='images/LeftDesign2.png') }}" class="design-image">
+            <p class="section-title">West</p>
+            <img src="{{ url_for('static', filename='images/Flipped right design2.png') }}" class="design-image">
+    </div>
+    <div class="states">
+        <div class="sitem-container">
+                <a href="{{ url_for('Gujarat') }}"><img src="{{ url_for('static', filename='images/Gujarat1.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Gujarat</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('Rajasthan') }}"><img src="{{ url_for('static', filename='images/Rajasthan.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Rajasthan</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('MP') }}"><img src="{{ url_for('static', filename='images/MP.webp') }}" class="sitem"></a>
+                <p class="sitem-text">Madhya Pradesh</p>
+        </div>
+    </div>
+    
+    <div class="content-section">
+            <img src="{{ url_for('static', filename='images/LeftDesign2.png') }}" class="design-image">
+            <p class="section-title">East</p>
+            <img src="{{ url_for('static', filename='images/Flipped right design2.png') }}" class="design-image">
+    </div>
+    <div class="states">
+        <div class="sitem-container">
+                <a href="{{ url_for('Odisha') }}"><img src="{{ url_for('static', filename='images/Odisha.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Odisha</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('West Bengal') }}"><img src="{{ url_for('static', filename='images/West-Bengal.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">West Bengal</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('Assam') }}"><img src="{{ url_for('static', filename='images/Assam.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Assam</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+            <img src="{{ url_for('static', filename='images/LeftDesign2.png') }}" class="design-image">
+            <p class="section-title">South</p>
+            <img src="{{ url_for('static', filename='images/Flipped right design2.png') }}" class="design-image">
+    </div>
+    <div class="states">
+        <div class="sitem-container">
+                <a href="{{ url_for('Tamil_Nadu') }}"><img src="Tamil-Nadu.avif" class="sitem"></a>
+                <p class="sitem-text">Tamil Nadu</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('kerala') }}"><img src="{{ url_for('static', filename='images/Kerala.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Kerala</p>
+        </div>
+        <div class="sitem-container">
+                <a href="{{ url_for('karnataka') }}"><img src="{{ url_for('static', filename='images/karnataka.jpg') }}" class="sitem"></a>
+                <p class="sitem-text">Karnataka</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+  <div class="footer-container">
+
+    <!-- About Kalakosh -->
+    <div class="footer-section">
+      <h3>About Kalakosh</h3>
+      <p>
+        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
+        folk, tribal, and classical artforms across every state.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+        <li><a href="{{ url_for('kalakosh_events') }}">Events</a></li>
+        <li><a href="{{ url_for('login') }}">Log in</a></li>
+      </ul>
+    </div>
+
+    <!-- Help & Support -->
+    <div class="footer-section">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Stay Connected -->
+    <div class="footer-section">
+      <h3>Stay Connected</h3>
+      <p>Follow us on:</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/kalakosh.kala" target="_blank"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a href="https://www.facebook.com/profile.php?id=61578851587605" target="_blank"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://pin.it/1hq42s0dv" target="_blank"><i class="bx bxl-pinterest"></i></a>
+      </div>
+      <p id="mail"><a href="mailto:kalakoshinfo@gmail.com?subject=Inquiry from your website"><i class="bx bxs-envelope"></i> : kalakoshinfo@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warli Art Workshop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <div class="logo">
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo.png') }}"></a></div> 
+        <div class="nav">
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
+        </div>
+    </div>
+
+    <main>
+
+    <section class="about-art">
+        <div class="about-text">
+            <h2>Warli Storytelling in Symbols</h2>
+            <p>Dive into the world of tribal tales told without words. This workshop explores Warli art, a traditional form from Maharashtra, where simple white symbols on earthy backgrounds narrate stories of community, nature, and daily life. You'll learn how to create your own visual story using this ancient symbolic language.</p>
+        </div>
+        <div class="about-img">
+            <img src="{{ url_for('static', filename='images/fabric2.jpeg') }}" alt="Map of Madhubani">
+        </div>
+    </section>
+
+    <section class="instructor">
+        <h2>Your Workshop Guide</h2>
+        <div class="artist-card">
+            <img src="{{ url_for('static', filename='images/sunita.jpg') }}" alt="Workshop Instructor">
+            <div class="artist-info">
+                <h3>Sunita Rao</h3>
+                <p>A seasoned Warli artist from Palghar, Sunita has been practicing and teaching this art for over a decade. Her work has been featured in cultural exhibitions across India, and her passion lies in preserving the spirit of Warli while making it accessible to all.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="register-section">
+        <h2>Workshop Details</h2>
+        <p><strong>Location:</strong>Kalakosh Collective, Fort Kochi, Kerala</p>
+        <p><strong>Dates:</strong> 28 July 2025</p>
+        <p><strong>Time:</strong> 5 PM – 7 PM</p>
+        <a href="{{ url_for('login') }}" class="register-btn">Register Here</a>
+    </section>
+</main>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About Kalakosh -->
+    <div class="footer-section">
+      <h3>About Kalakosh</h3>
+      <p>
+        Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
+        folk, tribal, and classical artforms across every state.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+        <li><a href="{{ url_for('events') }}">Events</a></li>
+        <li><a href="{{ url_for('login') }}">Log in</a></li>
+      </ul>
+    </div>
+
+    <!-- Help & Support -->
+    <div class="footer-section">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Stay Connected -->
+    <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Follow us on:</p><br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/kalakosh.kala" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61578851587605" target="_blank"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://pin.it/1hq42s0dv" target="_blank"><i class="bx bxl-pinterest"></i></a>
+                </div><br>
+                <p id="mail"><a href="mailto:kalakoshinfo@gmail.com"><i class="bx bxs-envelope"></i>: kalakoshinfo@gmail.com</a></p>
+            </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Kalakosh. Designed with ❤ in India.</p>
+  </div>
+</footer>
+</body>
+</html>

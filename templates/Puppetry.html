@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppets Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('Rajasthan') }}"><button id="Back">Back</button></a>
+    <h1 class="gallery-title">Puppetry Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/C9kcUkj8cEQ?si=OTn6YWAGNIwTCL0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Rajasthani Puppet Show</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static' filename='images/puppet1') }}" alt="String Puppets" class="gallery-media">
+            <p class="media-caption">String Puppets</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/puppet2.webp') }}" alt="Puppetry Show" class="gallery-media">
+            <p class="media-caption">Puppetry Show</p>
+        </div>
+
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mWVedpURi7M?si=SlEIudxBPfGGJehJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Making of a Puppet</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/puppet3.jpg') }}" alt="Puppet Making" class="gallery-media">
+            <p class="media-caption">Puppet Making</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/Puppets4.jpg') }}" alt="Traditional Puppet Dance" class="gallery-media">
+            <p class="media-caption">Traditional Puppet Dance</p>
+        </div>
+
+    </div>
+</body>
+</html>

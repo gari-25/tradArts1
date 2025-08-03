@@ -1,0 +1,92 @@
+{
+    "dlwmd": {
+        "email": "wd@vvvvv",
+        "password": "1234"
+    },
+    "drashti singh": {
+        "email": "abc@gmail.com",
+        "password": "1234"
+    },
+    "hi": {
+        "email": "ac@gmail.com",
+        "password": "1234"
+    },
+    "drashtisingh14": {
+        "email": "acd@gmail.com",
+        "password": "1234"
+    },
+    "vaibhavi": {
+        "email": "vaibhavi@gmail.com",
+        "password": "1234"
+    },
+    "null": {
+        "email": null,
+        "password": null
+    },
+    "garima": {
+        "email": "ladharshed@gmail.com",
+        "password": "Gari@123"
+    },
+    "Abc": {
+        "email": "abc@gmail.com",
+        "password": "1234"
+    },
+    "v": {
+        "email": "hi@gmail.com",
+        "password": "123",
+        "user_type": "visitor"
+    },
+    "G": {
+        "email": "gari@gmail.com",
+        "password": "456",
+        "user_type": "artist"
+    },
+    "usera": {
+        "email": "anotheruser@mail.com",
+        "password": "abcdefg",
+        "user_type": "user",
+        "firebase_uid": "lKnZYJmz6KVowXT44kpbR5ONPKu2"
+    },
+    "artist1": {
+        "email": "testartist@mail.com",
+        "password": "123456",
+        "user_type": "artist",
+        "firebase_uid": "pbMrHKD3QBS595kS0kTQ81uXIaT2"
+    },
+    "artist2": {
+        "email": "artist2@example.com",
+        "password": "abcdefg",
+        "user_type": "artist",
+        "firebase_uid": "Js8U7X3j6Cauuw3metS39NCC7Bd2"
+    },
+    "userb": {
+        "email": "userb@test.com",
+        "password": "ABCDEFG",
+        "user_type": "visitor",
+        "firebase_uid": "g22jkso9pfUdeUUUN0fbiGyDRk43"
+    },
+    "Amit": {
+        "email": "amit@mail.com",
+        "password": "amit123",
+        "user_type": "artist",
+        "firebase_uid": "xSuMzZ3uZgameb1p9Xyv2EeJFbl1"
+    },
+    "Vrinda": {
+        "email": "vrinda@mail.com",
+        "password": "vrinda12",
+        "user_type": "artist",
+        "firebase_uid": "pEay2jVlnshUdYu23NruQeRdEOQ2"
+    },
+    "User1": {
+        "email": "user1@mail.com",
+        "password": "user12",
+        "user_type": "visitor",
+        "firebase_uid": "o6VKSwgxKeMnS1n0eUT2rdDHlKl2"
+    },
+    "ArtistA": {
+        "email": "artista@mail.com",
+        "password": "artista12",
+        "user_type": "artist",
+        "firebase_uid": "2jJlwbUKxEQ8plqoNEZrM0EPHvJ3"
+    }
+}

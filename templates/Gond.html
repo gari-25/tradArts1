@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gond Painting Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('MP') }}"><button id="Back">Back</button></a>
+    <h1 class="gallery-title">Gond Painting Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nq1qn4pX3Gw?si=ZvD5dW0fsz4VzTiL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">The Art of Gond Painting</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/gond1.jpeg') }}" alt="Traditional Gond" class="gallery-media">
+            <p class="media-caption">Traditional Gond</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/gond2.jpeg') }}" alt="The Gond Tree of Life" class="gallery-media">
+            <p class="media-caption">The Gond Tree of Life</p>
+        </div>
+
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dVWExfnrzdg?si=uFCRCkrMk6vvmj5y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Gond Art Tutorial</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/gond3.jpg') }}" alt="Gond Folk" class="gallery-media">
+            <p class="media-caption">Gond Folk</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/gond4.jpg') }}" alt="Gond Tribe" class="gallery-media">
+            <p class="media-caption">Gond Tribe</p>
+        </div>
+
+    </div>
+</body>
+</html>

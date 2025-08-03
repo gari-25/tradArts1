@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banarasi Silk Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('UP') }}"><button id="Back">Back</button></a>
+    <h1 class="gallery-title">Banarasi Silk Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oaphHtLuoSQ?si=3a1fLXvRv1zrJhhK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Banarasi Saree - The Traditional Way</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/bsilk1.jpg') }}" class="gallery-media">
+            <p class="media-caption">Banarasi Designs</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/bsilk2.jpg') }}" class="gallery-media">
+            <p class="media-caption">Banarasi Fabric</p>
+        </div>
+
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-0oLunOWYXo?si=hkiMv-nYDT-7Pv-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">The Industry of Banarasi Sarees</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/bsilk3.jpg') }}" class="gallery-media">
+            <p class="media-caption">Banarasi Saree</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/bsilk4.jpg') }}" class="gallery-media">
+            <p class="media-caption">Banarasi Silk</p>
+        </div>
+
+    </div>
+</body>
+</html>

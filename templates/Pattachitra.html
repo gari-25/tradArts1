@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalaKosh Gallery - Mughal Painting</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('Odisha') }}"><button id="Back">Back</button></a>
+    <h1 class="gallery-title">Pattachitra Painting Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nNnh6IPJsXc?si=eM-xJBpme0V2NLbm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">The Art of Pattachitra</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/pattachitra1.jpeg') }}" class="gallery-media">
+            <p class="media-caption">Pattachitra Ardhnarishwar</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/pattachitra2.jpeg') }}" alt="" class="gallery-media">
+            <p class="media-caption">Pattachitra Maa</p>
+        </div>
+
+        <div class="gallery-item video-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iQZ2K72Q1Ws?si=ETbjvT_OiENw6JCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="gallery-media"></iframe>
+            <p class="media-caption">Pattachitra Tutorial</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/pattachitra3.jpeg') }}" alt="" class="gallery-media">
+            <p class="media-caption">Pattachitra Folk</p>
+        </div>
+
+        <div class="gallery-item image-item">
+            <img src="{{ url_for('static', filename='images/pattachitra4.jpeg') }}" alt="" class="gallery-media">
+            <p class="media-caption">Pattachitra RadhaKrishna</p>
+        </div>
+
+    </div>
+</body>
+</html>

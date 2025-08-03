@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalaKosh Artforms</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artform-gallery.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="{{ url_for('State_region') }}"><button id="Back">Back</button></a>
+
+    <div class="artform-container1">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/papier.jpg') }}" class="artform-image">
+            <p class="artform-name">Papier-Mâché</p>
+        </div>
+        <div class="description-container1">
+            Papier-Mâché is a renowned craft from Jammu & Kashmir, with a rich history dating back to the 14th century, believed to have been introduced by Persian Sufi saint Mir Sayyid Ali Hamadani. It flourished under Mughal patronage, becoming synonymous with Kashmiri artistry. The beauty of Papier-Mâché lies in its intricate hand-painted designs, vibrant colors, and smooth, lacquered finish on molded paper pulp. Artisans create exquisite boxes, bowls, decorative items, and jewelry, often depicting floral motifs, birdlife, and scenes from Kashmiri folklore. Culturally significant, Papier-Mâché is a cherished part of Kashmiri heritage, reflecting a blend of Persian and local artistic sensibilities. It's a key source of livelihood for many artisans, preserving a centuries-old tradition of transforming humble paper into objects of unique beauty and cultural storytelling.
+            <a href="{{ url_for('Papier_Mâché') }}"><button class="gallery">View Gallery</button></a>
+        </div>
+    </div>
+
+    <div class="artform-container2">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/Namda.jpg') }}" class="artform-image">
+            <p class="artform-name">Namda making</p>
+        </div>
+        <div class="description-container2">
+            Namda making is a traditional felted rug craft from Jammu & Kashmir, with a history dating back to the 11th century. Unlike woven carpets, Namdas are made by felting wool through pressure and moisture, a technique believed to have Central Asian origins. The beauty of Namdas lies in their soft, warm texture and the vibrant embroidery (Aari work) that adorns them. Artisans create colorful floral patterns, animal motifs, and geometric designs on the felted base, transforming simple wool into artistic floor coverings or wall hangings. Culturally significant, Namdas are integral to Kashmiri households, providing warmth and comfort in the cold climate. They represent a unique form of textile art, passed down through generations of skilled craftspeople, and contribute significantly to the rich material culture of the region.
+            <a href="{{ url_for('Namda') }}"><button class="gallery">View Gallery</button></a>
+        </div>
+    </div>
+
+    <div class="artform-container1">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/kceiling.jpg') }}" class="artform-image">
+            <p class="artform-name">Khatamband ceiling art</p>
+        </div>
+        <div class="description-container1">
+            Khatamband Ceiling Art is an exquisite form of wooden ceiling craftsmanship from Kashmir, with a history believed to date back to the 14th century. This intricate art gained prominence during the Mughal era, adorning mosques, shrines, and elite residences. The beauty of Khatamband lies in its mesmerizing geometric patterns, created by fitting together small, cut pieces of wood (usually deodar or walnut) without the use of nails or adhesive. The symmetrical designs form stunning, three-dimensional ceiling mosaics. Culturally significant, Khatamband is a hallmark of Kashmiri architectural elegance and skilled carpentry. It transforms simple ceilings into breathtaking works of art, reflecting a sophisticated blend of craftsmanship and mathematical precision, and continues to be a cherished part of Kashmiri interior design heritage.Bandhani is an ancient tie-dye art from Gujarat and Rajasthan, where small knots are tied on fabric before dyeing, creating intricate patterns. Each tiny dot in a Bandhani piece represents a knot, making it a labor-intensive craft. The resulting vibrant and geometric designs are often used in saris, turbans, and dupattas, reflecting regional motifs and cultural narratives.
+            <a href="{{ url_for('kceiling') }}"><button class="gallery">View Gallery</button></a>
+        </div>
+    </div>
+
+    <div class="artform-container2">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/wicker.jpg') }}" class="artform-image">
+            <p class="artform-name">Willow Wicker Crafts</p>
+        </div>
+        <div class="description-container2">
+            Willow Wicker Crafts are a traditional handicraft in Jammu & Kashmir, particularly popular in the Kashmir Valley, with a history deeply tied to the abundant local willow trees. This craft has been practiced for centuries, providing essential household items. The beauty of Willow Wicker Crafts lies in their natural, earthy appeal, durability, and the intricate weaving patterns. Artisans meticulously weave thin willow branches into a wide array of functional items like baskets, hampers, chairs, tables, and decorative pieces. Culturally significant, Willow Wicker Crafts are integral to Kashmiri daily life, used for everything from carrying goods to furnishing homes. This eco-friendly craft supports numerous rural communities, showcasing a sustainable art form and preserving traditional weaving skills passed down through generations.
+            <a href="{{ url_for('wicker') }}"><button class="gallery">View Gallery</button></a>
+        </div>
+    </div>
+
+    </body>
+</html>

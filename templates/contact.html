@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Almendra+SC&family=Amarante&family=Luxurious+Roman&family=Hind&family=Palatino+Linotype&family=Winky+Rough:wght@400;700&family=Quintessential&family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Header and nav bar -->
+     <div class="header">
+    <div class="logo">
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Logo1.png') }}"></a></div> 
+
+        <div class="nav">
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items active">Contact Us</div></a>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Team Profiles -->
+<div class="profiles-head">
+    <img src="{{ url_for('static', filename='images/left-sep.png') }}">
+    <div>Meet Our Team</div>
+    <img src="{{ url_for('static', filename='images/right-sep.png') }}">
+</div>
+
+<div class="team-cards">
+
+  <div class="team-card floating-element">
+    <div class="card-header">
+      <div class="image-wrapper">
+      <img src="{{ url_for('static', filename='images/Drashti.jpeg') }}" alt="Drashti">
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Drashti</h3>
+        <p>
+          Drashti developed Kalakosh's login and signup systems, ensuring secure user access. She brings 
+          innovation and strong teamwork to every aspect of the project.
+        </p>
+      <button onclick="window.open('https:/www.linkedin.com/in/drashti-singh-441143328','_blank')">Connect</button>
+    </div>
+  </div>
+
+  <div class="team-card floating-element">
+    <div class="card-header">
+      <div class="image-wrapper">
+      <img src="{{ url_for('static', filename='images/Iti.jpeg') }}" alt="Iti">
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Iti</h3>
+         <p>
+          Iti leads Communications & Events at Kalakosh, building community ties and shaping the Events Page. 
+          Her communication skills help share the platform's artistic vision effectively.
+         </p>
+      <button onclick="window.open('https:/www.linkedin.com/in/itiagrawal2007','_blank')">Connect</button>
+    </div>
+  </div>
+
+  <div class="team-card floating-element">
+    <div class="card-header">
+      <div class="image-wrapper">
+      <img src="{{ url_for('static', filename='images/Vaibhavi.jpeg') }}" alt="Vaibhavi">
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Vaibhavi</h3>
+        <p>
+          Vaibhavi shaped Kalakosh's visual identity through the Artforms pages and galleries. She led layout planning and drove ongoing design improvements while fostering team collaboration.
+        </p>
+      <button onclick="window.open('https:/www.linkedin.com/in/vaibhavi-parmar-b1575b328','_blank')">Connect</button>
+    </div>
+  </div>
+
+  <div class="team-card floating-element">
+    <div class="card-header">
+      <div class="image-wrapper">
+      <img src="{{ url_for('static', filename='images/Garima.jpeg') }}" alt="Garima">
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Garima</h3>
+        <p>
+          Garima crafted the Homepage and Contact Us page designs, adding visual charm to Kalakosh. She also 
+          enriched content through artform research and active team input.
+        </p>
+      <button onclick="window.open('https:/www.linkedin.com/in/garima-lad-79816b32a','_blank')">Connect</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Contact Form -->
+<div class="page-content floating-element">
+    <h2>We'd love to hear from you!</h2>
+        <div class="contact-info">
+            <p>Have questions, feedback, or collaboration inquiries? We'd love to hear from you!</p>
+            <p><strong>Email:</strong> kalakoshinfo@gmail.com</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Address:</strong> 123 Art Lane, Cultural District, Vadodara, Gujarat, India</p>
+            <h2>Send us a message</h2>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co./kalakoshinfo@gamil.com" method="post"
+        onsubmit="alert('Thank you for reaching out! We will get back to you soon.')">
+            
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit" onclick="return validateForm()">Send Message</button>
+        </form>
+    </div>
+
+<!-- Footer -->
+  <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>About Kalakosh</h3>
+          <p>Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of 
+        folk, tribal, and classical artforms across every state.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+            <li><a href="{{ url_for('kalakosh_events') }}">Events</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Help & Support</h3>
+          <ul>
+            <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+            <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+            <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Stay Connected</h3>
+          <p>Follow us on:</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/kalakosh.kala" target="_blank"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61578851587605" target="_blank"><i class="bx bxl-facebook"></i></a>
+            <a href="https://pin.it/1hq42s0dv" target="_blank"><i class="bx bxl-pinterest"></i></a>
+          </div>
+          <p id="mail"><a href="mailto:kalakoshinfo@gmail.com" target="_blank">
+            <i class="bx bxs-envelope"></i>: kalakoshinfo@gmail.com
+          </a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+      </div>
+    </footer>
+
+<script>
+
+//Form Validation
+function validateForm() {
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
+
+    let valid = true;
+    let errorMessages = [];
+
+    // Reset borders
+    [name, email, subject, message].forEach(field => {
+        field.style.border = '1px solid #ccc';
+    });
+
+    // Name
+    if (name.value.trim() === '') {
+        errorMessages.push("Name is required.");
+        name.style.border = '2px solid red';
+        valid = false;
+    }
+
+    // Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+        errorMessages.push("Please enter a valid email address.");
+        email.style.border = '2px solid red';
+        valid = false;
+    }
+
+    // Subject
+    if (subject.value.trim() === '') {
+        errorMessages.push("Subject is required.");
+        subject.style.border = '2px solid red';
+        valid = false;
+    }
+
+    // Message
+    if (message.value.trim().length < 10) {
+        errorMessages.push("Message must be at least 10 characters long.");
+        message.style.border = '2px solid red';
+        valid = false;
+    }
+
+    if (!valid) {
+        alert(errorMessages.join('\n'));
+    }
+
+    return valid; // If false, form submission will be blocked
+}
+
+//Element Floating
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Trigger once
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Select all elements with the floating class
+    const floatingElements = document.querySelectorAll(".floating-element");
+
+    floatingElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>

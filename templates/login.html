@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kalakosh</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lestyle.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="logo">
+        <div class="main_logo"><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo.png') }}"></a></div> 
+
+        <div class="nav">
+        <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+        <a href="{{ url_for('State_region') }}">><div class="items">Artforms</div></a>
+        <a href="{{ url_for('events') }}"><div class="items">Events</div></a>
+        <a href="{{ url_for('login') }}"><div class="items active">Log in</div></a>
+        <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-box">
+           <h2>Welcome</h2>
+           <form id="login-form">
+               <div class="input-box">
+                <input type="text" id="login-username" placeholder="Username" required>
+               </div>
+               <div class="input-box">
+                <input type="password" id="login-password" placeholder="Password" required>
+               </div>
+               <button type="submit">Login</button>
+               <p id="login-message" class="message"></p>
+               <div class="register-link">
+                   <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+               </div>
+           </form>
+        </div>
+        <div class="content">
+            <video autoplay muted playsinline>
+               <source src="{{ url_for('static', filename='images/KalaKosh.mp4') }}" type="video/mp4" />
+                   Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+        // Your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+            authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+            projectId: "kalakosh-website-bd6a6",
+            storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+            messagingSenderId: "1093917835204",
+            appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+            measurementId: "G-F7N10Z0RGC"
+        };
+
+        // Initialize Firebase client-side app
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const loginForm = document.getElementById('login-form');
+        const loginUsernameInput = document.getElementById('login-username');
+        const loginPasswordInput = document.getElementById('login-password');
+        const loginMessage = document.getElementById('login-message');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loginMessage.textContent = '';
+            loginMessage.className = 'message'; // Reset message styling
+
+            const username = loginUsernameInput.value;
+            const password = loginPasswordInput.value;
+
+            try {
+                // 1. Send login data to Flask backend
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    loginMessage.textContent = data.message;
+                    loginMessage.classList.add('success');
+                    console.log("Flask Login Success:", data);
+
+                    // 2. Use the custom token from Flask to sign in to Firebase client-side
+                    if (data.customToken) {
+                        const userCredential = await signInWithCustomToken(auth, data.customToken);
+                        const user = userCredential.user;
+                        console.log("Client-side Firebase sign-in successful with custom token:", user.uid);
+
+                        // 3. Get the Firebase ID Token for redirection
+                        const idToken = await user.getIdToken();
+
+                        // 4. Redirect based on user type
+                        if (data.userType === 'artist') {
+                            window.location.href = `{{ url_for('artist_dashboard') }}?token=${idToken}`; // Pass token to artist dashboard
+                        } else {
+                            window.location.href = `{{ url_for('login_events') }}`;
+                        }
+                    } else {
+                        loginMessage.textContent = "Login successful, but no custom token received. Please try again.";
+                        loginMessage.classList.add('error');
+                    }
+
+                } else {
+                    loginMessage.textContent = data.message || 'Login failed.';
+                    loginMessage.classList.add('error');
+                    console.error("Flask Login Error:", data);
+                }
+            } catch (error) {
+                loginMessage.textContent = 'An unexpected error occurred. Please try again.';
+                loginMessage.classList.add('error');
+                console.error("Client-side Login Fetch Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>

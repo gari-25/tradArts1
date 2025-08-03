@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Kalakosh</title>
+    <link rel="stylesheet" href="/static/lestyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Google Fonts for Kalakosh branding -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Quintessential&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&family=Lugrasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Fonts */
+        .font-mukta { font-family: 'Mukta', sans-serif; }
+        .font-quintessential { font-family: 'Quintessential', cursive; }
+        .font-almendra-sc { font-family: 'Almendra SC', serif; }
+        .font-lugrasimo { font-family: 'Lugrasimo', cursive; }
+        .font-artifika { font-family: 'Artifika', serif; }
+        .font-pt-serif-caption { font-family: 'PT Serif Caption', serif; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- EXACT USER-PROVIDED HEADER -->
+        <div class="logo">
+            <div class="main_logo"><a href="/"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Kalakosh Logo"></a></div>
+            <div class="nav">
+                <a href="{{ url_for('index') }}"><div class="items">Home</div></a>
+                <a href="{{ url_for('State_region') }}"><div class="items">Artforms</div></a>
+                <a href="{{ url_for('events') }}"><div class="items active">Events</div></a>
+                <a href="{{ url_for('login') }}"><div class="items">Log in</div></a>
+                <a href="{{ url_for('contact') }}"><div class="items">Contact Us</div></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Where Indian Art Comes Alive</h1>
+                <p class="tagline">A blend of workshops, heritage stories, and handmade legacies brought together beautifully.</p>
+                <a href="#upcoming-events-section" class="hero-btn">Explore Events</a>
+            </div>
+        </section>
+
+        <div class="full-content-wrapper">
+            <section class="calendar-wrapper">
+                <h1 class="section-main-title">Events Calendar</h1>
+                <div class="calendar-box">
+                    <div class="calendar-header">
+                        <span class="arrow">&#10094;</span>
+                        <span class="month">July 2024</span>
+                        <span class="arrow">&#10095;</span>
+                    </div>
+                    <div class="calendar-days">
+                        <div> S </div>
+                        <div> M </div>
+                        <div> T </div>
+                        <div> W </div>
+                        <div> T </div>
+                        <div> F </div>
+                        <div> S </div>
+                    </div>
+                    <div class="calendar-dates">
+                        <div class="inactive"></div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div class="active">3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div class="active">7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                        <div class="active">13</div>
+                        <div>14</div>
+                        <div>15</div>
+                        <div>16</div>
+                        <div>17</div>
+                        <div class="active">18</div>
+                        <div>19</div>
+                        <div>20</div>
+                        <div>21</div>
+                        <div>22</div>
+                        <div>23</div>
+                        <div class="active">24</div>
+                        <div>25</div>
+                        <div>26</div>
+                        <div>27</div>
+                        <div>28</div>
+                        <div>29</div>
+                        <div>30</div>
+                        <div>31</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="upcoming-events-list-section" id="upcoming-events-section">
+                <h1 class="section-main-title">Upcoming Workshops & Exhibitions</h1>
+                <hr class="section-divider" />
+                <!-- Dynamic Upcoming Events will be loaded here -->
+                <div id="upcomingEventsDynamicList" class="dynamic-list-container">
+                    <p class="loading-message">Loading upcoming events...</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="dynamic-events-wrapper">
+            <div class="content-section">
+                <img src="{{ url_for('static', filename='images/nLeftdesign.png') }}" class="design-image" alt="Design Element">
+                <p class="section-title">Workshops</p>
+                <img src="{{ url_for('static', filename='images/nrightdesign.png') }}" class="design-image" alt="Design Element">
+            </div>
+
+            <section class="event-cards-grid" id="workshops">
+                <!-- Dynamic Workshop Cards will be loaded here -->
+                <p class="loading-message col-span-full" id="workshopLoading">Loading workshops...</p>
+            </section>
+
+            <div class="content-section">
+                <img src="{{ url_for('static', filename='images/nLeftdesign.png') }}" class="design-image" alt="Design Element">
+                <p class="section-title">Exhibitions</p>
+                <img src="{{ url_for('static', filename='images/nrightdesign.png') }}" class="design-image" alt="Design Element">
+            </div>
+
+            <section class="event-cards-grid" id="exhibitions">
+                <!-- Dynamic Exhibition Cards will be loaded here -->
+                <p class="loading-message col-span-full" id="exhibitionLoading">Loading exhibitions...</p>
+            </section>
+        </section>
+    </main>
+
+    <!-- EXACT USER-PROVIDED FOOTER -->
+    <footer class="footer reveal">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Kalakosh</h3>
+                <p>Kalakosh is a living archive of India's rich artistic traditions, celebrating the timeless legacy of
+                    folk, tribal, and classical artforms across every state.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
+                    <li><a href="{{ url_for('events') }}">Events</a></li>
+                    <li><a href="{{ url_for('login') }}">Log in</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+                    <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('terms_of_service') }}">Terms Of Service</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Follow us on:</p><br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/kalakosh.kala" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61578851587605" target="_blank"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://pin.it/1hq42s0dv" target="_blank"><i class="bx bxl-pinterest"></i></a>
+                </div><br>
+                <p id="mail"><a href="mailto:kalakoshinfo@gmail.com"><i class="bx bxs-envelope"></i>: kalakoshinfo@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Kalakosh. Designed with ❤️ in India.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // IMPORTANT: Use the provided global variables for app ID and Firebase config
+        const currentAppId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfigRaw = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
+        const firebaseConfig = JSON.parse(firebaseConfigRaw);
+
+        // Fallback for local testing if __firebase_config is not set (e.g., direct HTML open)
+        if (Object.keys(firebaseConfig).length === 0 || !firebaseConfig.apiKey) {
+            console.warn("Using fallback Firebase config. Ensure __firebase_config is set in production.");
+            Object.assign(firebaseConfig, {
+                apiKey: "AIzaSyDQuFoRR5n9nvx0nq2HnbJlHQlugcd1jfM",
+                authDomain: "kalakosh-website-bd6a6.firebaseapp.com",
+                projectId: "kalakosh-website-bd6a6",
+                storageBucket: "kalakosh-website-bd6a6.firebasestorage.app",
+                messagingSenderId: "1093917835204",
+                appId: "1:1093917835204:web:d93e71b98c03393cb0ae91",
+                measurementId: "G-F7N10Z0RGC"
+            });
+        }
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const upcomingEventsDynamicList = document.getElementById('upcomingEventsDynamicList');
+        const workshopLoading = document.getElementById('workshopLoading');
+        const exhibitionLoading = document.getElementById('exhibitionLoading');
+        const workshopsGrid = document.getElementById('workshops');
+        const exhibitionsSection = document.getElementById('exhibitions');
+
+        // Function to load and display events
+        async function loadEvents() {
+            if (!db || !currentAppId) {
+                console.error("Firebase not initialized. Cannot load events.");
+                upcomingEventsDynamicList.innerHTML = "<p class='text-red-500 text-center py-10'>Error: Firebase not initialized.</p>";
+                workshopLoading.textContent = "Error: Firebase not initialized.";
+                exhibitionLoading.textContent = "Error: Firebase not initialized.";
+                return;
+            }
+
+            // Clear existing content (except for static sections)
+            upcomingEventsDynamicList.innerHTML = '';
+            workshopsGrid.innerHTML = '';
+            exhibitionsSection.innerHTML = '';
+
+            workshopLoading.classList.remove('hidden');
+            exhibitionLoading.classList.remove('hidden');
+
+            try {
+                // Fetch events from the public collection
+                const eventsCollectionRef = collection(db, `artifacts/${currentAppId}/public/data/events`);
+                const q = query(eventsCollectionRef, orderBy('date', 'asc')); // Order by date for upcoming events
+
+                onSnapshot(q, (snapshot) => {
+                    const allEvents = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    console.log("Fetched events:", allEvents); // Debugging
+
+                    const now = new Date();
+                    now.setHours(0, 0, 0, 0); // Normalize to start of today
+
+                    const upcomingEvents = [];
+                    const workshops = [];
+                    const exhibitions = [];
+
+                    allEvents.forEach(event => {
+                        const eventDate = new Date(event.date); // Assuming event.date is in YYYY-MM-DD format
+                        if (eventDate >= now) { // Only include future or current events
+                            upcomingEvents.push(event);
+                            if (event.type === 'Workshop') {
+                                workshops.push(event);
+                            } else if (event.type === 'Exhibition') {
+                                exhibitions.push(event);
+                            }
+                        }
+                    });
+
+                    // Render Upcoming Events (Calendar Events section)
+                    if (upcomingEvents.length === 0) {
+                        upcomingEventsDynamicList.innerHTML = "<p class='text-gray-500 text-center py-10'>No upcoming events or workshops scheduled yet.</p>";
+                    } else {
+                        upcomingEventsDynamicList.innerHTML = ''; // Clear placeholder before adding events
+                        upcomingEvents.forEach(event => {
+                            const eventItem = document.createElement('div');
+                            eventItem.className = "event-item";
+                            eventItem.innerHTML = `
+                                <h4>${event.title}</h4>
+                                <p>${event.description}</p>
+                                <div class="half">
+                                    <div id="da"><strong>Date:</strong> ${event.date}</div>
+                                    <div><button><a href="/login-register?event_id=${event.id}">Details</a></button></div>
+                                </div>
+                                <hr />
+                            `;
+                            upcomingEventsDynamicList.appendChild(eventItem);
+                        });
+                    }
+
+                    // Render Workshops
+                    workshopLoading.classList.add('hidden');
+                    if (workshops.length === 0) {
+                        workshopsGrid.innerHTML = "<p class='text-gray-500 text-center py-10 col-span-full'>No workshops available at the moment.</p>";
+                    } else {
+                        workshopsGrid.innerHTML = ''; // Clear placeholder before adding events
+                        workshops.forEach(event => {
+                            const workshopCard = document.createElement('div');
+                            workshopCard.className = "dynamic-event-card"; /* NEW CLASS FOR DYNAMIC CARDS */
+                            workshopCard.innerHTML = `
+                                <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Event+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
+                                <div class="dynamic-event-details">
+                                    <h3>${event.title}</h3>
+                                    <div class="instructor">
+                                        <img src="${event.instructorImage || 'https://placehold.co/50x50/DDDDDD/666666?text=I'}" alt="Instructor" onerror="this.onerror=null; this.src='https://placehold.co/50x50/DDDDDD/666666?text=I';">
+                                        <span>by ${event.artistName || 'Unknown Instructor'}</span>
+                                    </div>
+                                    <div class="event-meta">Date: ${event.date} | Time: ${event.time}</div>
+                                    <div class="event-actions">
+                                        <button class="register"><a href="{{ url_for('login-register') }}?event_id=${event.id}">Register Now</a></button>
+                                        <button class="details">View Details</button>
+                                    </div>
+                                </div>
+                            `;
+                            workshopsGrid.appendChild(workshopCard);
+                        });
+                    }
+
+                    // Render Exhibitions
+                    exhibitionLoading.classList.add('hidden');
+                    if (exhibitions.length === 0) {
+                        exhibitionsSection.innerHTML = "<p class='text-gray-500 text-center py-10 col-span-full'>No exhibitions available at the moment.</p>";
+                    } else {
+                        exhibitionsSection.innerHTML = ''; // Clear placeholder before adding events
+                        exhibitions.forEach(event => {
+                            const exhibitionCard = document.createElement('div');
+                            exhibitionCard.className = "dynamic-event-card"; /* NEW CLASS FOR DYNAMIC CARDS */
+                            exhibitionCard.innerHTML = `
+                                <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Exhibition+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
+                                <div class="dynamic-event-details">
+                                    <h3>${event.title}</h3>
+                                    <p>${event.description}</p>
+                                    <p><strong>Venue:</strong> ${event.location}</p>
+                                    <p><strong>Event Timing:</strong> ${event.date}, ${event.time}</p>
+                                    <div class="buttons">
+                                        <a href="{{ url_for('login-register') }}?event_id=${event.id}" class="btn">Register / Details</a>
+                                    </div>
+                                </div>
+                            `;
+                            exhibitionsSection.appendChild(exhibitionCard);
+                        });
+                    }
+
+                }, (err) => {
+                    console.error("Error fetching events:", err);
+                    upcomingEventsDynamicList.innerHTML = `<p class='text-red-500 text-center py-10'>Error loading events: ${err.message}</p>`;
+                    workshopLoading.textContent = `Error loading workshops: ${err.message}`;
+                    exhibitionLoading.textContent = `Error loading exhibitions: ${err.message}`;
+                });
+            } catch (err) {
+                console.error("Error in loadEvents setup:", err);
+                upcomingEventsDynamicList.innerHTML = `<p class='text-red-500 text-center py-10'>An error occurred: ${err.message}</p>`;
+                workshopLoading.textContent = `An error occurred: ${err.message}`;
+                exhibitionLoading.textContent = `An error occurred: ${err.message}`;
+            }
+        }
+
+        window.onload = loadEvents;
+    </script>
+</body>
+</html>

@@ -312,6 +312,174 @@ def login_events():
 def login_register():
     return render_template('login-register.html')
 
+@app.route('/Papier_Mâché')
+def Papier_Mâché():
+    return render_template('Papier-Mâché.html')
+
+@app.route('/Namda')
+def Namda():
+    return render_template('Namda.html')
+
+@app.route('/kceiling')
+def kceiling():
+    return render_template('kceiling.html')
+
+@app.route('/wicker')
+def wicker():
+    return render_template('wicker.html')
+
+@app.route('/pahari')
+def pahari():
+    return render_template('pahari.html')
+
+@app.route('/Chamba')
+def Chamba():
+    return render_template('Chamba.html')
+
+@app.route('/bamboo')
+def bamboo():
+    return render_template('bamboo.html')
+
+@app.route('/hjewellery')
+def hjewellery():
+    return render_template('hjewellery.html')
+
+@app.route('/Lippan')
+def Lippan():
+    return render_template('Lippan.html')
+
+@app.route('/Rogan')
+def Rogan():
+    return render_template('Rogan.html')
+
+@app.route('/Beadwork')
+def Beadwork():
+    return render_template('Beadwork.html')
+
+@app.route('/Wood_Craft')
+def Wood_Craft():
+    return render_template('Wood_Craft.html')
+
+@app.route('/Kalbelia')
+def Kalbelia():
+    return render_template('Kalbelia.html')
+
+@app.route('/Pichwai')
+def Pichwai_page():
+    return render_template('Pichwai.html')
+
+@app.route('/Lakh_Bangles')
+def Lakh_Bangles():
+    return render_template('Lakh_Bangles.html')
+
+@app.route('/Puppetry')
+def Puppetry():
+    return render_template('Puppetry.html')
+
+@app.route('/Gond')
+def Gond():
+    return render_template('Gond.html')
+
+@app.route('/Stone')
+def Stone():
+    return render_template('Stone.html')
+
+@app.route('/Terracotta')
+def Terracotta():
+    return render_template('Terracotta.html')
+
+@app.route('/Chanderi')
+def Chanderi():
+    return render_template('Chanderi.html')
+
+@app.route('/Pattachitra')
+def Pattachitra():
+    return render_template('Pattachitra.html')
+
+@app.route('/Gotipua')
+def Gotipua():
+    return render_template('Gotipua.html')
+
+@app.route('/Ikat_Weaving')
+def Ikat_Weaving():
+    return render_template('Ikat_Weaving.html')
+
+@app.route('/dhokra')
+def dhokra():
+    return render_template('dhokra.html')
+
+@app.route('/Sattriya')
+def Sattriya():
+    return render_template('Sattriya.html')
+
+@app.route('/Muga')
+def Muga():
+    return render_template('Muga.html')
+
+@app.route('/Majuli')
+def Majuli():
+    return render_template('Majuli.html')
+
+@app.route('/BMP')
+def BMP():
+    return render_template('BMP.html')
+
+@app.route('/kathakali')
+def kathakali():
+    return render_template('kathakali.html')
+
+@app.route('/mural')
+def mural():
+    return render_template('mural.html')
+
+@app.route('/aranmula')
+def aranmula():
+    return render_template('aranmula.html')
+
+@app.route('/coir')
+def coir():
+    return render_template('coir.html')
+
+@app.route('/mysore')
+def mysore():
+    return render_template('mysore.html')
+
+@app.route('/bidri')
+def bidri():
+    return render_template('bidri.html')
+
+@app.route('/kinnal')
+def kinnal():
+    return render_template('kinnal.html')
+
+@app.route('/ilkal')
+def ilkal():
+    return render_template('ilkal.html')
+
+@app.route('/madhubani')
+def madhubani():
+    return render_template('madhubani.html')
+
+@app.route('/vastra')
+def vastra():
+    return render_template('vastra.html')
+
+@app.route('/clay')
+def clay():
+    return render_template('clay.html')
+
+@app.route('/warli')
+def warli():
+    return render_template('warli.html')
+
+@app.route('/fabric')
+def fabric():
+    return render_template('fabric.html')
+
+@app.route('/string')
+def string():
+    return render_template('string.html')
+
 if __name__ == '__main__':
     initialize_firebase_app()
     app.run(debug=True)

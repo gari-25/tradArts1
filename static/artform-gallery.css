@@ -1,30 +1,29 @@
 html {
     height: 100%; /* Ensures HTML takes full viewport height */
+    overflow-x: hidden;
 }
 
 body {
-    background-image: url('/static/images/bg.jpg'); /* Your specified background image */
+    background-image: url('/static/images/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Ensures the background stays fixed relative to the viewport */
-    background-position: center center; /* Centers the image */
-    margin: 0; /* Remove default body margin */
-    height: 100vh; /* Set body height to 100% of viewport height for initial view */
-    width: auto; /* Allow width to be determined by content */
-    overflow-y: scroll; /* Enable vertical scrolling if content exceeds viewport height */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    height: 100vh;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
-    /* Basic typography for the page */
-    font-family: 'Mukta', sans-serif; /* A good readable font for general text */
-    color: #333; /* Default text color */
-    line-height: 1.6; /* Improve readability for paragraphs */
+    font-family: 'Mukta', sans-serif;
+    color: #333;
+    line-height: 1.6;
 
-    /* Flexbox for body to stack artform containers and center them */
     display: flex;
-    flex-direction: column; /* Stack artform containers vertically */
-    align-items: center; /* Center them horizontally */
-    padding: 20px 0; /* Add vertical padding around the entire content */
-    box-sizing: border-box; /* Include padding in element's total height */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 #Back {
@@ -38,7 +37,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-family: 'Mukta', sans-serif;
-    font-size: 1.15em; /* Using slightly larger font size */
+    font-size: 1.15em;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
     z-index: 100; 
@@ -72,7 +71,8 @@ body {
     transform: translateY(-2px);
 }
 
-.artform-container1 {
+.artform-container1,
+.artform-container2 {
     width: 90%;
     max-width: 1100px;
     display: flex;
@@ -88,46 +88,35 @@ body {
     box-sizing: border-box;
     color: blanchedalmond;
     font-weight: bold;
+    flex-wrap: wrap; /* Added for better responsiveness */
 }
 
 .artform-container2 {
-    width: 90%;
-    max-width: 1100px;
-    display: flex;
     flex-direction: row-reverse;
-    height: auto;
-    background-color: rgba(133, 17, 17, 0.475);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    padding: 30px;
-    margin-bottom: 40px;
-    align-items: flex-start;
-    gap: 30px;
-    box-sizing: border-box;
-    color: blanchedalmond;
-    font-weight: bold;
 }
 
 .image-container {
     flex: 0 0 250px;
-    height: 90%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-right: 20px;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 .artform-image {
     width: 250px;
-    height: 90%;
+    height: auto;
     object-fit: cover;
     border-radius: 15%;
     border: 2px solid rgb(122, 5, 5);
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
+    max-width: 100%;
 }
 
 .artform-image:hover {
@@ -143,10 +132,9 @@ body {
     margin-top: 10px;
 }
 
-.description-container1 {
+.description-container1,
+.description-container2 {
     flex: 1;
-    padding-left: 30px;
-    border-left: 1px solid rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,22 +145,18 @@ body {
     color: rgb(86, 1, 1);
     font-weight: 900;
     font-family: 'Artifika', serif;
+    max-width: 100%;
+}
+
+.description-container1 {
+    padding-left: 30px;
+    border-left: 1px solid rgba(0,0,0,0.2);
 }
 
 .description-container2 {
-    flex: 1;
     padding-right: 30px;
     border-right: 1px solid rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    line-height: 1.8;
-    text-align: justify;
-    color: rgb(86, 1, 1);
     font-weight: bold;
-    font-family: 'Artifika', serif;
 }
 
 .gallery-title {
@@ -223,7 +207,8 @@ body {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
-    border: 1px solid rgb(122, 5, 5); 
+    border: 1px solid rgb(122, 5, 5);
+    max-width: 100%;
 }
 
 .image-item {
@@ -242,8 +227,8 @@ body {
     padding: 5px 0;
 }
 
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
-    /* Gallery specific adjustments */
     .gallery-title {
         font-size: 3em;
     }
@@ -260,7 +245,7 @@ body {
 }
 
 @media (max-width: 900px) {
-        .artform-container1, .artform-container2 {
+    .artform-container1, .artform-container2 {
         flex-direction: column;
         width: 95%;
         padding: 20px;
@@ -274,7 +259,6 @@ body {
         margin-bottom: 20px;
     }
 
-    /* Consolidated description container for responsiveness */
     .description-container1, .description-container2 {
         flex: none;
         width: 100%;
@@ -322,7 +306,7 @@ body {
     #pic-name {
         font-size: 1.5em;
     }
-    
+
     .gallery-title {
         font-size: 2em;
     }
@@ -331,5 +315,17 @@ body {
     }
     .gallery-media {
         height: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery-title {
+        font-size: 1.5em;
+    }
+    .artform-image {
+        width: 150px;
+    }
+    .gallery-media {
+        height: 120px;
     }
 }

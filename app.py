@@ -482,4 +482,4 @@ def string():
 
 if __name__ == '__main__':
     initialize_firebase_app()
-    app.run(debug=True)
+    app.run()

@@ -5,7 +5,7 @@ html, body{
 }
 
 body{
-    background-image:url(bg.jpg);
+    background-image:url(/static/images/bg.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed; /* Ensures the background stays fixed relative to the viewport */

@@ -1,6 +1,6 @@
 /* Ensure parallax effect works */
 body{
-    background-image:url(man_bg2.avif); 
+    background-image:url(/static/images/man_bg2.avif); 
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -73,7 +73,7 @@ body{
 #typewriterText {
   color:white;
   font-family: 'Tangerine';
-  font-size:6em;
+  font-size:4em;
   text-shadow:1px 2px 4px #6B2E00;
   white-space: nowrap;
   border-right: 2px solid black;

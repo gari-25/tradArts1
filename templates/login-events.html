@@ -186,6 +186,9 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+        // base URL for the login/register page (server-side rendered)
+            const loginRegisterBase = "{{ url_for('login_register') }}";
+
         // IMPORTANT: Use the provided global variables for app ID and Firebase config
         const currentAppId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const firebaseConfigRaw = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
@@ -265,20 +268,25 @@
                         upcomingEventsDynamicList.innerHTML = "<p class='text-gray-500 text-center py-10'>No upcoming events or workshops scheduled yet.</p>";
                     } else {
                         upcomingEventsDynamicList.innerHTML = ''; // Clear placeholder before adding events
-                        upcomingEvents.forEach(event => {
-                            const eventItem = document.createElement('div');
-                            eventItem.className = "event-item";
-                            eventItem.innerHTML = `
-                                <h4>${event.title}</h4>
-                                <p>${event.description}</p>
-                                <div class="half">
-                                    <div id="da"><strong>Date:</strong> ${event.date}</div>
-                                    <div><button><a href="/login-register?event_id=${event.id}">Details</a></button></div>
-                                </div>
-                                <hr />
-                            `;
-                            upcomingEventsDynamicList.appendChild(eventItem);
-                        });
+                        // Inside rendering upcomingEvents
+upcomingEvents.forEach(event => {
+    const eventItem = document.createElement('div');
+    eventItem.className = "event-item";
+    eventItem.innerHTML = `
+        <h4>${event.title}</h4>
+        <p>${event.description}</p>
+        <div class="half">
+            <div id="da"><strong>Date:</strong> ${event.date}</div>
+            <div>
+                <button>
+                    <a href="${loginRegisterBase}?event_id=${event.id}">Details</a>
+                </button>
+            </div>
+        </div>
+        <hr />
+    `;
+    upcomingEventsDynamicList.appendChild(eventItem);
+});
                     }
 
                     // Render Workshops
@@ -287,26 +295,28 @@
                         workshopsGrid.innerHTML = "<p class='text-gray-500 text-center py-10 col-span-full'>No workshops available at the moment.</p>";
                     } else {
                         workshopsGrid.innerHTML = ''; // Clear placeholder before adding events
-                        workshops.forEach(event => {
-                            const workshopCard = document.createElement('div');
-                            workshopCard.className = "dynamic-event-card"; /* NEW CLASS FOR DYNAMIC CARDS */
-                            workshopCard.innerHTML = `
-                                <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Event+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
-                                <div class="dynamic-event-details">
-                                    <h3>${event.title}</h3>
-                                    <div class="instructor">
-                                        <img src="${event.instructorImage || 'https://placehold.co/50x50/DDDDDD/666666?text=I'}" alt="Instructor" onerror="this.onerror=null; this.src='https://placehold.co/50x50/DDDDDD/666666?text=I';">
-                                        <span>by ${event.artistName || 'Unknown Instructor'}</span>
-                                    </div>
-                                    <div class="event-meta">Date: ${event.date} | Time: ${event.time}</div>
-                                    <div class="event-actions">
-                                        <button class="register"><a href="{{ url_for('login-register') }}?event_id=${event.id}">Register Now</a></button>
-                                        <button class="details">View Details</button>
-                                    </div>
-                                </div>
-                            `;
-                            workshopsGrid.appendChild(workshopCard);
-                        });
+                        // Inside rendering workshops
+workshops.forEach(event => {
+    const workshopCard = document.createElement('div');
+    workshopCard.className = "dynamic-event-card";
+    workshopCard.innerHTML = `
+        <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Event+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
+        <div class="dynamic-event-details">
+            <h3>${event.title}</h3>
+            <div class="instructor">
+                <img src="${event.instructorImage || 'https://placehold.co/50x50/DDDDDD/666666?text=I'}" alt="Instructor" onerror="this.onerror=null; this.src='https://placehold.co/50x50/DDDDDD/666666?text=I';">
+                <span>by ${event.artistName || 'Unknown Instructor'}</span>
+            </div>
+            <div class="event-meta">Date: ${event.date} | Time: ${event.time}</div>
+            <div class="event-actions">
+                <!-- use loginRegisterBase to avoid mixing Jinja inside template literal -->
+                <button class="register"><a href="${loginRegisterBase}?event_id=${event.id}">Register Now</a></button>
+                <button class="details">View Details</button>
+            </div>
+        </div>
+    `;
+    workshopsGrid.appendChild(workshopCard);
+});
                     }
 
                     // Render Exhibitions
@@ -315,23 +325,24 @@
                         exhibitionsSection.innerHTML = "<p class='text-gray-500 text-center py-10 col-span-full'>No exhibitions available at the moment.</p>";
                     } else {
                         exhibitionsSection.innerHTML = ''; // Clear placeholder before adding events
-                        exhibitions.forEach(event => {
-                            const exhibitionCard = document.createElement('div');
-                            exhibitionCard.className = "dynamic-event-card"; /* NEW CLASS FOR DYNAMIC CARDS */
-                            exhibitionCard.innerHTML = `
-                                <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Exhibition+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
-                                <div class="dynamic-event-details">
-                                    <h3>${event.title}</h3>
-                                    <p>${event.description}</p>
-                                    <p><strong>Venue:</strong> ${event.location}</p>
-                                    <p><strong>Event Timing:</strong> ${event.date}, ${event.time}</p>
-                                    <div class="buttons">
-                                        <a href="{{ url_for('login-register') }}?event_id=${event.id}" class="btn">Register / Details</a>
-                                    </div>
-                                </div>
-                            `;
-                            exhibitionsSection.appendChild(exhibitionCard);
-                        });
+                            // Inside rendering exhibitions
+exhibitions.forEach(event => {
+    const exhibitionCard = document.createElement('div');
+    exhibitionCard.className = "dynamic-event-card";
+    exhibitionCard.innerHTML = `
+        <img src="${event.imageUrl || 'https://placehold.co/400x300/CCCCCC/333333?text=Exhibition+Image'}" alt="${event.title}" onerror="this.onerror=null; this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error';">
+        <div class="dynamic-event-details">
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <p><strong>Venue:</strong> ${event.location}</p>
+            <p><strong>Event Timing:</strong> ${event.date}, ${event.time}</p>
+            <div class="buttons">
+                <a href="${loginRegisterBase}?event_id=${event.id}" class="btn">Register / Details</a>
+            </div>
+        </div>
+    `;
+    exhibitionsSection.appendChild(exhibitionCard);
+});
                     }
 
                 }, (err) => {

@@ -34,7 +34,7 @@
                 <p class="sitem-text">Uttar Pradesh</p>
         </div>
         <div class="sitem-container">
-                <a href="{{ url_for('J&K') }}"><img src="J&K" class="sitem"></a>
+                <a href="{{ url_for('J_K') }}"><img src="{{ url_for('static', filename='images/J&K') }}" class="sitem"></a>
                 <p class="sitem-text">Jammu & Kashmir</p>
         </div>
         <div class="sitem-container">
@@ -74,7 +74,7 @@
                 <p class="sitem-text">Odisha</p>
         </div>
         <div class="sitem-container">
-                <a href="{{ url_for('West Bengal') }}"><img src="{{ url_for('static', filename='images/West-Bengal.jpg') }}" class="sitem"></a>
+                <a href="{{ url_for('West_Bengal') }}"><img src="{{ url_for('static', filename='images/West-Bengal.jpg') }}" class="sitem"></a>
                 <p class="sitem-text">West Bengal</p>
         </div>
         <div class="sitem-container">
@@ -90,7 +90,7 @@
     </div>
     <div class="states">
         <div class="sitem-container">
-                <a href="{{ url_for('Tamil_Nadu') }}"><img src="Tamil-Nadu.avif" class="sitem"></a>
+                <a href="{{ url_for('Tamil_Nadu') }}"><img src="{{ url_for('static', filename='images/Tamil-Nadu.avif') }}" class="sitem"></a>
                 <p class="sitem-text">Tamil Nadu</p>
         </div>
         <div class="sitem-container">
@@ -121,7 +121,7 @@
       <ul>
         <li><a href="{{ url_for('index') }}">Home</a></li>
         <li><a href="{{ url_for('State_region') }}">Artforms</a></li>
-        <li><a href="{{ url_for('kalakosh_events') }}">Events</a></li>
+        <li><a href="{{ url_for('events') }}">Events</a></li>
         <li><a href="{{ url_for('login') }}">Log in</a></li>
       </ul>
     </div>

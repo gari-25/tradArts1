@@ -79,7 +79,7 @@
 
             try {
                 // 1. Send signup data to Flask backend
-                const response = await fetch('/signup', {
+                const response = await fetch('/signup_logic', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -107,7 +107,7 @@
                         if (data.userType === 'artist') {
                             window.location.href = `{{ url_for('artist_dashboard') }}?token=${idToken}`; // Pass token to artist dashboard
                         } else {
-                            window.location.href = `{{ url_for('login_events') }}`;
+                            window.location.href = `{{ url_for('login-events') }}`;
                         }
                     } else {
                         signupMessage.textContent = "Signup successful, but no custom token received. Please try logging in.";

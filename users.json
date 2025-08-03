@@ -88,5 +88,23 @@
         "password": "artista12",
         "user_type": "artist",
         "firebase_uid": "2jJlwbUKxEQ8plqoNEZrM0EPHvJ3"
+    },
+    "A": {
+        "email": "a@mail.com",
+        "password": "scrypt:32768:8:1$0EH7eu80gA54zboX$c8d4d4a63f3e6d59082e749aaae5be7c15299ec3a3e7c57c49a42bd487e68f9164747d8dc18618d5217503cea827d12a357f3f038cd6eaabda6da199f00051c3",
+        "user_type": "artist",
+        "firebase_uid": "wiqdOnc63YRUM0hbVMysCRVNHAP2"
+    },
+    "Ar": {
+        "email": "ar@mail.com",
+        "password": "scrypt:32768:8:1$g1XEuD0WkOM95mXc$d19a4fa9b5f0ce7b2dae3f5afcb35be43c6d162892256677e871f362f8d1071c2fe34e5cf1686b25733115244ff5c872b18206feead838f233e16a62aa9eef2e",
+        "user_type": "artist",
+        "firebase_uid": "zIUb26256vZafs5Mhw9mbxIrbuf2"
+    },
+    "newu": {
+        "email": "nu@gmail.com",
+        "password": "scrypt:32768:8:1$xATwRpHb6MpUEQ9A$90c0d24767015e4c7176de3e4d587dfdb7d900faaaa81c523410f8ab9816aba1df91d952f04ae8193664f25bd911fd08fceef9af25aeceec10e638b72f9e583e",
+        "user_type": "visitor",
+        "firebase_uid": "wOGhyowiu3ObuIcKZuLQuGOwi1B2"
     }
 }

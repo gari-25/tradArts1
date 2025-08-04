@@ -241,3 +241,39 @@ form h4 a {
   color: bisque;
 }
 
+@media screen and (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav {
+        flex-wrap: wrap;
+        gap: 0.5em;
+        font-size: 1em;
+    }
+    .items {
+        width: auto;
+        padding: 0.5em 1em;
+    }
+
+    .container {
+        width: 90%; /* Full width on tablets */
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%; /* Almost full width on phones */
+        max-width: 350px;
+        padding: 1rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+
+    input, select, button {
+        font-size: 14px;
+    }
+}

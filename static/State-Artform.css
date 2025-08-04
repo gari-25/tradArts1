@@ -191,6 +191,9 @@ body{
         flex: none; /* Remove flex sizing */
         width: 100%; /* Make them full width */
     }
+    .states{
+      flex-direction: column;
+    }
 }
 
 .footer {

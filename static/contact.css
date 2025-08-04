@@ -389,7 +389,7 @@ p i{
     width:200px;
   }
   
-  .nav-links {
+  .nav {
     flex-direction: column;
     gap: 10px;
   }
@@ -438,3 +438,4 @@ p i{
   }
   
 }
+

@@ -15,9 +15,6 @@ body{
     width:auto;
     position: static;
     overflow: auto;
-    /* animation-name: opening;
-    animation-duration: 5s;
-    animation-iteration-count: 1; */
 }
 
 .logo{

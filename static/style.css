@@ -613,3 +613,24 @@ p i{
   }
 }
 
+.map {
+  width: 100% !important;
+  display: block !important;
+  margin: 20px auto !important;
+}
+
+.map img {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+@media (max-width: 768px) {
+  .map iframe,
+  .map img {
+    width: 90vw;
+    height: auto;
+  }
+}

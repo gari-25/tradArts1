@@ -373,69 +373,131 @@ p i{
 }
 
 /* Responsiveness */
+/* ---------- Mobile Responsive Fixes ---------- */
 @media screen and (max-width: 768px) {
-  body{
-    flex-direction: column;
-    overflow-x:hidden;
+
+  /* Body and background fix */
+  body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden; /* prevent sideways scroll */
   }
 
+  /* Header & Navigation */
   .header {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    background-color: #6B2E00;
+    padding: 10px 0;
   }
 
-  .logo,.logo img{
-    height:80px;
-    width:200px;
+  .logo {
+    justify-content: center;
+    width: 100%;
   }
-  
+
+  .main_logo img {
+    width: 180px;
+    height: auto;
+  }
+
   .nav {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
   }
 
-  .page-content{
-    width:80%;
+  .items {
+    width: 80%;
+    margin-bottom: 8px;
   }
 
-  .profiles-head{
+  /* Meet Our Team heading */
+  .profiles-head {
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
   }
 
-  .profiles-head img{
-    display: none;
+  .profiles-head img {
+    display: none; /* hide side separators on small screens */
   }
 
-  .contact-form {
+  /* Team Cards */
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .team-card {
     width: 90%;
-    height: auto;
+    height: auto; /* remove fixed height */
+  }
+
+  .image-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .card-body {
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-body button {
+    align-self: center;
+    width: 70%;
+  }
+
+  /* Contact Form Section */
+  .page-content {
+    width: 90%;
+    margin: 20px auto;
     padding: 20px;
   }
 
-  .contact-form label{
-    width:25%;
+  .contact-form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
   }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea{ 
-    width:60%;
+  .contact-form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3px;
   }
 
-.contact-form button{
-  align-self:center;
-}
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+  }
 
+  .contact-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Footer */
   .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .footer-section {
-    width: 90%;
-    padding: 10px 0;
-    text-align: center;
+    width: 100%;
+    padding: 15px 0;
   }
-  
 }
-
